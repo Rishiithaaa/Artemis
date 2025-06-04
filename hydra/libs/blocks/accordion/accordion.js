@@ -147,6 +147,7 @@ function createItem(accordion, id, heading, num, edit) {
     dm.append(ogMedia);
     dd.prepend(dm);
   }
+//window.hydrate && window.hydrate({id:dd,num,id,button, payload:7465})
 //@hydrate({payload:{dd,num,id,button}})
   button.addEventListener('click', (e) => { handleClick(e.target, dd, num, id); });
   accordion.append(dt, dd);
@@ -203,8 +204,13 @@ async function createExpandAllContainer(accordionItems, isEditorial, mediaEl) {
     if (video) pauseVideo(video);
   };
 
-//@hydrate({payload:{expandBtn,collapseBtn}})
+//window.hydrate && window.hydrate({id:expandBtn, payload:9852})
+//@hydrate({payload:{button:expandBtn}})
 expandBtn.addEventListener('click', ({ currentTarget }) => toggleAll(currentTarget, 'expand'));
+//@end
+
+//window.hydrate && window.hydrate({id:collapseBtn, payload:9990})
+//@hydrate({payload:{button:collapseBtn}})
 collapseBtn.addEventListener('click', ({ currentTarget }) => toggleAll(currentTarget, 'collapse'));
 //@end
 

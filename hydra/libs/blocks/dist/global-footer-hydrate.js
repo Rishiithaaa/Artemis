@@ -1,112 +1,33 @@
-const mediaCollection = {};
-/* c8 ignore next 8 */
-function playVideo(video) {
-  if (!video) return;
-  if (video.getAttribute('autoplay') === null) return;
-  const playBtn = video.nextElementSibling;
-  const isPlaying = playBtn.getAttribute('aria-pressed') === 'true';
-  if (isPlaying || video.readyState === 0) return;
-  playBtn.click();
-}
-
-/* c8 ignore next 11 */
-function pauseVideo(video) {
-  if (!video) return;
-  if (video.getAttribute('controls') !== null) {
-    video.pause();
-    return;
-  }
-  const pauseBtn = video.nextElementSibling;
-  const isPlaying = pauseBtn?.getAttribute('aria-pressed') === 'true';
-  if (!isPlaying || video.readyState === 0) return;
-  pauseBtn.click();
-}
-
-function openPanel(btn, panel) {
-  const analyticsValue = btn.getAttribute('daa-ll'); // Get the analytics value
-  btn.setAttribute('aria-expanded', 'true'); // Update aria-expanded for accessibility
-  btn.setAttribute('daa-ll', analyticsValue.replace(/open-/, 'close-')); // Change analytics state
-  panel.removeAttribute('hidden'); // Make the panel visible
-}
-
-function closePanel(btn, panel) {
-  const analyticsValue = btn.getAttribute('daa-ll');
-  btn.setAttribute('aria-expanded', 'false');
-  btn.setAttribute('daa-ll', analyticsValue.replace(/close-/, 'open-'));
-  panel.setAttribute('hidden', '');
-}
-
-function closeMediaPanel(displayArea, el, dd, clickedId) {
-  closePanel(el, dd);
-  const clickedMedia = displayArea.childNodes[clickedId - 1];
-  const video = clickedMedia?.querySelector('video');
-  if (video) pauseVideo(video);
-  const otherExpandedPanels = el.closest('.accordion').querySelectorAll('.accordion-trigger[aria-expanded="true"]');
-  if (!otherExpandedPanels.length) return;
-  clickedMedia.classList.remove('expanded');
-  const newExpandedId = otherExpandedPanels[0].id.split('trigger-')[1] - 1;
-  displayArea.childNodes[newExpandedId].classList.add('expanded');
-}
-
-function openMediaPanel(displayArea, el, dd, clickedId) {
-  const accordionId = el.getAttribute('aria-controls').split('-')[1];
-  [...mediaCollection[accordionId]].forEach((mediaCollectionItem, idx) => {
-    const video = mediaCollectionItem.querySelector('video');
-    if (idx === clickedId - 1) {
-      openPanel(el, dd);
-      displayArea?.childNodes[idx]?.classList.add('expanded');
-      if (video) playVideo(video);
-      return;
-    }
-    mediaCollectionItem.classList.remove('expanded');
-    const trigger = document.querySelector(`#accordion-${accordionId}-trigger-${idx + 1}`);
-    const content = document.querySelector(`#accordion-${accordionId}-content-${idx + 1}`);
-    closePanel(trigger, content);
-    if (video) pauseVideo(video);
-  });
-}
-
-function handleClick(el, dd, num) {
-  const expandAllBtns = el.closest('.accordion-container')?.querySelectorAll('.accordion-expand-all button');
-  if (expandAllBtns.length) {
-    expandAllBtns.forEach(btn => {
-      btn.setAttribute('aria-pressed', 'mixed');
-      btn.classList.remove('fill');
-      btn.disabled = false;
+import Footer from './Footer';
+class FooterHydrate extends Footer {
+  _306({
+    regionPickerWrapperClass
+  }) {
+    document.addEventListener('click', e => {
+      if (isRegionPickerExpanded() && !e.target.closest(`.${regionPickerWrapperClass}`)) {
+        regionPickerElem.setAttribute('aria-expanded', false);
+      }
     });
   }
-  const closestEditorial = el.closest('.editorial');
-  const expanded = el.getAttribute('aria-expanded') === 'true';
-  if (closestEditorial) {
-    if (expanded) {
-      closeMediaPanel(closestEditorial.querySelector('.accordion-media'), el, dd, num);
-      return;
-    }
-    openMediaPanel(closestEditorial.querySelector('.accordion-media'), el, dd, num);
-    return;
-  }
-  if (expanded) {
-    closePanel(el, dd);
-    return;
-  }
-  openPanel(el, dd);
 }
-const hydrationToken = "accordion/accordion.js";
+
+//window.hydrate && window.hydrate({id:CONFIG, payload:664})
+
+const CONFIG = {
+  socialPlatforms: ['facebook', 'instagram', 'twitter', 'linkedin', 'pinterest', 'discord', 'behance', 'youtube', 'weibo', 'social-media'],
+  delays: {
+    decoration: 3000
+  }
+};
+const hydrationToken = "global-footer/global-footer.js";
 const hydrationBlocks = {
-  _152: (dd, num, id, button) => {
-    button.addEventListener('click', e => {
-      handleClick(e.target, dd, num, id);
-    });
-  },
-  _209: (button: expandBtn) => {
-    expandBtn.addEventListener('click', ({
-      currentTarget
-    }) => toggleAll(currentTarget, 'expand'));
-  },
-  _214: (button: collapseBtn) => {
-    collapseBtn.addEventListener('click', ({
-      currentTarget
-    }) => toggleAll(currentTarget, 'collapse'));
+  _34: () => {
+    const CONFIG = {
+      socialPlatforms: ['facebook', 'instagram', 'twitter', 'linkedin', 'pinterest', 'discord', 'behance', 'youtube', 'weibo', 'social-media'],
+      delays: {
+        decoration: 3000
+      }
+    };
   }
 };
 /**

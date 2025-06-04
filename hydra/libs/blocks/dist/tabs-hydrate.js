@@ -1,112 +1,101 @@
-const mediaCollection = {};
-/* c8 ignore next 8 */
-function playVideo(video) {
-  if (!video) return;
-  if (video.getAttribute('autoplay') === null) return;
-  const playBtn = video.nextElementSibling;
-  const isPlaying = playBtn.getAttribute('aria-pressed') === 'true';
-  if (isPlaying || video.readyState === 0) return;
-  playBtn.click();
-}
-
-/* c8 ignore next 11 */
-function pauseVideo(video) {
-  if (!video) return;
-  if (video.getAttribute('controls') !== null) {
-    video.pause();
-    return;
-  }
-  const pauseBtn = video.nextElementSibling;
-  const isPlaying = pauseBtn?.getAttribute('aria-pressed') === 'true';
-  if (!isPlaying || video.readyState === 0) return;
-  pauseBtn.click();
-}
-
-function openPanel(btn, panel) {
-  const analyticsValue = btn.getAttribute('daa-ll'); // Get the analytics value
-  btn.setAttribute('aria-expanded', 'true'); // Update aria-expanded for accessibility
-  btn.setAttribute('daa-ll', analyticsValue.replace(/open-/, 'close-')); // Change analytics state
-  panel.removeAttribute('hidden'); // Make the panel visible
-}
-
-function closePanel(btn, panel) {
-  const analyticsValue = btn.getAttribute('daa-ll');
-  btn.setAttribute('aria-expanded', 'false');
-  btn.setAttribute('daa-ll', analyticsValue.replace(/close-/, 'open-'));
-  panel.setAttribute('hidden', '');
-}
-
-function closeMediaPanel(displayArea, el, dd, clickedId) {
-  closePanel(el, dd);
-  const clickedMedia = displayArea.childNodes[clickedId - 1];
-  const video = clickedMedia?.querySelector('video');
-  if (video) pauseVideo(video);
-  const otherExpandedPanels = el.closest('.accordion').querySelectorAll('.accordion-trigger[aria-expanded="true"]');
-  if (!otherExpandedPanels.length) return;
-  clickedMedia.classList.remove('expanded');
-  const newExpandedId = otherExpandedPanels[0].id.split('trigger-')[1] - 1;
-  displayArea.childNodes[newExpandedId].classList.add('expanded');
-}
-
-function openMediaPanel(displayArea, el, dd, clickedId) {
-  const accordionId = el.getAttribute('aria-controls').split('-')[1];
-  [...mediaCollection[accordionId]].forEach((mediaCollectionItem, idx) => {
-    const video = mediaCollectionItem.querySelector('video');
-    if (idx === clickedId - 1) {
-      openPanel(el, dd);
-      displayArea?.childNodes[idx]?.classList.add('expanded');
-      if (video) playVideo(video);
-      return;
-    }
-    mediaCollectionItem.classList.remove('expanded');
-    const trigger = document.querySelector(`#accordion-${accordionId}-trigger-${idx + 1}`);
-    const content = document.querySelector(`#accordion-${accordionId}-content-${idx + 1}`);
-    closePanel(trigger, content);
-    if (video) pauseVideo(video);
+const tabColor = {};
+const linkedTabs = {};
+const isTabInTabListView = tab => {
+  const tabList = tab.closest('[role="tablist"]');
+  const tabRect = tab.getBoundingClientRect();
+  const tabListRect = tabList.getBoundingClientRect();
+  const tabLeft = Math.round(tabRect.left);
+  const tabRight = Math.round(tabRect.right);
+  const tabListLeft = Math.round(tabListRect.left);
+  const tabListRight = Math.round(tabListRect.right);
+  return tabLeft >= tabListLeft && tabRight <= tabListRight;
+};
+const scrollTabIntoView = (e, inline = 'center') => {
+  const isElInView = isTabInTabListView(e);
+  if (!isElInView) e.scrollIntoView({
+    behavior: 'smooth',
+    block: 'nearest',
+    inline
   });
+};
+const scrollStackedMobile = content => {
+  if (!window.matchMedia('(max-width: 600px)').matches) return;
+  const rects = content.getBoundingClientRect();
+  const stickyTop = document.querySelector('.feds-localnav') ?? document.querySelector('.global-navigation, .gnav');
+  const navHeight = stickyTop?.scrollHeight || 0;
+  const topOffset = rects.top + window.scrollY - navHeight - 1;
+  window.scrollTo({
+    top: topOffset,
+    behavior: 'smooth'
+  });
+};
+
+function getRedirectionUrl(linkedTabsList, targetId) {
+  if (!targetId || !linkedTabsList[targetId] || window.location.pathname === linkedTabsList[targetId]) return '';
+  const currentUrl = new URL(window.location.href);
+  /* c8 ignore next 4 */
+  const tabParam = currentUrl.searchParams.get('tab');
+  if (tabParam) {
+    currentUrl.searchParams.set('tab', `${tabParam.split('-')[0]}-${targetId.split('-')[2]}`);
+  }
+  currentUrl.pathname = linkedTabsList[targetId];
+  return currentUrl;
 }
 
-function handleClick(el, dd, num) {
-  const expandAllBtns = el.closest('.accordion-container')?.querySelectorAll('.accordion-expand-all button');
-  if (expandAllBtns.length) {
-    expandAllBtns.forEach(btn => {
-      btn.setAttribute('aria-pressed', 'mixed');
-      btn.classList.remove('fill');
-      btn.disabled = false;
-    });
+function changeTabs(e) {
+  const {
+    target
+  } = e;
+  const targetId = target.getAttribute('id');
+  const redirectionUrl = getRedirectionUrl(linkedTabs, targetId);
+  /* c8 ignore next 4 */
+  if (redirectionUrl) {
+    window.location.assign(redirectionUrl);
+    return;
   }
-  const closestEditorial = el.closest('.editorial');
-  const expanded = el.getAttribute('aria-expanded') === 'true';
-  if (closestEditorial) {
-    if (expanded) {
-      closeMediaPanel(closestEditorial.querySelector('.accordion-media'), el, dd, num);
-      return;
+  const parent = target.parentNode;
+  const content = parent.parentNode.parentNode.lastElementChild;
+  const targetContent = content.querySelector(`#${target.getAttribute('aria-controls')}`);
+  const tabsBlock = target.closest('.tabs');
+  const blockId = tabsBlock.id;
+  parent.querySelectorAll(`[aria-selected="true"][data-block-id="${blockId}"]`).forEach(t => {
+    t.setAttribute('aria-selected', false);
+    if (Object.keys(tabColor).length) {
+      t.removeAttribute('style', 'backgroundColor');
     }
-    openMediaPanel(closestEditorial.querySelector('.accordion-media'), el, dd, num);
-    return;
+  });
+  target.setAttribute('aria-selected', true);
+  if (tabColor[targetId]) {
+    target.style.backgroundColor = tabColor[targetId];
   }
-  if (expanded) {
-    closePanel(el, dd);
-    return;
-  }
-  openPanel(el, dd);
+  scrollTabIntoView(target);
+  content.querySelectorAll(`[role="tabpanel"][data-block-id="${blockId}"]`).forEach(p => p.setAttribute('hidden', true));
+  targetContent.removeAttribute('hidden');
+  if (tabsBlock.classList.contains('stacked-mobile')) scrollStackedMobile(targetContent);
 }
-const hydrationToken = "accordion/accordion.js";
+const hydrationToken = "tabs/tabs.js";
 const hydrationBlocks = {
-  _152: (dd, num, id, button) => {
-    button.addEventListener('click', e => {
-      handleClick(e.target, dd, num, id);
+  _129: (tabs, tabLists, tabFocus) => {
+    tabLists.forEach(tabList => {
+      tabList.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+          if (e.key === 'ArrowRight') {
+            tabFocus += 1;
+            if (tabFocus >= tabs.length) tabFocus = 0;
+          } else if (e.key === 'ArrowLeft') {
+            tabFocus -= 1;
+            if (tabFocus < 0) tabFocus = tabs.length - 1;
+          }
+          tabs[tabFocus].setAttribute('tabindex', 0);
+          tabs[tabFocus].focus();
+        }
+      });
     });
   },
-  _209: (button: expandBtn) => {
-    expandBtn.addEventListener('click', ({
-      currentTarget
-    }) => toggleAll(currentTarget, 'expand'));
-  },
-  _214: (button: collapseBtn) => {
-    collapseBtn.addEventListener('click', ({
-      currentTarget
-    }) => toggleAll(currentTarget, 'collapse'));
+  _150: (tabs) => {
+    tabs.forEach(tab => {
+      tab.addEventListener('click', changeTabs);
+    });
   }
 };
 /**

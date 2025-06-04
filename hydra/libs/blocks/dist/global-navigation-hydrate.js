@@ -1,5 +1,249 @@
+import Gnav from './Gnav';
+class GnavHydrate extends Gnav {
+  _501({
+    localNav,
+    title
+  }) {
+    localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
+      localNav.classList.toggle('feds-localnav--active');
+      const isActive = localNav.classList.contains('feds-localnav--active');
+      localNav.querySelector('.feds-localnav-title').setAttribute('aria-expanded', isActive);
+      localNav.querySelector('.feds-localnav-title').setAttribute('daa-ll', `${title}_localNav|${isActive ? 'close' : 'open'}`);
+    });
+  }
+  _940({
+    toggle
+  }) {
+    toggle.addEventListener('click', () => logErrorFor(async () => {
+      this.toggleMenuMobile();
+      if (this.blocks?.search?.instance) {
+        this.blocks.search.instance.clearSearchForm();
+      } else {
+        await this.loadSearch();
+      }
+      if (this.isToggleExpanded()) setHamburgerPadding();
+    }, 'Toggle click failed', 'gnav', 'error'));
+  }
+  _1254({
+    isDesktop,
+    popup
+  }) {
+    isDesktop.addEventListener('change', async () => {
+      enableMobileScroll();
+      if (isDesktop.matches) {
+        popup.innerHTML = originalContent;
+        this.block.classList.remove('new-nav');
+      } else {
+        originalContent = await transformTemplateToMobile(popup, item, this.isLocalNav());
+        popup.querySelector('.close-icon')?.addEventListener('click', this.toggleMenuMobile);
+        this.block.classList.add('new-nav');
+      }
+    });
+  }
+  _1301({
+    isDesktop,
+    dropdownTrigger,
+    isSectionMenu
+  }) {
+    dropdownTrigger.addEventListener('click', e => {
+      if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
+        const popup = dropdownTrigger.nextElementSibling;
+        if (popup && this.isLocalNav()) {
+          this.updatePopupPosition(popup);
+        }
+        makeTabActive(popup);
+      } else if (isDesktop.matches && this.newMobileNav && isSectionMenu) {
+        const popup = dropdownTrigger.nextElementSibling;
+        if (popup) popup.style.removeProperty('top');
+      }
+      trigger({
+        element: dropdownTrigger,
+        event: e,
+        type: 'dropdown'
+      });
+      setActiveDropdown(dropdownTrigger);
+    });
+  }
+  toggleMenuMobile = () => {
+    const toggle = this.elements.mobileToggle;
+    const isExpanded = this.isToggleExpanded();
+    if (!isExpanded && this.newMobileNav) {
+      const sections = document.querySelectorAll('header.new-nav .feds-nav > section.feds-navItem > button.feds-navLink');
+      animateInSequence(sections, 0.075);
+      if (this.isLocalNav() && this.hasMegaMenu()) {
+        disableMobileScroll();
+        const section = sections[0];
+        queueMicrotask(() => section.click());
+      }
+    } else if (isExpanded && this.isLocalNav()) {
+      enableMobileScroll();
+    }
+    toggle?.setAttribute('aria-expanded', !isExpanded);
+    document.body.classList.toggle('disable-scroll', !isExpanded);
+    this.elements.navWrapper?.classList?.toggle('feds-nav-wrapper--expanded', !isExpanded);
+    closeAllDropdowns();
+    setCurtainState(!isExpanded);
+    toggle?.setAttribute('daa-ll', `hamburgermenu|${isExpanded ? 'open' : 'close'}`);
+  };
+  loadSearch = () => {
+    const instanceAlreadyExists = !!this.blocks?.search?.instance;
+    const searchNotInContent = !this.searchPresent();
+    if (instanceAlreadyExists || searchNotInContent) return null;
+    return this.loadDelayed().then(() => {
+      this.blocks.search.instance = new this.Search(this.blocks.search.config);
+    }).catch(() => {});
+  };
+  isToggleExpanded = () => this.elements.mobileToggle?.getAttribute('aria-expanded') === 'true';
+  isLocalNav = () => this.newMobileNav && this.elements.navWrapper?.querySelectorAll('.feds-nav > section.feds-navItem')?.length <= 1;
+  // update GNAV popup position based on branch banner
+  updatePopupPosition = activePopup => {
+    const popup = activePopup || this.elements.mainNav.querySelector('.feds-navItem--section.feds-dropdown--active .feds-popup');
+    if (!popup) return;
+    const yOffset = window.scrollY || Math.abs(parseInt(document.body.style.top, 10)) || 0;
+    const navOffset = this.block.classList.contains('has-promo') ? 'var(--feds-height-nav) - var(--global-height-navPromo)' : 'var(--feds-height-nav)';
+    popup.removeAttribute('style');
+    popup.style.top = `calc(${yOffset}px - ${navOffset} - 2px)`;
+    const {
+      isPresent,
+      isSticky,
+      height
+    } = getBranchBannerInfo();
+    if (isPresent) {
+      const delta = yOffset - height;
+      if (isSticky) {
+        popup.style.height = `calc(100dvh - ${height}px + 2px)`;
+      } else {
+        popup.style.top = `calc(0px - var(--feds-height-nav) + ${Math.max(delta, 0)}px - 2px)`;
+        popup.style.height = `calc(100dvh + ${Math.min(delta, 0)}px + 2px)`;
+      }
+    }
+  };
+  hasMegaMenu = () => this.elements.navWrapper?.querySelectorAll('.feds-nav > section.feds-navItem')?.length >= 1;
+  searchPresent = () => !!this.content.querySelector('.search');
+  loadDelayed = async () => {
+    this.ready = this.ready || new Promise(async resolve => {
+      try {
+        this.block.removeEventListener('click', this.loadDelayed);
+        this.block.removeEventListener('keydown', this.loadDelayed);
+        if (this.searchPresent()) {
+          const [{
+            default: Search
+          }] = await Promise.all([import('./features/search/gnav-search.js'), loadStyles(rootPath('features/search/gnav-search.css'))]);
+          this.Search = Search;
+        }
+        if (!this.useUniversalNav) {
+          const [{
+            default: ProfileDropdown
+          }] = await Promise.all([import('./features/profile/dropdown.js'), loadStyles(rootPath('features/profile/dropdown.css'))]);
+          this.ProfileDropdown = ProfileDropdown;
+        }
+        resolve();
+      } catch (e) {
+        lanaLog({
+          message: 'GNAV: Error within loadDelayed',
+          e,
+          tags: 'gnav',
+          errorType: 'warn'
+        });
+        resolve();
+      }
+    });
+    return this.ready;
+  };
+}
+
+import {
+  closeAllDropdowns,
+  decorateCta,
+  fetchAndProcessPlainHtml,
+  getActiveLink,
+  getAnalyticsValue,
+  getExperienceName,
+  isActiveLink,
+  icons,
+  isDesktop,
+  isTangentToViewport,
+  lanaLog,
+  loadBaseStyles,
+  loadDecorateMenu,
+  rootPath,
+  loadStyles,
+  logErrorFor,
+  selectors,
+  setActiveDropdown,
+  setCurtainState,
+  setUserProfile,
+  toFragment,
+  trigger,
+  yieldToMain,
+  addMepHighlightAndTargetId,
+  isDarkMode,
+  darkIcons,
+  setDisableAEDState,
+  animateInSequence,
+  transformTemplateToMobile,
+  closeAllTabs,
+  disableMobileScroll,
+  enableMobileScroll,
+  setAsyncDropdownCount,
+  branchBannerLoadCheck,
+  getBranchBannerInfo
+} from './utilities/utilities.js';
 const hydrationToken = "global-navigation/global-navigation.js";
-const hydrationBlocks = {};
+const hydrationBlocks = {
+  _501: (localNav, title) => {
+    localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
+      localNav.classList.toggle('feds-localnav--active');
+      const isActive = localNav.classList.contains('feds-localnav--active');
+      localNav.querySelector('.feds-localnav-title').setAttribute('aria-expanded', isActive);
+      localNav.querySelector('.feds-localnav-title').setAttribute('daa-ll', `${title}_localNav|${isActive ? 'close' : 'open'}`);
+    });
+  },
+  _940: (toggle) => {
+    toggle.addEventListener('click', () => logErrorFor(async () => {
+      this.toggleMenuMobile();
+      if (this.blocks?.search?.instance) {
+        this.blocks.search.instance.clearSearchForm();
+      } else {
+        await this.loadSearch();
+      }
+      if (this.isToggleExpanded()) setHamburgerPadding();
+    }, 'Toggle click failed', 'gnav', 'error'));
+  },
+  _1254: (isDesktop, popup) => {
+    isDesktop.addEventListener('change', async () => {
+      enableMobileScroll();
+      if (isDesktop.matches) {
+        popup.innerHTML = originalContent;
+        this.block.classList.remove('new-nav');
+      } else {
+        originalContent = await transformTemplateToMobile(popup, item, this.isLocalNav());
+        popup.querySelector('.close-icon')?.addEventListener('click', this.toggleMenuMobile);
+        this.block.classList.add('new-nav');
+      }
+    });
+  },
+  _1301: (isDesktop, dropdownTrigger, isSectionMenu) => {
+    dropdownTrigger.addEventListener('click', e => {
+      if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
+        const popup = dropdownTrigger.nextElementSibling;
+        if (popup && this.isLocalNav()) {
+          this.updatePopupPosition(popup);
+        }
+        makeTabActive(popup);
+      } else if (isDesktop.matches && this.newMobileNav && isSectionMenu) {
+        const popup = dropdownTrigger.nextElementSibling;
+        if (popup) popup.style.removeProperty('top');
+      }
+      trigger({
+        element: dropdownTrigger,
+        event: e,
+        type: 'dropdown'
+      });
+      setActiveDropdown(dropdownTrigger);
+    });
+  }
+};
 /**
  * Dynamic Hydration Runtime Code
  * This module provides runtime functionality for hydrating components on the client side.

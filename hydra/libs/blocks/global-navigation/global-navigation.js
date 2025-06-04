@@ -338,7 +338,7 @@ const removeLocalNav = () => {
   lanaLog({ message: 'Gnav Localnav was removed, potential CLS', tags: 'gnav-localnav' });
   document.querySelector('.feds-localnav')?.remove();
 };
-
+//@hydrate.class(Gnav,{className:'GnavHydrate'})
 export class Gnav {
   constructor({ content, block, newMobileNav } = {}) {
     this.content = content;
@@ -495,7 +495,9 @@ export class Gnav {
       itemWrapper.appendChild(clonedItem);
     });
 
-   window.hydrate && window.hydrate({id:4, payload:{localNav,title}}) 
+
+   //window.hydrate && window.hydrate({id:localNav,title, payload:17503})
+   //@hydrate({payload:{localNav,title}})
     localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
       localNav.classList.toggle('feds-localnav--active');
       const isActive = localNav.classList.contains('feds-localnav--active');
@@ -933,7 +935,8 @@ export class Gnav {
       </button>`;
 
 
-    window.hydrate && window.hydrate({id:2, payload:{toggle}})
+   // window.hydrate && window.hydrate({id:toggle, payload:33336})
+   //@hydrate({payload:{toggle}})
     toggle.addEventListener('click', () => logErrorFor(async () => {
       this.toggleMenuMobile();
 
@@ -1245,7 +1248,9 @@ export class Gnav {
             originalContent = await transformTemplateToMobile(popup, item, this.isLocalNav());
             popup.querySelector('.close-icon')?.addEventListener('click', this.toggleMenuMobile);
           }
-          window.hydrate && window.hydrate({id:1, payload:{isDesktop, popup}})
+
+          //window.hydrate && window.hydrate({id:isDesktop, popup, payload:46204})
+          //@hydrate({payload:{isDesktop,popup}})
           isDesktop.addEventListener('change', async () => {
             enableMobileScroll();
             if (isDesktop.matches) {
@@ -1291,7 +1296,8 @@ export class Gnav {
           </${tag}>`;
 
         // Toggle trigger's dropdown on click
-        window.hydrate && window.hydrate({id:0, payload:{isDesktop, dropdownTrigger, isSectionMenu }})
+        //window.hydrate && window.hydrate({id:isDesktop, dropdownTrigger, isSectionMenu , payload:48154})
+        //@hydrate({payload:{isDesktop,dropdownTrigger,isSectionMenu}})
         dropdownTrigger.addEventListener('click', (e) => {
           if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
             const popup = dropdownTrigger.nextElementSibling;
@@ -1308,7 +1314,7 @@ export class Gnav {
           trigger({ element: dropdownTrigger, event: e, type: 'dropdown' });
           setActiveDropdown(dropdownTrigger);
         });
-
+//@end
         // Update analytics value when dropdown is expanded/collapsed
         observeDropdown(dropdownTrigger);
 
@@ -1412,7 +1418,7 @@ export class Gnav {
     return this.elements.search;
   };
 }
-
+//@end
 export default async function init(block) {
   const { mep } = getConfig();
   const sourceUrl = await getGnavSource();

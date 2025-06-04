@@ -326,7 +326,7 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
     }
   });
 
-  await import ('https://artm--milo--amitbikram.hlx.live/artemis/tools/dist/hydration/loader.js');
+  await import ('https://hydra--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js');
 
 const arr = document.querySelectorAll('.caas');
 if(arr.length > 0) {

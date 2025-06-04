@@ -27,8 +27,9 @@ function transformHydrationAnnotations(codeString) {
     //   }\)         : Matches "})"
     // )?            : End optional group - makes payload part optional
     // g             : Global flag
-    const regex = /\/\/\s*@hydrate\.(\d+)(?:\({payload:({.*?})}\))?/g;
+    //const regex = /\/\/\s*@hydrate\.(\d+)(?:\({payload:({.*?})}\))?/g;
 
+    const regex = /\/\/\s*@hydrate\s*\(\s*\{payload:\{([^}]*)\}\}\s*\)/g;
     // Use string.replace with a replacer function
     const transformedCode = codeString.replace(regex, (match, id, payloadObject) => {
         // id: The captured ID string (e.g., "0" or "2")
@@ -39,6 +40,7 @@ function transformHydrationAnnotations(codeString) {
         if (payloadObject !== undefined) {
         // Payload exists: include both id and payload
         // Ensure payloadObject (which includes braces) is interpolated correctly
+        console.log(`Hydration ID: ${id}, Payload: ${payloadObject}`);
         return `window.hydrate && window.hydrate({id:${id}, payload:${payloadObject}})`;
         } else {
         // Payload does NOT exist: include ONLY id
