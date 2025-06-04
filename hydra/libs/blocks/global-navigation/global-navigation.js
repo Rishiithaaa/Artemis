@@ -497,7 +497,7 @@ export class Gnav {
 
 
    //window.hydrate && window.hydrate({id:localNav,title, payload:17503})
-   //@hydrate({payload:{localNav,title}})
+   window.hydrate && window.hydrate({id:localNav,title, payload:17577})
     localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
       localNav.classList.toggle('feds-localnav--active');
       const isActive = localNav.classList.contains('feds-localnav--active');
@@ -936,7 +936,7 @@ export class Gnav {
 
 
    // window.hydrate && window.hydrate({id:toggle, payload:33336})
-   //@hydrate({payload:{toggle}})
+   window.hydrate && window.hydrate({id:toggle, payload:33476})
     toggle.addEventListener('click', () => logErrorFor(async () => {
       this.toggleMenuMobile();
 
@@ -1250,7 +1250,7 @@ export class Gnav {
           }
 
           //window.hydrate && window.hydrate({id:isDesktop, popup, payload:46204})
-          //@hydrate({payload:{isDesktop,popup}})
+          window.hydrate && window.hydrate({id:isDesktop,popup, payload:46427})
           isDesktop.addEventListener('change', async () => {
             enableMobileScroll();
             if (isDesktop.matches) {
@@ -1297,7 +1297,7 @@ export class Gnav {
 
         // Toggle trigger's dropdown on click
         //window.hydrate && window.hydrate({id:isDesktop, dropdownTrigger, isSectionMenu , payload:48154})
-        //@hydrate({payload:{isDesktop,dropdownTrigger,isSectionMenu}})
+        window.hydrate && window.hydrate({id:isDesktop,dropdownTrigger,isSectionMenu, payload:48483})
         dropdownTrigger.addEventListener('click', (e) => {
           if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
             const popup = dropdownTrigger.nextElementSibling;

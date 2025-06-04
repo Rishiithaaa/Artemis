@@ -82,7 +82,7 @@ export default async function init(el) {
     const x = metadata.delay.text
 
      //window.hydrate && window.hydrate({id:x,section, payload:2963})
-     //@hydrate({payload:{section,x}})
+     window.hydrate && window.hydrate({id:section,x, payload:3033})
     handleDelay(x, section);
     //@end
   }

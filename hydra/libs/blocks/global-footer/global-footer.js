@@ -302,7 +302,7 @@ class Footer {
       // Close region picker dropdown on outside click
 
       //window.hydrate && window.hydrate({id:regionPickerWrapperClass, payload:11217})
-      //@hydrate({payload:{regionPickerWrapperClass}})
+      window.hydrate && window.hydrate({id:regionPickerWrapperClass, payload:11363})
       document.addEventListener('click', (e) => {
         if (isRegionPickerExpanded()
           && !e.target.closest(`.${regionPickerWrapperClass}`)) {

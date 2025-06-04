@@ -98,12 +98,12 @@ const hydrationBlocks = {
       handleClick(e.target, dd, num, id);
     });
   },
-  _209: (button: expandBtn) => {
+  _209: (expandBtn) => {
     expandBtn.addEventListener('click', ({
       currentTarget
     }) => toggleAll(currentTarget, 'expand'));
   },
-  _214: (button: collapseBtn) => {
+  _214: (collapseBtn) => {
     collapseBtn.addEventListener('click', ({
       currentTarget
     }) => toggleAll(currentTarget, 'collapse'));
