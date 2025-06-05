@@ -15,7 +15,6 @@ function transformHydrationAnnotations(codeString) {
     if (typeof codeString !== 'string') {
       return codeString; // Return input if not a string
     }
-  
     // Regex Explained: (Same as before)
     // \/\/          : Matches "//"
     // \s* : Optional whitespace
@@ -29,7 +28,8 @@ function transformHydrationAnnotations(codeString) {
     // g             : Global flag
     //const regex = /\/\/\s*@hydrate\.(\d+)(?:\({payload:({.*?})}\))?/g;
 
-    const regex = /\/\/\s*@hydrate\s*\(\s*\{payload:\{([^}]*)\}\}\s*\)/g;
+    //const regex = /\/\/\s*@hydrate\(\{payload:\{([^}]*)\}\}\)/g;
+        const regex = /\/\/\s*@hydrate\s*\(\s*\{payload:\{([^}]*)\}\}\s*\)/g;
     // Use string.replace with a replacer function
     const transformedCode = codeString.replace(regex, (match, id, payloadObject) => {
         // id: The captured ID string (e.g., "0" or "2")
@@ -37,10 +37,11 @@ function transformHydrationAnnotations(codeString) {
         //                OR it will be === undefined if the payload part didn't match.
 
         // **Conditional Logic is Key Here**
+        //console.log(payloadObject)
         if (payloadObject !== undefined) {
         // Payload exists: include both id and payload
         // Ensure payloadObject (which includes braces) is interpolated correctly
-        console.log(`Hydration ID: ${id}, Payload: ${payloadObject}`);
+       // console.log(`Hydration ID: ${id}, Payload: ${payloadObject}`);
         return `window.hydrate && window.hydrate({id:${id}, payload:${payloadObject}})`;
         } else {
         // Payload does NOT exist: include ONLY id

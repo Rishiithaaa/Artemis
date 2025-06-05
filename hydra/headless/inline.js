@@ -326,7 +326,10 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
     }
   });
 
-  await import ('https://hydra--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js');
+  //await import ('https://hydra--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js');
+  const s = document.createElement('script');
+            s.src = "https://hydra--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
+            document.head.append(s);
 
 const arr = document.querySelectorAll('.caas');
 if(arr.length > 0) {

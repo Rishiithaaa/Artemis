@@ -124,7 +124,8 @@ const run = async () => {
 }, scriptContent, [...cssMap.entries()]);
 
 const hydrationTasks = await page.evaluate(() => window.__hydrate__);
-
+console.log(`Found ${Object.keys(hydrationTasks).length} hydration tasks.`);
+//console.log(`Hydration tasks: ${JSON.stringify(hydrationTasks, null, 2)}`);
 const minifiedHtml = minify(html, {
   collapseWhitespace: true,
   removeComments: true,

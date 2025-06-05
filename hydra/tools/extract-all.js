@@ -12,11 +12,12 @@ export async function extractAllComponents() {
   await processHydratedFiles(sourceDir, outputDir, blocks);
 //console.log('Hydration blocks:', blocks);
   // Generate unified loader
+  const baseUrl = 'https://hydra--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/';
   const hydratedFiles = fs.readdirSync(outputDir)
     .filter(file => file.endsWith('-hydrate.js'))
-    .map(file => `import './${file}';`)
+    .map(file => `import('${baseUrl}${file}');`)
     .join('\n');
-  
+
   fs.writeFileSync(path.join(outputDir, 'loader.js'), hydratedFiles);
   fs.writeFileSync(path.join(outputDir, 'code.json'), JSON.stringify(blocks));
 }

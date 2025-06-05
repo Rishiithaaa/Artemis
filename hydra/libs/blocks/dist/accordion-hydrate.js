@@ -93,17 +93,35 @@ function handleClick(el, dd, num) {
 }
 const hydrationToken = "accordion/accordion.js";
 const hydrationBlocks = {
-  _152: (dd, num, id, button) => {
+  _154: (payload) => {
+    payload = {
+      ...payload,
+      button,
+      dd,
+      num,
+      id,
+      id: 154
+    };
     button.addEventListener('click', e => {
       handleClick(e.target, dd, num, id);
     });
   },
-  _209: (expandBtn) => {
+  _213: (payload) => {
+    payload = {
+      ...payload,
+      button: expandBtn,
+      id: 213
+    };
     expandBtn.addEventListener('click', ({
       currentTarget
     }) => toggleAll(currentTarget, 'expand'));
   },
-  _214: (collapseBtn) => {
+  _217: (payload) => {
+    payload = {
+      ...payload,
+      button: collapseBtn,
+      id: 217
+    };
     collapseBtn.addEventListener('click', ({
       currentTarget
     }) => toggleAll(currentTarget, 'collapse'));

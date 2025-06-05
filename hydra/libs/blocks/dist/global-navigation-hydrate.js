@@ -1,9 +1,14 @@
 import Gnav from './Gnav';
 class GnavHydrate extends Gnav {
-  _501({
-    localNav,
-    title
+  _500({
+    payload
   }) {
+    payload = {
+      ...payload,
+      localNav,
+      title,
+      id: 500
+    };
     localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
       localNav.classList.toggle('feds-localnav--active');
       const isActive = localNav.classList.contains('feds-localnav--active');
@@ -11,9 +16,14 @@ class GnavHydrate extends Gnav {
       localNav.querySelector('.feds-localnav-title').setAttribute('daa-ll', `${title}_localNav|${isActive ? 'close' : 'open'}`);
     });
   }
-  _940({
-    toggle
+  _938({
+    payload
   }) {
+    payload = {
+      ...payload,
+      toggle,
+      id: 938
+    };
     toggle.addEventListener('click', () => logErrorFor(async () => {
       this.toggleMenuMobile();
       if (this.blocks?.search?.instance) {
@@ -24,10 +34,15 @@ class GnavHydrate extends Gnav {
       if (this.isToggleExpanded()) setHamburgerPadding();
     }, 'Toggle click failed', 'gnav', 'error'));
   }
-  _1254({
-    isDesktop,
-    popup
+  _1250({
+    payload
   }) {
+    payload = {
+      ...payload,
+      popup,
+      isDesktop,
+      id: 1250
+    };
     isDesktop.addEventListener('change', async () => {
       enableMobileScroll();
       if (isDesktop.matches) {
@@ -40,11 +55,15 @@ class GnavHydrate extends Gnav {
       }
     });
   }
-  _1301({
-    isDesktop,
-    dropdownTrigger,
-    isSectionMenu
+  _1296({
+    payload
   }) {
+    payload = {
+      ...payload,
+      dropdownTrigger,
+      isSectionMenu,
+      id: 1296
+    };
     dropdownTrigger.addEventListener('click', e => {
       if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
         const popup = dropdownTrigger.nextElementSibling;
@@ -191,7 +210,13 @@ import {
 } from './utilities/utilities.js';
 const hydrationToken = "global-navigation/global-navigation.js";
 const hydrationBlocks = {
-  _501: (localNav, title) => {
+  _500: (payload) => {
+    payload = {
+      ...payload,
+      localNav,
+      title,
+      id: 500
+    };
     localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
       localNav.classList.toggle('feds-localnav--active');
       const isActive = localNav.classList.contains('feds-localnav--active');
@@ -199,7 +224,12 @@ const hydrationBlocks = {
       localNav.querySelector('.feds-localnav-title').setAttribute('daa-ll', `${title}_localNav|${isActive ? 'close' : 'open'}`);
     });
   },
-  _940: (toggle) => {
+  _938: (payload) => {
+    payload = {
+      ...payload,
+      toggle,
+      id: 938
+    };
     toggle.addEventListener('click', () => logErrorFor(async () => {
       this.toggleMenuMobile();
       if (this.blocks?.search?.instance) {
@@ -210,7 +240,13 @@ const hydrationBlocks = {
       if (this.isToggleExpanded()) setHamburgerPadding();
     }, 'Toggle click failed', 'gnav', 'error'));
   },
-  _1254: (isDesktop, popup) => {
+  _1250: (payload) => {
+    payload = {
+      ...payload,
+      popup,
+      isDesktop,
+      id: 1250
+    };
     isDesktop.addEventListener('change', async () => {
       enableMobileScroll();
       if (isDesktop.matches) {
@@ -223,7 +259,13 @@ const hydrationBlocks = {
       }
     });
   },
-  _1301: (isDesktop, dropdownTrigger, isSectionMenu) => {
+  _1296: (payload) => {
+    payload = {
+      ...payload,
+      dropdownTrigger,
+      isSectionMenu,
+      id: 1296
+    };
     dropdownTrigger.addEventListener('click', e => {
       if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
         const popup = dropdownTrigger.nextElementSibling;

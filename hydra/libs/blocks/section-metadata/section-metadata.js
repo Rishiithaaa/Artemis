@@ -80,9 +80,7 @@ export default async function init(el) {
   if (metadata.masonry) handleMasonry(metadata.masonry.text, section);
   if (metadata.delay) {
     const x = metadata.delay.text
-
-     //window.hydrate && window.hydrate({id:x,section, payload:2963})
-     window.hydrate && window.hydrate({id:section,x, payload:3033})
+window.hydrate && window.hydrate({id:x,section, payload:2957})
     handleDelay(x, section);
     //@end
   }

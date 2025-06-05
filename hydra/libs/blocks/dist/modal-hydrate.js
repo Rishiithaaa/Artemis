@@ -215,7 +215,12 @@ async function getModal(details, custom) {
 }
 const hydrationToken = "modal/modal.js";
 const hydrationBlocks = {
-  _265: () => {
+  _266: (payload) => {
+    payload = {
+      ...payload,
+      x,
+      id: 266
+    };
     window.addEventListener('hashchange', e => {
       if (!window.location.hash) {
         try {

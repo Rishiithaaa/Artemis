@@ -96,7 +96,6 @@ let classNode = null;
 if (!classComment && path.isClassDeclaration() && path.parentPath && path.parentPath.parent && path.parentPath.parent.comments) {
   // Try to find a comment that ends just before this class starts
   const classStart = path.node.loc.start.line;
-  console.log('classStart', classStart);
   classComment = path.parentPath.parent.comments.find(
     c => c.value.trim().startsWith('@hydrate.class') && c.loc.end.line === classStart - 1
   );
@@ -137,20 +136,16 @@ if (classComment) {
 );
     if (hydrateComment) {
       const lineNumber = path.node.loc?.start?.line || 0;
-      //console.log('Found hydrate comment at line:', lineNumber);
       const extractedPayload = convertHydrateString(hydrateComment.value);
       //const hydrateCode = `(${extractedPayload}) => {${generator(path.node, { comments: false }).code}}`;
-//const hydrateCode = `(payload) => { payload = { ...payload, ${extractedPayload}, id: ${lineNumber} }; ${generator(path.node, { comments: false }).code} }`;
-const hydrateCode = `(${extractedPayload}) => {${generator(path.node, { comments: false }).code}}`;
-
-      console.log('Hydrate code:', hydrateCode);
+const hydrateCode = `(payload) => { payload = { ...payload, ${extractedPayload}, id: ${lineNumber} }; ${generator(path.node, { comments: false }).code} }`;
+//const hydrateCode = `(${extractedPayload}) => {${generator(path.node, { comments: false }).code}}`;
       const parentClass = path.findParent(p => p.isClassBody());
       if (parentClass) {
         const classNode = parentClass.parentPath.node;
         const classStartLine = classNode.loc.start.line;
             if (hydratedClasses.has(classStartLine)) {
       const blk = { code: hydrateCode, id: lineNumber };
-      console.log(blk)
       hydratedClasses.get(classStartLine).blocks.push(blk);
       classHydrateBlocks.push(blk); // <--- ADD THIS LINE
     }
@@ -319,12 +314,11 @@ do {
       });
     }
   });
-console.log(hydratedClasses);
 
   const hydrateBlocks = [...classHydrateBlocks, ...nonClassHydrateBlocks];
 blocks[lastTwoParts] = blocks[lastTwoParts] || [];
 blocks[lastTwoParts].push(...hydrateBlocks);
-//console.log(blocks);
+
 // Create a map of function IDs to code strings
 const fnsArr = hydrateBlocks.map(blk => `_${blk.id}: ${blk.code}`);
 // Build hydrated class definitions

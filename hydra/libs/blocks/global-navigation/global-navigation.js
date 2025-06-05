@@ -496,8 +496,7 @@ export class Gnav {
     });
 
 
-   //window.hydrate && window.hydrate({id:localNav,title, payload:17503})
-   window.hydrate && window.hydrate({id:localNav,title, payload:17577})
+   window.hydrate && window.hydrate({id:localNav,title, payload:17503})
     localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
       localNav.classList.toggle('feds-localnav--active');
       const isActive = localNav.classList.contains('feds-localnav--active');
@@ -935,8 +934,7 @@ export class Gnav {
       </button>`;
 
 
-   // window.hydrate && window.hydrate({id:toggle, payload:33336})
-   window.hydrate && window.hydrate({id:toggle, payload:33476})
+   window.hydrate && window.hydrate({id:toggle, payload:33335})
     toggle.addEventListener('click', () => logErrorFor(async () => {
       this.toggleMenuMobile();
 
@@ -1248,9 +1246,7 @@ export class Gnav {
             originalContent = await transformTemplateToMobile(popup, item, this.isLocalNav());
             popup.querySelector('.close-icon')?.addEventListener('click', this.toggleMenuMobile);
           }
-
-          //window.hydrate && window.hydrate({id:isDesktop, popup, payload:46204})
-          window.hydrate && window.hydrate({id:isDesktop,popup, payload:46427})
+          window.hydrate && window.hydrate({id:popup,isDesktop, payload:46202})
           isDesktop.addEventListener('change', async () => {
             enableMobileScroll();
             if (isDesktop.matches) {
@@ -1296,8 +1292,7 @@ export class Gnav {
           </${tag}>`;
 
         // Toggle trigger's dropdown on click
-        //window.hydrate && window.hydrate({id:isDesktop, dropdownTrigger, isSectionMenu , payload:48154})
-        window.hydrate && window.hydrate({id:isDesktop,dropdownTrigger,isSectionMenu, payload:48483})
+        window.hydrate && window.hydrate({id:dropdownTrigger,isSectionMenu, payload:48151})
         dropdownTrigger.addEventListener('click', (e) => {
           if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
             const popup = dropdownTrigger.nextElementSibling;
