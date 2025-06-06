@@ -30,7 +30,7 @@ import { replaceKey } from '../../features/placeholders.js';
 const { miloLibs, codeRoot, locale, mep } = getConfig();
 const base = miloLibs || codeRoot;
 
-window.hydrate && window.hydrate({id:CONFIG, payload:665})
+//@hydrate({payload:{CONFIG}})
 const CONFIG = {
   socialPlatforms: ['facebook', 'instagram', 'twitter', 'linkedin', 'pinterest', 'discord', 'behance', 'youtube', 'weibo', 'social-media'],
   delays: { decoration: 3000 },
@@ -301,7 +301,7 @@ class Footer {
       });
       // Close region picker dropdown on outside click
 
-      window.hydrate && window.hydrate({id:regionPickerWrapperClass, payload:11218})
+      //@hydrate({payload:{regionPickerWrapperClass}})
       document.addEventListener('click', (e) => {
         if (isRegionPickerExpanded()
           && !e.target.closest(`.${regionPickerWrapperClass}`)) {

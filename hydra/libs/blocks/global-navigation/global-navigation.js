@@ -196,7 +196,7 @@ export const LANGMAP = {
   zh: ['cn', 'tw'],
 };
 
-//@hydrate.0({ payload: { signIn, decorateSignIn, decorateProfileTrigger } })
+//@hydrate({payload:{signIn,decorateSignIn,decorateProfileTrigger}})
 // signIn method to handle sign-in flow dynamically when adobeIMS is available
 const signIn = (options = {}) => {
   if (typeof window.adobeIMS?.signIn !== 'function') {
@@ -207,7 +207,7 @@ const signIn = (options = {}) => {
 };
 //@end
 
-//@hydrate.1({ payload: { signInElem, dropdownElem, decoratedElem } })
+//@hydrate({payload:{signInElem,dropdownElem,decoratedElem}})
 // decorateSignIn to handle the dynamic creation of sign-in button or dropdown
 const decorateSignIn = async ({ rawElem, decoratedElem }) => {
   const dropdownElem = rawElem.querySelector(':scope > div:nth-child(2)');
@@ -246,7 +246,7 @@ const decorateSignIn = async ({ rawElem, decoratedElem }) => {
 };
 //@end
 
-//@hydrate.2({ payload: { buttonElem } })
+//@hydrate({payload:{buttonElem}})
 // decorateProfileTrigger dynamically generates the profile button with runtime values
 const decorateProfileTrigger = async ({ avatar }) => {
   const [label, profileAvatar] = await replaceKeyArray(
@@ -496,7 +496,7 @@ export class Gnav {
     });
 
 
-   window.hydrate && window.hydrate({id:localNav,title, payload:17503})
+   //@hydrate({payload:{localNav,title}})
     localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
       localNav.classList.toggle('feds-localnav--active');
       const isActive = localNav.classList.contains('feds-localnav--active');
@@ -934,7 +934,7 @@ export class Gnav {
       </button>`;
 
 
-   window.hydrate && window.hydrate({id:toggle, payload:33335})
+   //@hydrate({payload:{toggle}})
     toggle.addEventListener('click', () => logErrorFor(async () => {
       this.toggleMenuMobile();
 
@@ -1246,7 +1246,7 @@ export class Gnav {
             originalContent = await transformTemplateToMobile(popup, item, this.isLocalNav());
             popup.querySelector('.close-icon')?.addEventListener('click', this.toggleMenuMobile);
           }
-          window.hydrate && window.hydrate({id:popup,isDesktop, payload:46202})
+          //@hydrate({payload:{popup,isDesktop}})
           isDesktop.addEventListener('change', async () => {
             enableMobileScroll();
             if (isDesktop.matches) {
@@ -1292,7 +1292,7 @@ export class Gnav {
           </${tag}>`;
 
         // Toggle trigger's dropdown on click
-        window.hydrate && window.hydrate({id:dropdownTrigger,isSectionMenu, payload:48151})
+        //@hydrate({payload:{dropdownTrigger,isSectionMenu}})
         dropdownTrigger.addEventListener('click', (e) => {
           if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
             const popup = dropdownTrigger.nextElementSibling;

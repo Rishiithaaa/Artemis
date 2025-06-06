@@ -59,7 +59,6 @@ export function extractHandlers(outputPath, config, blocks) {
   const ast = parser.parse(code, { sourceType: 'module', ranges: true, locations: true });
   const parts = entry.split('/');
   const lastTwoParts = parts.slice(-2).join('/');
-
   const dependencies = new Set();
   const componentHandlers = new Set();
   const importNodes = new Set();
@@ -146,12 +145,20 @@ const hydrateCode = `(payload) => { payload = { ...payload, ${extractedPayload},
         const classStartLine = classNode.loc.start.line;
             if (hydratedClasses.has(classStartLine)) {
       const blk = { code: hydrateCode, id: lineNumber };
+      //console.log(` Hydrate block added to class starting on line ${classStartLine}:`, blk);
       hydratedClasses.get(classStartLine).blocks.push(blk);
       classHydrateBlocks.push(blk); // <--- ADD THIS LINE
     }
 
       } else if (!path.isClassDeclaration()) {
-        nonClassHydrateBlocks.push({ code: hydrateCode, id: lineNumber });
+
+        //nonClassHydrateBlocks.push({ code: hydrateCode, id: lineNumber });
+        const blk = { code: hydrateCode, id: lineNumber };
+
+  //console.log(`💡 Non-class hydrate block on line ${lineNumber}:`, blk);
+
+  nonClassHydrateBlocks.push(blk);
+
       }
 
       path.traverse({

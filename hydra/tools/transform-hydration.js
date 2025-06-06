@@ -11,6 +11,7 @@ import path from 'path';
  * @param {string} codeString The input string containing code and comments.
  * @returns {string} The code string with comments replaced.
  */
+/*
 function transformHydrationAnnotations(codeString) {
     if (typeof codeString !== 'string') {
       return codeString; // Return input if not a string
@@ -51,15 +52,60 @@ function transformHydrationAnnotations(codeString) {
   
     return transformedCode;
 } 
+*/
 
+function transformHydrationAnnotations(id, payloadString) {
+  // id: number (line number)
+  // payloadString: string, like 'button: true, foo: "bar"'
+  // Compose hydration call with id and payload
+  const l_id=id+1;
+  if (payloadString && payloadString.trim().length > 0) {
+    return `window.hydrate && window.hydrate({id:${l_id}, payload:{${payloadString}}})`;
+  } else {
+    return `window.hydrate && window.hydrate({id:${l_id}})`;
+  }
+}
 /**
  * Processes a file and transforms its hydration annotations
  * @param {string} filePath - Path to the file to process
  */
+
+/*
 export function processFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
   const transformedContent = transformHydrationAnnotations(content);
   fs.writeFileSync(filePath, transformedContent);
+}
+  */
+
+export function processFile(filePath) {
+  const content = fs.readFileSync(filePath, 'utf8');
+  const lines = content.split(/\r?\n/);
+
+  // Regex to match //@hydrate({payload:{...}}) with optional spaces
+  const commentRegex = /^\s*\/\/\s*@hydrate\s*\(\s*\{payload:\{([^}]*)\}\}\s*\)\s*$/;
+
+  const outputLines = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const match = line.match(commentRegex);
+
+    if (match) {
+      const payload = match[1]; // extracted payload string inside braces
+      const id = i + 1; // use 1-based line number as id
+
+      // Call transform with line number as id and payload string
+      const transformedLine = transformHydrationAnnotations(id, payload);
+
+      outputLines.push(transformedLine);
+    } else {
+      outputLines.push(line);
+    }
+  }
+
+  const transformedContent = outputLines.join('\n');
+  fs.writeFileSync(filePath, transformedContent, 'utf8');
 }
 
 /**

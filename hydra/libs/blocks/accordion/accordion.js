@@ -150,7 +150,7 @@ function createItem(accordion, id, heading, num, edit) {
 
 
 
-window.hydrate && window.hydrate({id:button,dd,num,id, payload:7468})
+//@hydrate({payload:{button,dd,num,id}})
   button.addEventListener('click', (e) => { handleClick(e.target, dd, num, id); });
   accordion.append(dt, dd);
 //@end
@@ -209,11 +209,11 @@ async function createExpandAllContainer(accordionItems, isEditorial, mediaEl) {
 
 
 
-window.hydrate && window.hydrate({id:expandBtn, payload:9858})
+//@hydrate({payload:{expandBtn}})
 expandBtn.addEventListener('click', ({ currentTarget }) => toggleAll(currentTarget, 'expand'));
 //@end
 
-window.hydrate && window.hydrate({id:collapseBtn, payload:10003})
+//@hydrate({payload:{collapseBtn}})
 collapseBtn.addEventListener('click', ({ currentTarget }) => toggleAll(currentTarget, 'collapse'));
 //@end
 

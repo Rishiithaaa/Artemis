@@ -125,7 +125,7 @@ function initTabs(elm, config, rootElem) {
 
 
 
-  window.hydrate && window.hydrate({id:tabs,tabLists,tabFocus, payload:5195})
+  //@hydrate({payload:{tabs,tabLists,tabFocus}})
   tabLists.forEach((tabList) => {
     tabList.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
@@ -146,7 +146,7 @@ function initTabs(elm, config, rootElem) {
   //@end
 
 
-  window.hydrate && window.hydrate({id:tabs, payload:5818})
+  //@hydrate({payload:{tabs}})
   tabs.forEach((tab) => {
     tab.addEventListener('click', changeTabs);
   });

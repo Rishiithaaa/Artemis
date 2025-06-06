@@ -1,3 +1,4 @@
+/*
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
@@ -9,21 +10,22 @@ import { extractAllComponents } from './extract-all.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Configuration
 export const config = {
     // Source directory (relative to Milo root)
-    sourceDir: './libs',
+    sourceDir: '../libs',
     // Project temp directory name
-    projectTempDir: '../../',
+    projectTempDir: '../',
     // Destination folder name within project temp
-    destFolderName: 'libs1'
+    destFolderName: 'libs'
 };
+
+
 
 /**
  * Copies a directory recursively
  * @param {string} source - Source directory path
  * @param {string} destination - Destination directory path
- */
+ 
 function copyDirectory(source, destination) {
     // Create destination directory if it doesn't exist
     if (!fs.existsSync(destination)) {
@@ -49,7 +51,7 @@ function copyDirectory(source, destination) {
 
 /**
  * Main function to copy the lib directory
- */
+
 export function copyLibDirectory() {
     try {
         // Get Milo root directory (assuming this script is in tools directory)
@@ -97,4 +99,100 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     copyLibDirectory();
     await extractAllComponents()
     processDirectory(config.projectTempDir);
+}
+
+*/
+
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { processDirectory } from './transform-hydration.js';
+import { extractAllComponents } from './extract-all.js';
+
+// Get the directory name of the current module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export const config = {
+    // Source directory (relative to this script)
+    sourceDir: '../libs',          // hydra/libs
+    // Project root directory (relative to this script)
+    projectRootDir: '../../',      // milo/
+    // Destination directory name within project root
+    destFolderName: 'libs'         // milo/libs
+};
+
+/**
+ * Recursively copies a directory from source to destination.
+ * @param {string} source - Absolute path of source directory.
+ * @param {string} destination - Absolute path of destination directory.
+ */
+function copyDirectory(source, destination) {
+    if (!fs.existsSync(destination)) {
+        fs.mkdirSync(destination, { recursive: true });
+    }
+
+    const entries = fs.readdirSync(source, { withFileTypes: true });
+
+    for (const entry of entries) {
+        const sourcePath = path.join(source, entry.name);
+        const destPath = path.join(destination, entry.name);
+
+        if (entry.isDirectory()) {
+            copyDirectory(sourcePath, destPath);
+        } else {
+            fs.copyFileSync(sourcePath, destPath);
+        }
+    }
+}
+
+/**
+ * Copies hydra/libs to milo/libs (overwrite if exists)
+ */
+export function copyLibDirectory() {
+    try {
+        const sourcePath = path.join(__dirname, config.sourceDir);           // hydra/libs
+        const projectRoot = path.resolve(__dirname, config.projectRootDir);  // milo/
+        const destPath = path.join(projectRoot, config.destFolderName);      // milo/libs
+
+        if (!fs.existsSync(sourcePath)) {
+            throw new Error(`Source directory ${sourcePath} does not exist`);
+        }
+
+        // Remove destination if it exists for a clean copy
+        if (fs.existsSync(destPath)) {
+            console.log(`Removing existing directory: ${destPath}`);
+            fs.rmSync(destPath, { recursive: true, force: true });
+        }
+
+        console.log(`Copying from ${sourcePath} to ${destPath}`);
+        copyDirectory(sourcePath, destPath);
+
+        console.log('Copy completed successfully!');
+        return destPath;
+    } catch (error) {
+        console.error('Error copying directory:', error.message);
+        throw error;
+    }
+}
+
+// If run directly as a script
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+    (async () => {
+        try {
+            // 1. Copy hydra/libs to milo/libs
+            const copiedLibPath = copyLibDirectory();
+
+            // 2. Extract components (adjust if this function needs parameters)
+            await extractAllComponents();
+
+            // 3. Process hydration annotations on copied milo/libs
+            processDirectory(copiedLibPath);
+
+            console.log('All steps completed successfully!');
+        } catch (err) {
+            console.error('Build script failed:', err);
+            process.exit(1);
+        }
+    })();
 }

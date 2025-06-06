@@ -262,7 +262,7 @@ export default function init(el) {
 
 // Click-based modal
 
-window.hydrate && window.hydrate({id:x, payload:9376})
+//@hydrate({payload:{x}})
 window.addEventListener('hashchange', (e) => {
   if (!window.location.hash) {
     try {
