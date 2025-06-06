@@ -9,11 +9,13 @@ const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: 
 const mediaCollection = {};
 
 function setSEO(questions) {
+
   faq.mainEntity.push(questions.map(({ name, text }) => (
     { '@type': 'Question', name, acceptedAnswer: { text, '@type': 'Answer' } })));
   const script = createTag('script', { type: 'application/ld+json' }, JSON.stringify(faq));
   document.head.append(script);
 }
+
 
 /* c8 ignore next 8 */
 function playVideo(video) {
@@ -37,12 +39,11 @@ function pauseVideo(video) {
   if (!isPlaying || video.readyState === 0) return;
   pauseBtn.click();
 }
-
 function openPanel(btn, panel) {
-  const analyticsValue = btn.getAttribute('daa-ll');
-  btn.setAttribute('aria-expanded', 'true');
-  btn.setAttribute('daa-ll', analyticsValue.replace(/open-/, 'close-'));
-  panel.removeAttribute('hidden');
+  const analyticsValue = btn.getAttribute('daa-ll'); // Get the analytics value
+  btn.setAttribute('aria-expanded', 'true'); // Update aria-expanded for accessibility
+  btn.setAttribute('daa-ll', analyticsValue.replace(/open-/, 'close-')); // Change analytics state
+  panel.removeAttribute('hidden'); // Make the panel visible
 }
 
 function closePanel(btn, panel) {
@@ -51,7 +52,6 @@ function closePanel(btn, panel) {
   btn.setAttribute('daa-ll', analyticsValue.replace(/close-/, 'open-'));
   panel.setAttribute('hidden', '');
 }
-
 function closeMediaPanel(displayArea, el, dd, clickedId) {
   closePanel(el, dd);
   const clickedMedia = displayArea.childNodes[clickedId - 1];
@@ -85,25 +85,25 @@ function openMediaPanel(displayArea, el, dd, clickedId) {
 function handleClick(el, dd, num) {
   const expandAllBtns = el.closest('.accordion-container')?.querySelectorAll('.accordion-expand-all button');
   if (expandAllBtns.length) {
-    expandAllBtns.forEach((btn) => {
-      btn.setAttribute('aria-pressed', 'mixed');
-      btn.classList.remove('fill');
-      btn.disabled = false;
-    });
+  expandAllBtns.forEach((btn) => {
+    btn.setAttribute('aria-pressed', 'mixed');
+    btn.classList.remove('fill');
+    btn.disabled = false;
+  });
   }
 
   const closestEditorial = el.closest('.editorial');
   const expanded = el.getAttribute('aria-expanded') === 'true';
   if (closestEditorial) {
-    if (expanded) {
-      closeMediaPanel(closestEditorial.querySelector('.accordion-media'), el, dd, num);
-      return;
-    }
-    openMediaPanel(closestEditorial.querySelector('.accordion-media'), el, dd, num);
+  if (expanded) {
+
+    closeMediaPanel(closestEditorial.querySelector('.accordion-media'), el, dd, num);
     return;
   }
-
-  if (expanded) {
+  openMediaPanel(closestEditorial.querySelector('.accordion-media'), el, dd, num);
+  return;
+}
+   if (expanded) {
     closePanel(el, dd);
     return;
   }
@@ -148,11 +148,12 @@ function createItem(accordion, id, heading, num, edit) {
     dd.prepend(dm);
   }
 
-  //@hydrate.0({payload:{button, dd, num, id}})
-  button.addEventListener('click', (e) => { handleClick(e.target, dd, num, id); });
-  //@end
-  accordion.append(dt, dd);
 
+
+window.hydrate && window.hydrate({id:154, payload:{button,dd,num,id}})
+  button.addEventListener('click', (e) => { handleClick(e.target, dd, num, id); });
+  accordion.append(dt, dd);
+//@end
   return { name: heading.textContent, text, dt, dd };
 }
 
@@ -205,12 +206,17 @@ async function createExpandAllContainer(accordionItems, isEditorial, mediaEl) {
     if (video) pauseVideo(video);
   };
 
-  //@hydrate.1({payload:{expandBtn}})
-  expandBtn.addEventListener('click', ({ currentTarget }) => toggleAll(currentTarget, 'expand'));
-  //@end
-  //@hydrate.2({payload:{collapseBtn}})
-  collapseBtn.addEventListener('click', ({ currentTarget }) => toggleAll(currentTarget, 'collapse'));
-  //@end
+
+
+
+window.hydrate && window.hydrate({id:213, payload:{expandBtn}})
+expandBtn.addEventListener('click', ({ currentTarget }) => toggleAll(currentTarget, 'expand'));
+//@end
+
+window.hydrate && window.hydrate({id:217, payload:{collapseBtn}})
+collapseBtn.addEventListener('click', ({ currentTarget }) => toggleAll(currentTarget, 'collapse'));
+//@end
+
   return container;
 }
 
@@ -261,9 +267,7 @@ export default async function init(el) {
 
   let counter = 100;
   for(let i = 0; i<4; i++) {
-    //@hydrate.4({payload:{i, counter}})
     console.log(i, counter);
     counter++;
-    //@end
   }
 }

@@ -30,11 +30,13 @@ import { replaceKey } from '../../features/placeholders.js';
 const { miloLibs, codeRoot, locale, mep } = getConfig();
 const base = miloLibs || codeRoot;
 
+window.hydrate && window.hydrate({id:34, payload:{CONFIG}})
 const CONFIG = {
   socialPlatforms: ['facebook', 'instagram', 'twitter', 'linkedin', 'pinterest', 'discord', 'behance', 'youtube', 'weibo', 'social-media'],
   delays: { decoration: 3000 },
 };
-
+//@end
+//@hydrate.class(Footer,{className:'FooterHydrate'})
 class Footer {
   constructor({ block } = {}) {
     this.block = block;
@@ -248,7 +250,7 @@ class Footer {
       loadStyle(`${base}/blocks/modal/modal.css`);
       const { default: initModal } = await import('../modal/modal.js');
       const modal = await initModal(regionPickerElem);
-
+//hydrate({payload:{regionPickerWrapperClass}});
       const loadRegionNav = async () => {
         const block = document.querySelector('.region-nav');
         if (block && getConfig().standaloneGnav) {
@@ -266,7 +268,7 @@ class Footer {
           block.classList.remove('hide');
         }
       };
-
+//@end
       if (modal) await loadRegionNav(); // just in case the modal is already open
 
       regionPickerElem.addEventListener('click', () => {
@@ -298,12 +300,15 @@ class Footer {
         regionPickerElem.setAttribute('aria-expanded', !isDialogActive);
       });
       // Close region picker dropdown on outside click
+
+window.hydrate && window.hydrate({id:305, payload:{regionPickerWrapperClass}})
       document.addEventListener('click', (e) => {
         if (isRegionPickerExpanded()
           && !e.target.closest(`.${regionPickerWrapperClass}`)) {
           regionPickerElem.setAttribute('aria-expanded', false);
         }
       });
+      //@end
     }
 
     return this.elements.regionPicker;
@@ -417,7 +422,7 @@ class Footer {
     return this.elements.footer;
   };
 }
-
+//@end
 export default function init(block) {
   try {
     const footer = new Footer({ block });
