@@ -99,6 +99,23 @@ const run = async () => {
   // const secondHalf = cssEntries.slice(midPoint);
 const hydrationTasks = await page.evaluate(() => window.__hydrate__);
   let html = await page.evaluate(function(scriptContent, cssEntries,hydrationTasks) { 
+
+  // ---- Inject your image path converter logic ----
+  function convertRelativeImagePaths() {
+    const images = document.querySelectorAll('picture img, picture source');
+    images.forEach(img => {
+      const src = img.getAttribute('src');
+      const srcset = img.getAttribute('srcset');
+      if (src && src.startsWith('./')) {
+        img.setAttribute('src', src.replace('./', '/products/'));
+      }
+      if (srcset && srcset.startsWith('./')) {
+        img.setAttribute('srcset', srcset.replace('./', '/products/'));
+      }
+    });
+  }
+  convertRelativeImagePaths(); // run before returning HTML
+
     // const cssEntries = cssObject;
     const midPoint = Math.ceil(cssEntries.length / 2);
     const firstHalf = cssEntries.slice(0, midPoint);
