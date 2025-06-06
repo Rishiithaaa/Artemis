@@ -196,7 +196,7 @@ export const LANGMAP = {
   zh: ['cn', 'tw'],
 };
 
-window.hydrate && window.hydrate({id:200, payload:{signIn,decorateSignIn,decorateProfileTrigger}})
+//@hydrate({payload:{signIn,decorateSignIn,decorateProfileTrigger}})
 // signIn method to handle sign-in flow dynamically when adobeIMS is available
 const signIn = (options = {}) => {
   if (typeof window.adobeIMS?.signIn !== 'function') {
@@ -207,7 +207,7 @@ const signIn = (options = {}) => {
 };
 //@end
 
-window.hydrate && window.hydrate({id:211, payload:{signInElem,dropdownElem,decoratedElem}})
+//@hydrate({payload:{signInElem,dropdownElem,decoratedElem}})
 // decorateSignIn to handle the dynamic creation of sign-in button or dropdown
 const decorateSignIn = async ({ rawElem, decoratedElem }) => {
   const dropdownElem = rawElem.querySelector(':scope > div:nth-child(2)');
@@ -246,7 +246,7 @@ const decorateSignIn = async ({ rawElem, decoratedElem }) => {
 };
 //@end
 
-window.hydrate && window.hydrate({id:250, payload:{buttonElem}})
+//@hydrate({payload:{buttonElem}})
 // decorateProfileTrigger dynamically generates the profile button with runtime values
 const decorateProfileTrigger = async ({ avatar }) => {
   const [label, profileAvatar] = await replaceKeyArray(
@@ -338,7 +338,7 @@ const removeLocalNav = () => {
   lanaLog({ message: 'Gnav Localnav was removed, potential CLS', tags: 'gnav-localnav' });
   document.querySelector('.feds-localnav')?.remove();
 };
-
+//@hydrate.class(Gnav,{className:'GnavHydrate'})
 export class Gnav {
   constructor({ content, block, newMobileNav } = {}) {
     this.content = content;
@@ -496,7 +496,7 @@ export class Gnav {
     });
 
 
-window.hydrate && window.hydrate({id:500, payload:{localNav,title}})
+   //@hydrate({payload:{localNav,title}})
     localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
       localNav.classList.toggle('feds-localnav--active');
       const isActive = localNav.classList.contains('feds-localnav--active');
@@ -934,7 +934,7 @@ window.hydrate && window.hydrate({id:500, payload:{localNav,title}})
       </button>`;
 
 
-window.hydrate && window.hydrate({id:938, payload:{toggle}})
+   //@hydrate({payload:{toggle}})
     toggle.addEventListener('click', () => logErrorFor(async () => {
       this.toggleMenuMobile();
 
@@ -1246,7 +1246,7 @@ window.hydrate && window.hydrate({id:938, payload:{toggle}})
             originalContent = await transformTemplateToMobile(popup, item, this.isLocalNav());
             popup.querySelector('.close-icon')?.addEventListener('click', this.toggleMenuMobile);
           }
-window.hydrate && window.hydrate({id:1250, payload:{popup,isDesktop}})
+          //@hydrate({payload:{popup,isDesktop}})
           isDesktop.addEventListener('change', async () => {
             enableMobileScroll();
             if (isDesktop.matches) {
@@ -1292,7 +1292,7 @@ window.hydrate && window.hydrate({id:1250, payload:{popup,isDesktop}})
           </${tag}>`;
 
         // Toggle trigger's dropdown on click
-window.hydrate && window.hydrate({id:1296, payload:{dropdownTrigger,isSectionMenu}})
+        //@hydrate({payload:{dropdownTrigger,isSectionMenu}})
         dropdownTrigger.addEventListener('click', (e) => {
           if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
             const popup = dropdownTrigger.nextElementSibling;
@@ -1413,7 +1413,7 @@ window.hydrate && window.hydrate({id:1296, payload:{dropdownTrigger,isSectionMen
     return this.elements.search;
   };
 }
-
+//@end
 export default async function init(block) {
   const { mep } = getConfig();
   const sourceUrl = await getGnavSource();
