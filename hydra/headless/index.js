@@ -97,9 +97,8 @@ const run = async () => {
   // const midPoint = Math.ceil(cssEntries.length / 2);
   // const firstHalf = cssEntries.slice(0, midPoint);
   // const secondHalf = cssEntries.slice(midPoint);
-
-
-  let html = await page.evaluate(function(scriptContent, cssEntries) { 
+const hydrationTasks = await page.evaluate(() => window.__hydrate__);
+  let html = await page.evaluate(function(scriptContent, cssEntries,hydrationTasks) { 
     // const cssEntries = cssObject;
     const midPoint = Math.ceil(cssEntries.length / 2);
     const firstHalf = cssEntries.slice(0, midPoint);
@@ -120,10 +119,11 @@ const run = async () => {
         `<style>.consonant-Wrapper {height: unset !important;} ${secondHalf.map(([_, css]) => css).join('\n')}</style>
         <script type="module">
         ${scriptContent}
-        </script><script src="https://stage.adobeccstatic.com/unav/1.3/UniversalNav.js" type="text/javascript"></script>\n</body>`)
-}, scriptContent, [...cssMap.entries()]);
+        </script><script src="https://stage.adobeccstatic.com/unav/1.3/UniversalNav.js" type="text/javascript"></script>\n
+        <script type='module'>window.hydrateData=${hydrationTasks} </script></body>`)
+}, scriptContent, [...cssMap.entries()], hydrationTasks);
 
-const hydrationTasks = await page.evaluate(() => window.__hydrate__);
+
 console.log(`Found ${Object.keys(hydrationTasks).length} hydration tasks.`);
 //console.log(`Hydration tasks: ${JSON.stringify(hydrationTasks, null, 2)}`);
 const minifiedHtml = minify(html, {
@@ -140,5 +140,6 @@ const minifiedHtml = minify(html, {
   const endTime = performance.now();
   console.log(`⏳ Execution time: ${(endTime - startTime).toFixed(2)} ms`);
 };
+
 
 run().catch(console.error);
