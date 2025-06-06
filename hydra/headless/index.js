@@ -7,7 +7,7 @@ const scriptContent = fs.readFileSync('./headless/inline.js', 'utf-8');
 
 const run = async () => {
   const startTime = performance.now();
-  const browser = await puppeteer.launch({ headless: true, args: [
+  const browser = await puppeteer.launch({ headless: "new", args: [
     '--no-sandbox',
     '--disable-setuid-sandbox',
     '--disable-dev-shm-usage',
