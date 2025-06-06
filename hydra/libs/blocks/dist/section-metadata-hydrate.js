@@ -12,7 +12,10 @@ function handleDelay(time, section) {
 }
 const hydrationToken = "section-metadata/section-metadata.js";
 const hydrationBlocks = {
-  _84: (x, section) => {
+  _84: ({
+    x,
+    section
+  }) => {
     handleDelay(x, section);
   }
 };

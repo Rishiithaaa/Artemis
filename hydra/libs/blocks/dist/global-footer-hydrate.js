@@ -19,7 +19,9 @@ const CONFIG = {
 };
 const hydrationToken = "global-footer/global-footer.js";
 const hydrationBlocks = {
-  _34: (CONFIG) => {
+  _34: ({
+    CONFIG
+  }) => {
     const CONFIG = {
       socialPlatforms: ['facebook', 'instagram', 'twitter', 'linkedin', 'pinterest', 'discord', 'behance', 'youtube', 'weibo', 'social-media'],
       delays: {

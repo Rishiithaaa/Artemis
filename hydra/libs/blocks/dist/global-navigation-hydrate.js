@@ -283,7 +283,11 @@ const decorateProfileTrigger = async ({
 };
 const hydrationToken = "global-navigation/global-navigation.js";
 const hydrationBlocks = {
-  _201: (signIn, decorateSignIn, decorateProfileTrigger) => {
+  _201: ({
+    signIn,
+    decorateSignIn,
+    decorateProfileTrigger
+  }) => {
     const signIn = (options = {}) => {
       if (typeof window.adobeIMS?.signIn !== 'function') {
         lanaLog({
@@ -296,7 +300,11 @@ const hydrationBlocks = {
       window.adobeIMS.signIn(options);
     };
   },
-  _212: (signInElem, dropdownElem, decoratedElem) => {
+  _212: ({
+    signInElem,
+    dropdownElem,
+    decoratedElem
+  }) => {
     const decorateSignIn = async ({
       rawElem,
       decoratedElem
@@ -339,7 +347,9 @@ const hydrationBlocks = {
       decoratedElem.prepend(signInElem);
     };
   },
-  _251: (buttonElem) => {
+  _251: ({
+    buttonElem
+  }) => {
     const decorateProfileTrigger = async ({
       avatar
     }) => {
