@@ -7,7 +7,7 @@ const scriptContent = fs.readFileSync('./headless/inline.js', 'utf-8');
 
 const run = async () => {
   const startTime = performance.now();
-  const browser = await puppeteer.launch({ headless: false, args: [
+  const browser = await puppeteer.launch({ headless: true, args: [
     '--no-sandbox',
     '--disable-setuid-sandbox',
     '--disable-dev-shm-usage',
@@ -77,7 +77,7 @@ const run = async () => {
   await Promise.all(cssPromises);
 
   // Wait for a key element to be sure the page is ready
-  await page.waitForSelector(".feds-footer-wrapper");
+  await page.waitForSelector("#page-load-ok-milo");
 //   Extract HTML
 //   Inject inline styles
   // await page.evaluate((cssMap) => {
