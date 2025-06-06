@@ -1,14 +1,9 @@
 import Gnav from './Gnav';
 class GnavHydrate extends Gnav {
   _500({
-    payload
+    localNav,
+    title
   }) {
-    payload = {
-      ...payload,
-      localNav,
-      title,
-      id: 500
-    };
     localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
       localNav.classList.toggle('feds-localnav--active');
       const isActive = localNav.classList.contains('feds-localnav--active');
@@ -17,13 +12,8 @@ class GnavHydrate extends Gnav {
     });
   }
   _938({
-    payload
+    toggle
   }) {
-    payload = {
-      ...payload,
-      toggle,
-      id: 938
-    };
     toggle.addEventListener('click', () => logErrorFor(async () => {
       this.toggleMenuMobile();
       if (this.blocks?.search?.instance) {
@@ -35,14 +25,9 @@ class GnavHydrate extends Gnav {
     }, 'Toggle click failed', 'gnav', 'error'));
   }
   _1250({
-    payload
+    popup,
+    isDesktop
   }) {
-    payload = {
-      ...payload,
-      popup,
-      isDesktop,
-      id: 1250
-    };
     isDesktop.addEventListener('change', async () => {
       enableMobileScroll();
       if (isDesktop.matches) {
@@ -56,14 +41,9 @@ class GnavHydrate extends Gnav {
     });
   }
   _1296({
-    payload
+    dropdownTrigger,
+    isSectionMenu
   }) {
-    payload = {
-      ...payload,
-      dropdownTrigger,
-      isSectionMenu,
-      id: 1296
-    };
     dropdownTrigger.addEventListener('click', e => {
       if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
         const popup = dropdownTrigger.nextElementSibling;
@@ -303,14 +283,7 @@ const decorateProfileTrigger = async ({
 };
 const hydrationToken = "global-navigation/global-navigation.js";
 const hydrationBlocks = {
-  _201: (payload) => {
-    payload = {
-      ...payload,
-      signIn,
-      decorateSignIn,
-      decorateProfileTrigger,
-      id: 201
-    };
+  _201: (signIn, decorateSignIn, decorateProfileTrigger) => {
     const signIn = (options = {}) => {
       if (typeof window.adobeIMS?.signIn !== 'function') {
         lanaLog({
@@ -323,14 +296,7 @@ const hydrationBlocks = {
       window.adobeIMS.signIn(options);
     };
   },
-  _212: (payload) => {
-    payload = {
-      ...payload,
-      signInElem,
-      dropdownElem,
-      decoratedElem,
-      id: 212
-    };
+  _212: (signInElem, dropdownElem, decoratedElem) => {
     const decorateSignIn = async ({
       rawElem,
       decoratedElem
@@ -373,12 +339,7 @@ const hydrationBlocks = {
       decoratedElem.prepend(signInElem);
     };
   },
-  _251: (payload) => {
-    payload = {
-      ...payload,
-      buttonElem,
-      id: 251
-    };
+  _251: (buttonElem) => {
     const decorateProfileTrigger = async ({
       avatar
     }) => {

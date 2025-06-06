@@ -75,14 +75,7 @@ function changeTabs(e) {
 }
 const hydrationToken = "tabs/tabs.js";
 const hydrationBlocks = {
-  _129: (payload) => {
-    payload = {
-      ...payload,
-      tabs,
-      tabLists,
-      tabFocus,
-      id: 129
-    };
+  _129: (tabs, tabLists, tabFocus) => {
     tabLists.forEach(tabList => {
       tabList.addEventListener('keydown', e => {
         if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
@@ -99,12 +92,7 @@ const hydrationBlocks = {
       });
     });
   },
-  _150: (payload) => {
-    payload = {
-      ...payload,
-      tabs,
-      id: 150
-    };
+  _150: (tabs) => {
     tabs.forEach(tab => {
       tab.addEventListener('click', changeTabs);
     });

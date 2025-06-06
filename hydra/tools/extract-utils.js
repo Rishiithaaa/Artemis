@@ -137,8 +137,8 @@ if (classComment) {
       const lineNumber = path.node.loc?.start?.line || 0;
       const extractedPayload = convertHydrateString(hydrateComment.value);
       //const hydrateCode = `(${extractedPayload}) => {${generator(path.node, { comments: false }).code}}`;
-const hydrateCode = `(payload) => { payload = { ...payload, ${extractedPayload}, id: ${lineNumber} }; ${generator(path.node, { comments: false }).code} }`;
-//const hydrateCode = `(${extractedPayload}) => {${generator(path.node, { comments: false }).code}}`;
+//const hydrateCode = `(payload) => { payload = { ...payload, ${extractedPayload}, id: ${lineNumber} }; ${generator(path.node, { comments: false }).code} }`;
+const hydrateCode = `(${extractedPayload}) => {${generator(path.node, { comments: false }).code}}`;
       const parentClass = path.findParent(p => p.isClassBody());
       if (parentClass) {
         const classNode = parentClass.parentPath.node;

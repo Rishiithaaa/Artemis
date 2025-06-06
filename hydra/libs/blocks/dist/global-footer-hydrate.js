@@ -1,13 +1,8 @@
 import Footer from './Footer';
 class FooterHydrate extends Footer {
   _305({
-    payload
+    regionPickerWrapperClass
   }) {
-    payload = {
-      ...payload,
-      regionPickerWrapperClass,
-      id: 305
-    };
     document.addEventListener('click', e => {
       if (isRegionPickerExpanded() && !e.target.closest(`.${regionPickerWrapperClass}`)) {
         regionPickerElem.setAttribute('aria-expanded', false);
@@ -24,12 +19,7 @@ const CONFIG = {
 };
 const hydrationToken = "global-footer/global-footer.js";
 const hydrationBlocks = {
-  _34: (payload) => {
-    payload = {
-      ...payload,
-      CONFIG,
-      id: 34
-    };
+  _34: (CONFIG) => {
     const CONFIG = {
       socialPlatforms: ['facebook', 'instagram', 'twitter', 'linkedin', 'pinterest', 'discord', 'behance', 'youtube', 'weibo', 'social-media'],
       delays: {
