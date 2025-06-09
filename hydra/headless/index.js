@@ -100,7 +100,7 @@ const run = async () => {
 const hydrationTasks = await page.evaluate(() => window.__hydrate__);
   let html = await page.evaluate(function(scriptContent, cssEntries,hydrationTasks) { 
 
-  // ---- Inject your image path converter logic ----
+ // ---- Inject your image path converter logic ----
   function convertRelativeImagePaths() {
     const images = document.querySelectorAll('picture img, picture source');
     images.forEach(img => {
@@ -115,7 +115,6 @@ const hydrationTasks = await page.evaluate(() => window.__hydrate__);
     });
   }
   convertRelativeImagePaths(); // run before returning HTML
-
     // const cssEntries = cssObject;
     const midPoint = Math.ceil(cssEntries.length / 2);
     const firstHalf = cssEntries.slice(0, midPoint);
@@ -137,7 +136,7 @@ const hydrationTasks = await page.evaluate(() => window.__hydrate__);
         <script type="module">
         ${scriptContent}
         </script><script src="https://stage.adobeccstatic.com/unav/1.3/UniversalNav.js" type="text/javascript"></script>\n
-        <script type='module'>window.hydrateData=${JSON.stringify(hydrationTasks)} </script></body>`)
+        </body>`)
 }, scriptContent, [...cssMap.entries()], hydrationTasks);
 
   // Log the number of hydration tasks found
