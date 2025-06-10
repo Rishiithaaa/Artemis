@@ -75,7 +75,7 @@ const run = async () => {
 
   // Wait for all CSS promises to resolve
   await Promise.all(cssPromises);
-
+await page.waitForSelector(".feds-footer-wrapper");
   // Wait for a key element to be sure the page is ready
   await page.waitForSelector("#page-load-ok-milo");
 //   Extract HTML

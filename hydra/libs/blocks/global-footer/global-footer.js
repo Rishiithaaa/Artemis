@@ -30,12 +30,12 @@ import { replaceKey } from '../../features/placeholders.js';
 const { miloLibs, codeRoot, locale, mep } = getConfig();
 const base = miloLibs || codeRoot;
 
-//@hydrate({payload:{CONFIG}})
+
 const CONFIG = {
   socialPlatforms: ['facebook', 'instagram', 'twitter', 'linkedin', 'pinterest', 'discord', 'behance', 'youtube', 'weibo', 'social-media'],
   delays: { decoration: 3000 },
 };
-//@end
+
 //@hydrate.class(Footer,{className:'FooterHydrate'})
 class Footer {
   constructor({ block } = {}) {

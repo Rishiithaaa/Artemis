@@ -11,23 +11,16 @@ class FooterHydrate extends Footer {
   }
 }
 
-const CONFIG = {
-  socialPlatforms: ['facebook', 'instagram', 'twitter', 'linkedin', 'pinterest', 'discord', 'behance', 'youtube', 'weibo', 'social-media'],
-  delays: {
-    decoration: 3000
-  }
-};
 const hydrationToken = "global-footer/global-footer.js";
 const hydrationBlocks = {
-  _34: ({
-    CONFIG
+  _305: ({
+    regionPickerWrapperClass
   }) => {
-    const CONFIG = {
-      socialPlatforms: ['facebook', 'instagram', 'twitter', 'linkedin', 'pinterest', 'discord', 'behance', 'youtube', 'weibo', 'social-media'],
-      delays: {
-        decoration: 3000
+    document.addEventListener('click', e => {
+      if (isRegionPickerExpanded() && !e.target.closest(`.${regionPickerWrapperClass}`)) {
+        regionPickerElem.setAttribute('aria-expanded', false);
       }
-    };
+    });
   }
 };
 /**
@@ -208,4 +201,4 @@ export function initializeDynamicHydration() {
 // Run after DOM is ready
 if (typeof document !== 'undefined') {
   initializeDynamicHydration();
-};
+}
