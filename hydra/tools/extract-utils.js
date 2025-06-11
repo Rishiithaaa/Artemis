@@ -76,7 +76,7 @@ export function extractHandlers(outputPath, config, blocks) {
   const extractedClassMethods = new Set();
   const hydrateMethodNames = new Set();
 
-traverse(ast, {
+  traverse(ast, {
   enter(path) {
     // 1. Gather all possible comments for this node
 const comments =
@@ -322,19 +322,29 @@ do {
     }
   });
 
-  const hydrateBlocks = [...classHydrateBlocks, ...nonClassHydrateBlocks];
+
+
+
+// Merge hydrate blocks
+const hydrateBlocks = [...classHydrateBlocks, ...nonClassHydrateBlocks];
 blocks[lastTwoParts] = blocks[lastTwoParts] || [];
 blocks[lastTwoParts].push(...hydrateBlocks);
 
-// Create a map of function IDs to code strings
-const fnsArr = hydrateBlocks.map(blk => `_${blk.id}: ${blk.code}`);
-// Build hydrated class definitions
+// Map of function IDs to code
+const classBlockIds = new Set();
+const classCustomSnippets = {
+  Gnav: `const x = document.querySelector('header').getAttribute('data-feds');`,
+  Footer: `const x = document.querySelector('footer');`,
+  // Add more mappings here if needed
+};
+// --- CLASS BLOCK HANDLING ---
 for (const { baseClassName, newClassName, blocks } of hydratedClasses.values()) {
   const seen = new Set();
   const methodBlocks = blocks
     .filter(blk => {
       if (seen.has(blk.id)) return false;
       seen.add(blk.id);
+      classBlockIds.add(blk.id);
       return !blk.code.includes('class ');
     })
     .map(blk => {
@@ -354,12 +364,10 @@ for (const { baseClassName, newClassName, blocks } of hydratedClasses.values()) 
     })
     .filter(Boolean);
 
-  // Extract only extra class methods not present in the hydrate method names
   const extraClassMethods = Array.from(extractedClassMethods).filter(
     method => !hydrateMethodNames.has(method.key.name)
   );
 
-  // Parse each method block to AST class methods
   const methodASTNodes = methodBlocks.map(m =>
     parser.parseExpression(`class X { ${m} }`).body.body[0]
   );
@@ -370,24 +378,27 @@ for (const { baseClassName, newClassName, blocks } of hydratedClasses.values()) 
     t.classBody([...methodASTNodes, ...extraClassMethods]),
     []
   );
-
-  // Generate code from the hydrated class AST and beautify
+ const injectedSnippet = classCustomSnippets[baseClassName] || '';
   const classCode = `
-import ${baseClassName} from './${baseClassName}';
+import {${baseClassName}} from './${lastTwoParts}';
+${injectedSnippet}
 ${generator(hydratedClass).code}
 `;
 
   hydrationCode.push(beautify(classCode, { indent_size: 2 }) + '\n');
 }
 
-if (nonClassHydrateBlocks.length > 0) {
+// --- NON-CLASS BLOCK HANDLING ---
+const filteredNonClassHydrateBlocks = nonClassHydrateBlocks.filter(blk => !classBlockIds.has(blk.id));
+//console.log("Filtered Non-Class Hydrate Blocks:", filteredNonClassHydrateBlocks.length);
+
+if (filteredNonClassHydrateBlocks.length > 0) {
   const hydrateFunctionNames = new Set();
-  nonClassHydrateBlocks.forEach(blk => {
+  filteredNonClassHydrateBlocks.forEach(blk => {
     const match = blk.code.match(/function\s+(\w+)/);
     if (match) hydrateFunctionNames.add(match[1]);
   });
 
-  // Filter extractedNodes to remove functions with these names
   const filteredExtractedNodes = Array.from(extractedNodes).filter(node => {
     if (t.isFunctionDeclaration(node)) {
       return !hydrateFunctionNames.has(node.id.name);
@@ -395,7 +406,8 @@ if (nonClassHydrateBlocks.length > 0) {
     return true;
   });
 
-  const nonClassfnsArr = nonClassHydrateBlocks.map(blk => `_${blk.id}: ${blk.code}`);
+  const nonClassfnsArr = filteredNonClassHydrateBlocks.map(blk => `_${blk.id}: ${blk.code}`);
+
 
   const nonClassCode = `
 ${generator(t.program([...importNodes, ...filteredExtractedNodes])).code}
@@ -408,22 +420,24 @@ ${hydrationRuntime}
 
   hydrationCode.push(beautify(nonClassCode, { indent_size: 2 }));
 } else {
-  let extractedCode = generator(t.program([...importNodes, ...extractedNodes])).code;
+  const extractedCode = generator(t.program([...importNodes, ...extractedNodes])).code;
   hydrationCode.push(
     beautify(
 `${extractedCode}
 const hydrationToken = "${lastTwoParts}";
-const hydrationBlocks = {${fnsArr.join(',')}};
+const hydrationBlocks = {};
 ${hydrationRuntime}
 `, { indent_size: 2 })
   );
 }
+
+// --- CLEANING FINAL OUTPUT ---
 const cleanedOutput = hydrationCode.join('\n')
   .replace(/\/\/\s*@hydrate(\.class)?\([^)]*\)\n?/g, '')
   .replace(/\/\/\s*@end\n?/g, '');
+
 fs.writeFileSync(outputPath, beautify(cleanedOutput, { indent_size: 2 }));
 }
-
 
 /**
  * Process all hydrated files in a directory

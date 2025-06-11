@@ -1,4 +1,7 @@
-import {Gnav} from '../global-navigation/global-navigation.js' ;
+import {
+  Gnav
+} from './global-navigation/global-navigation.js';
+const x = document.querySelector('header').getAttribute('data-feds');
 class GnavHydrate extends Gnav {
   _489({
     localNav,
@@ -188,9 +191,9 @@ import {
   setAsyncDropdownCount,
   branchBannerLoadCheck,
   getBranchBannerInfo
-} from '../global-navigation/utilities/utilities.js';
+} from './utilities/utilities.js';
 const hydrationToken = "global-navigation/global-navigation.js";
-const x=document.querySelector('header').getAttribute('data-feds');
+const hydrationBlocks = {};
 /**
  * Dynamic Hydration Runtime Code
  * This module provides runtime functionality for hydrating components on the client side.
@@ -210,12 +213,6 @@ const x=document.querySelector('header').getAttribute('data-feds');
  */
 export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
   // 1. Validate Inputs
-    const obj = window.customParseWithDomAndClasses(x, {
-    "Gnav": {
-      type: Gnav,
-      inh: GnavHydrate
-    }
-  });
   if (!Array.isArray(rawHydratorData)) {
     console.error("Dynamic Hydration (ID Only) failed: rawHydratorData must be an array.", rawHydratorData);
     return;
