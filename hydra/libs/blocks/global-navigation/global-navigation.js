@@ -1421,15 +1421,14 @@ export default async function init(block) {
     lanaLog({ message: error.message, ...error });
     throw error;
   }
-  setAsyncDropdownCount(content.querySelectorAll('.large-menu').length);
-  const HGnav = makeSerializable(Gnav);
-  const gnav = new HGnav({
+  const GnavHydrate = makeSerializable(Gnav);
+  const gnav = new GnavHydrate({
     content,
     block,
     newMobileNav,
   });
   window.gnav = gnav;
-  window.Gnav = HGnav;
+  window.Gnav = GnavHydrate;
   
   if (newMobileNav && !isDesktop.matches) block.classList.add('new-nav');
   await gnav.init();
