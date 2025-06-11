@@ -214,7 +214,7 @@ export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
     "Gnav":
       {
           type:Gnav,
-          inh:HGnav
+          inh:GnavHydrate
       }
   });
   // 1. Validate Inputs
