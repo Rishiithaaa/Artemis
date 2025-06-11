@@ -67,10 +67,10 @@ const run = async () => {
     }
   });
 
-  //const url = "https://main--cc--adobecom.aem.live/products/photoshop?milolibs=local&georouting=off";
+const url = "https://main--cc--adobecom.aem.live/products/photoshop?milolibs=local&georouting=off";
   // const url = "https://main--dc--adobecom.hlx.live/acrobat/online/sign-pdf";
 
-const url = "https://main--cc--adobecom.aem.live/products/illustrator?milolibs=local&georouting=off";
+//const url = "https://main--cc--adobecom.aem.live/products/illustrator?milolibs=local&georouting=off";
   await page.goto(url, {
     waitUntil: "networkidle0",
   });
