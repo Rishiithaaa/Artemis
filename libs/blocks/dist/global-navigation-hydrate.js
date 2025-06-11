@@ -188,7 +188,7 @@ import {
   setAsyncDropdownCount,
   branchBannerLoadCheck,
   getBranchBannerInfo
-} from './global-navigation/utilities/utilities.js';
+} from '../global-navigation/utilities/utilities.js';
 const hydrationToken = "global-navigation/global-navigation.js";
 const x=document.querySelector('header').getAttribute('data-feds');
 /**

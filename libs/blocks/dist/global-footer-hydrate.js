@@ -12,17 +12,6 @@ class FooterHydrate extends Footer {
 }
 
 const hydrationToken = "global-footer/global-footer.js";
-const hydrationBlocks = {
-  _305: ({
-    regionPickerWrapperClass
-  }) => {
-    document.addEventListener('click', e => {
-      if (isRegionPickerExpanded() && !e.target.closest(`.${regionPickerWrapperClass}`)) {
-        regionPickerElem.setAttribute('aria-expanded', false);
-      }
-    });
-  }
-};
 /**
  * Dynamic Hydration Runtime Code
  * This module provides runtime functionality for hydrating components on the client side.
