@@ -1,6 +1,6 @@
 import Gnav from './Gnav';
 class GnavHydrate extends Gnav {
-  _500({
+  _489({
     localNav,
     title
   }) {
@@ -11,7 +11,7 @@ class GnavHydrate extends Gnav {
       localNav.querySelector('.feds-localnav-title').setAttribute('daa-ll', `${title}_localNav|${isActive ? 'close' : 'open'}`);
     });
   }
-  _938({
+  _927({
     toggle
   }) {
     toggle.addEventListener('click', () => logErrorFor(async () => {
@@ -24,7 +24,7 @@ class GnavHydrate extends Gnav {
       if (this.isToggleExpanded()) setHamburgerPadding();
     }, 'Toggle click failed', 'gnav', 'error'));
   }
-  _1250({
+  _1239({
     popup,
     isDesktop
   }) {
@@ -40,9 +40,10 @@ class GnavHydrate extends Gnav {
       }
     });
   }
-  _1296({
+  _1285({
     dropdownTrigger,
-    isSectionMenu
+    isSectionMenu,
+    isDesktop
   }) {
     dropdownTrigger.addEventListener('click', e => {
       if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
@@ -151,18 +152,6 @@ class GnavHydrate extends Gnav {
   };
 }
 
-/* eslint import/no-relative-packages: 0 */
-/* eslint-disable no-async-promise-executor */
-import {
-  getConfig,
-  getMetadata,
-  loadIms,
-  decorateLinks,
-  loadScript,
-  getGnavSource,
-  getFedsPlaceholderConfig,
-  makeSerializable
-} from '../../utils/utils.js';
 import {
   closeAllDropdowns,
   decorateCta,
@@ -200,175 +189,71 @@ import {
   branchBannerLoadCheck,
   getBranchBannerInfo
 } from './utilities/utilities.js';
-import {
-  replaceKey,
-  replaceKeyArray
-} from '../../features/placeholders.js';
-const SIGNIN_CONTEXT = getConfig()?.signInContext;
-// signIn method to handle sign-in flow dynamically when adobeIMS is available
-const signIn = (options = {}) => {
-  if (typeof window.adobeIMS?.signIn !== 'function') {
-    lanaLog({
-      message: 'IMS signIn method not available',
-      tags: 'gnav',
-      errorType: 'warn'
-    });
-    return;
-  }
-  window.adobeIMS.signIn(options); // Hydrated dynamically based on IMS configuration and user flow
-};
-
-// decorateSignIn to handle the dynamic creation of sign-in button or dropdown
-const decorateSignIn = async ({
-  rawElem,
-  decoratedElem
-}) => {
-  const dropdownElem = rawElem.querySelector(':scope > div:nth-child(2)');
-  const signInLabel = await replaceKey('sign-in', getFedsPlaceholderConfig());
-  let signInElem;
-  if (!dropdownElem) {
-    signInElem = toFragment`<button daa-ll="${signInLabel}" class="feds-signIn">${signInLabel}</button>`;
-    signInElem.addEventListener('click', e => {
-      e.preventDefault();
-      signIn(SIGNIN_CONTEXT);
-    });
-  } else {
-    signInElem = toFragment`<button daa-ll="${signInLabel}" class="feds-signIn" aria-expanded="false" aria-haspopup="true">${signInLabel}</button>`;
-    signInElem.addEventListener('click', e => trigger({
-      element: signInElem,
-      event: e
-    }));
-    signInElem.addEventListener('keydown', e => e.code === 'Escape' && closeAllDropdowns());
-    dropdownElem.addEventListener('keydown', e => e.code === 'Escape' && closeAllDropdowns());
-    dropdownElem.classList.add('feds-signIn-dropdown');
-    const dropdownSignInAnchor = dropdownElem.querySelector('[href$="?sign-in=true"]');
-    if (dropdownSignInAnchor) {
-      const dropdownSignInButton = toFragment`<button class="feds-signIn">${dropdownSignInAnchor.textContent}</button>`;
-      dropdownSignInAnchor.replaceWith(dropdownSignInButton);
-      dropdownSignInButton.addEventListener('click', e => {
-        e.preventDefault();
-        signIn(SIGNIN_CONTEXT);
-      });
-    } else {
-      lanaLog({
-        message: 'Sign in link not found in dropdown.',
-        tags: 'gnav',
-        errorType: 'warn'
-      });
-    }
-    decoratedElem.append(dropdownElem);
-  }
-  decoratedElem.prepend(signInElem);
-};
-
-// decorateProfileTrigger dynamically generates the profile button with runtime values
-const decorateProfileTrigger = async ({
-  avatar
-}) => {
-  const [label, profileAvatar] = await replaceKeyArray(['profile-button', 'profile-avatar'], getFedsPlaceholderConfig());
-  const buttonElem = toFragment`
-    <button
-      data-cs-mask
-      class="feds-profile-button"
-      aria-expanded="false"
-      aria-controls="feds-profile-menu"
-      aria-label="${label}"
-      daa-ll="Account"
-      aria-haspopup="true"
-    >
-      <img data-cs-mask class="feds-profile-img" src="${avatar}" alt="${profileAvatar}"></img>
-    </button>
-  `;
-  return buttonElem;
-};
 const hydrationToken = "global-navigation/global-navigation.js";
 const hydrationBlocks = {
-  _201: ({
-    signIn,
-    decorateSignIn,
-    decorateProfileTrigger
+  _489: ({
+    localNav,
+    title
   }) => {
-    const signIn = (options = {}) => {
-      if (typeof window.adobeIMS?.signIn !== 'function') {
-        lanaLog({
-          message: 'IMS signIn method not available',
-          tags: 'gnav',
-          errorType: 'warn'
-        });
-        return;
-      }
-      window.adobeIMS.signIn(options);
-    };
+    localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
+      localNav.classList.toggle('feds-localnav--active');
+      const isActive = localNav.classList.contains('feds-localnav--active');
+      localNav.querySelector('.feds-localnav-title').setAttribute('aria-expanded', isActive);
+      localNav.querySelector('.feds-localnav-title').setAttribute('daa-ll', `${title}_localNav|${isActive ? 'close' : 'open'}`);
+    });
   },
-  _212: ({
-    signInElem,
-    dropdownElem,
-    decoratedElem
+  _927: ({
+    toggle
   }) => {
-    const decorateSignIn = async ({
-      rawElem,
-      decoratedElem
-    }) => {
-      const dropdownElem = rawElem.querySelector(':scope > div:nth-child(2)');
-      const signInLabel = await replaceKey('sign-in', getFedsPlaceholderConfig());
-      let signInElem;
-      if (!dropdownElem) {
-        signInElem = toFragment`<button daa-ll="${signInLabel}" class="feds-signIn">${signInLabel}</button>`;
-        signInElem.addEventListener('click', e => {
-          e.preventDefault();
-          signIn(SIGNIN_CONTEXT);
-        });
+    toggle.addEventListener('click', () => logErrorFor(async () => {
+      this.toggleMenuMobile();
+      if (this.blocks?.search?.instance) {
+        this.blocks.search.instance.clearSearchForm();
       } else {
-        signInElem = toFragment`<button daa-ll="${signInLabel}" class="feds-signIn" aria-expanded="false" aria-haspopup="true">${signInLabel}</button>`;
-        signInElem.addEventListener('click', e => trigger({
-          element: signInElem,
-          event: e
-        }));
-        signInElem.addEventListener('keydown', e => e.code === 'Escape' && closeAllDropdowns());
-        dropdownElem.addEventListener('keydown', e => e.code === 'Escape' && closeAllDropdowns());
-        dropdownElem.classList.add('feds-signIn-dropdown');
-        const dropdownSignInAnchor = dropdownElem.querySelector('[href$="?sign-in=true"]');
-        if (dropdownSignInAnchor) {
-          const dropdownSignInButton = toFragment`<button class="feds-signIn">${dropdownSignInAnchor.textContent}</button>`;
-          dropdownSignInAnchor.replaceWith(dropdownSignInButton);
-          dropdownSignInButton.addEventListener('click', e => {
-            e.preventDefault();
-            signIn(SIGNIN_CONTEXT);
-          });
-        } else {
-          lanaLog({
-            message: 'Sign in link not found in dropdown.',
-            tags: 'gnav',
-            errorType: 'warn'
-          });
-        }
-        decoratedElem.append(dropdownElem);
+        await this.loadSearch();
       }
-      decoratedElem.prepend(signInElem);
-    };
+      if (this.isToggleExpanded()) setHamburgerPadding();
+    }, 'Toggle click failed', 'gnav', 'error'));
   },
-  _251: ({
-    buttonElem
+  _1239: ({
+    popup,
+    isDesktop
   }) => {
-    const decorateProfileTrigger = async ({
-      avatar
-    }) => {
-      const [label, profileAvatar] = await replaceKeyArray(['profile-button', 'profile-avatar'], getFedsPlaceholderConfig());
-      const buttonElem = toFragment`
-    <button
-      data-cs-mask
-      class="feds-profile-button"
-      aria-expanded="false"
-      aria-controls="feds-profile-menu"
-      aria-label="${label}"
-      daa-ll="Account"
-      aria-haspopup="true"
-    >
-      <img data-cs-mask class="feds-profile-img" src="${avatar}" alt="${profileAvatar}"></img>
-    </button>
-  `;
-      return buttonElem;
-    };
+    isDesktop.addEventListener('change', async () => {
+      enableMobileScroll();
+      if (isDesktop.matches) {
+        popup.innerHTML = originalContent;
+        this.block.classList.remove('new-nav');
+      } else {
+        originalContent = await transformTemplateToMobile(popup, item, this.isLocalNav());
+        popup.querySelector('.close-icon')?.addEventListener('click', this.toggleMenuMobile);
+        this.block.classList.add('new-nav');
+      }
+    });
+  },
+  _1285: ({
+    dropdownTrigger,
+    isSectionMenu,
+    isDesktop
+  }) => {
+    dropdownTrigger.addEventListener('click', e => {
+      if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
+        const popup = dropdownTrigger.nextElementSibling;
+        if (popup && this.isLocalNav()) {
+          this.updatePopupPosition(popup);
+        }
+        makeTabActive(popup);
+      } else if (isDesktop.matches && this.newMobileNav && isSectionMenu) {
+        const popup = dropdownTrigger.nextElementSibling;
+        if (popup) popup.style.removeProperty('top');
+      }
+      trigger({
+        element: dropdownTrigger,
+        event: e,
+        type: 'dropdown'
+      });
+      setActiveDropdown(dropdownTrigger);
+    });
   }
 };
 /**
@@ -549,4 +434,4 @@ export function initializeDynamicHydration() {
 // Run after DOM is ready
 if (typeof document !== 'undefined') {
   initializeDynamicHydration();
-};
+}

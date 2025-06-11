@@ -1,6 +1,6 @@
 import Gnav from './Gnav';
 class GnavHydrate extends Gnav {
-  _500({
+  _489({
     localNav,
     title
   }) {
@@ -11,7 +11,7 @@ class GnavHydrate extends Gnav {
       localNav.querySelector('.feds-localnav-title').setAttribute('daa-ll', `${title}_localNav|${isActive ? 'close' : 'open'}`);
     });
   }
-  _938({
+  _927({
     toggle
   }) {
     toggle.addEventListener('click', () => logErrorFor(async () => {
@@ -24,7 +24,7 @@ class GnavHydrate extends Gnav {
       if (this.isToggleExpanded()) setHamburgerPadding();
     }, 'Toggle click failed', 'gnav', 'error'));
   }
-  _1250({
+  _1239({
     popup,
     isDesktop
   }) {
@@ -40,9 +40,10 @@ class GnavHydrate extends Gnav {
       }
     });
   }
-  _1296({
+  _1285({
     dropdownTrigger,
-    isSectionMenu
+    isSectionMenu,
+    isDesktop
   }) {
     dropdownTrigger.addEventListener('click', e => {
       if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
@@ -151,18 +152,6 @@ class GnavHydrate extends Gnav {
   };
 }
 
-/* eslint import/no-relative-packages: 0 */
-/* eslint-disable no-async-promise-executor */
-import {
-  getConfig,
-  getMetadata,
-  loadIms,
-  decorateLinks,
-  loadScript,
-  getGnavSource,
-  getFedsPlaceholderConfig,
-  makeSerializable
-} from '../../utils/utils.js';
 import {
   closeAllDropdowns,
   decorateCta,
@@ -200,177 +189,8 @@ import {
   branchBannerLoadCheck,
   getBranchBannerInfo
 } from './utilities/utilities.js';
-import {
-  replaceKey,
-  replaceKeyArray
-} from '../../features/placeholders.js';
-const SIGNIN_CONTEXT = getConfig()?.signInContext;
-// signIn method to handle sign-in flow dynamically when adobeIMS is available
-const signIn = (options = {}) => {
-  if (typeof window.adobeIMS?.signIn !== 'function') {
-    lanaLog({
-      message: 'IMS signIn method not available',
-      tags: 'gnav',
-      errorType: 'warn'
-    });
-    return;
-  }
-  window.adobeIMS.signIn(options); // Hydrated dynamically based on IMS configuration and user flow
-};
-
-// decorateSignIn to handle the dynamic creation of sign-in button or dropdown
-const decorateSignIn = async ({
-  rawElem,
-  decoratedElem
-}) => {
-  const dropdownElem = rawElem.querySelector(':scope > div:nth-child(2)');
-  const signInLabel = await replaceKey('sign-in', getFedsPlaceholderConfig());
-  let signInElem;
-  if (!dropdownElem) {
-    signInElem = toFragment`<button daa-ll="${signInLabel}" class="feds-signIn">${signInLabel}</button>`;
-    signInElem.addEventListener('click', e => {
-      e.preventDefault();
-      signIn(SIGNIN_CONTEXT);
-    });
-  } else {
-    signInElem = toFragment`<button daa-ll="${signInLabel}" class="feds-signIn" aria-expanded="false" aria-haspopup="true">${signInLabel}</button>`;
-    signInElem.addEventListener('click', e => trigger({
-      element: signInElem,
-      event: e
-    }));
-    signInElem.addEventListener('keydown', e => e.code === 'Escape' && closeAllDropdowns());
-    dropdownElem.addEventListener('keydown', e => e.code === 'Escape' && closeAllDropdowns());
-    dropdownElem.classList.add('feds-signIn-dropdown');
-    const dropdownSignInAnchor = dropdownElem.querySelector('[href$="?sign-in=true"]');
-    if (dropdownSignInAnchor) {
-      const dropdownSignInButton = toFragment`<button class="feds-signIn">${dropdownSignInAnchor.textContent}</button>`;
-      dropdownSignInAnchor.replaceWith(dropdownSignInButton);
-      dropdownSignInButton.addEventListener('click', e => {
-        e.preventDefault();
-        signIn(SIGNIN_CONTEXT);
-      });
-    } else {
-      lanaLog({
-        message: 'Sign in link not found in dropdown.',
-        tags: 'gnav',
-        errorType: 'warn'
-      });
-    }
-    decoratedElem.append(dropdownElem);
-  }
-  decoratedElem.prepend(signInElem);
-};
-
-// decorateProfileTrigger dynamically generates the profile button with runtime values
-const decorateProfileTrigger = async ({
-  avatar
-}) => {
-  const [label, profileAvatar] = await replaceKeyArray(['profile-button', 'profile-avatar'], getFedsPlaceholderConfig());
-  const buttonElem = toFragment`
-    <button
-      data-cs-mask
-      class="feds-profile-button"
-      aria-expanded="false"
-      aria-controls="feds-profile-menu"
-      aria-label="${label}"
-      daa-ll="Account"
-      aria-haspopup="true"
-    >
-      <img data-cs-mask class="feds-profile-img" src="${avatar}" alt="${profileAvatar}"></img>
-    </button>
-  `;
-  return buttonElem;
-};
 const hydrationToken = "global-navigation/global-navigation.js";
-const hydrationBlocks = {
-  _201: ({
-    signIn,
-    decorateSignIn,
-    decorateProfileTrigger
-  }) => {
-    const signIn = (options = {}) => {
-      if (typeof window.adobeIMS?.signIn !== 'function') {
-        lanaLog({
-          message: 'IMS signIn method not available',
-          tags: 'gnav',
-          errorType: 'warn'
-        });
-        return;
-      }
-      window.adobeIMS.signIn(options);
-    };
-  },
-  _212: ({
-    signInElem,
-    dropdownElem,
-    decoratedElem
-  }) => {
-    const decorateSignIn = async ({
-      rawElem,
-      decoratedElem
-    }) => {
-      const dropdownElem = rawElem.querySelector(':scope > div:nth-child(2)');
-      const signInLabel = await replaceKey('sign-in', getFedsPlaceholderConfig());
-      let signInElem;
-      if (!dropdownElem) {
-        signInElem = toFragment`<button daa-ll="${signInLabel}" class="feds-signIn">${signInLabel}</button>`;
-        signInElem.addEventListener('click', e => {
-          e.preventDefault();
-          signIn(SIGNIN_CONTEXT);
-        });
-      } else {
-        signInElem = toFragment`<button daa-ll="${signInLabel}" class="feds-signIn" aria-expanded="false" aria-haspopup="true">${signInLabel}</button>`;
-        signInElem.addEventListener('click', e => trigger({
-          element: signInElem,
-          event: e
-        }));
-        signInElem.addEventListener('keydown', e => e.code === 'Escape' && closeAllDropdowns());
-        dropdownElem.addEventListener('keydown', e => e.code === 'Escape' && closeAllDropdowns());
-        dropdownElem.classList.add('feds-signIn-dropdown');
-        const dropdownSignInAnchor = dropdownElem.querySelector('[href$="?sign-in=true"]');
-        if (dropdownSignInAnchor) {
-          const dropdownSignInButton = toFragment`<button class="feds-signIn">${dropdownSignInAnchor.textContent}</button>`;
-          dropdownSignInAnchor.replaceWith(dropdownSignInButton);
-          dropdownSignInButton.addEventListener('click', e => {
-            e.preventDefault();
-            signIn(SIGNIN_CONTEXT);
-          });
-        } else {
-          lanaLog({
-            message: 'Sign in link not found in dropdown.',
-            tags: 'gnav',
-            errorType: 'warn'
-          });
-        }
-        decoratedElem.append(dropdownElem);
-      }
-      decoratedElem.prepend(signInElem);
-    };
-  },
-  _251: ({
-    buttonElem
-  }) => {
-    const decorateProfileTrigger = async ({
-      avatar
-    }) => {
-      const [label, profileAvatar] = await replaceKeyArray(['profile-button', 'profile-avatar'], getFedsPlaceholderConfig());
-      const buttonElem = toFragment`
-    <button
-      data-cs-mask
-      class="feds-profile-button"
-      aria-expanded="false"
-      aria-controls="feds-profile-menu"
-      aria-label="${label}"
-      daa-ll="Account"
-      aria-haspopup="true"
-    >
-      <img data-cs-mask class="feds-profile-img" src="${avatar}" alt="${profileAvatar}"></img>
-    </button>
-  `;
-      return buttonElem;
-    };
-  }
-};
+const x=document.querySelector('header').getAttribute('data-feds');
 /**
  * Dynamic Hydration Runtime Code
  * This module provides runtime functionality for hydrating components on the client side.
@@ -389,6 +209,14 @@ const hydrationBlocks = {
  * 'id' must uniquely identify a code block in this version.
  */
 export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
+
+  const obj=window.customParseWithDomAndClasses(x,{
+    "Gnav":
+      {
+          type:Gnav,
+          inh:HGnav
+      }
+  });
   // 1. Validate Inputs
   if (!Array.isArray(rawHydratorData)) {
     console.error("Dynamic Hydration (ID Only) failed: rawHydratorData must be an array.", rawHydratorData);
@@ -549,4 +377,4 @@ export function initializeDynamicHydration() {
 // Run after DOM is ready
 if (typeof document !== 'undefined') {
   initializeDynamicHydration();
-};
+}

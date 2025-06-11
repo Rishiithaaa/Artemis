@@ -54,7 +54,6 @@ import { getMiloLocaleSettings } from '../merch/merch.js';
 
 const SIGNIN_CONTEXT = getConfig()?.signInContext;
 
-//@hydrate.0({ reason: "getHelpChildren depends on runtime config data" })
 function getHelpChildren() {
   const { unav } = getConfig();
   return unav?.unavHelpChildren || [
@@ -62,9 +61,8 @@ function getHelpChildren() {
     { type: 'Community' },
   ];
 }
-//@end
 
-//@hydrate.1({ reason: "Returns a dynamic event listener using config or default" })
+
 const getMessageEventListener = () => {
   const configListener = getConfig().unav?.profile?.messageEventListener;
   if (configListener) return configListener;
@@ -91,9 +89,7 @@ const getMessageEventListener = () => {
     }
   };
 };
-//@end
 
-//@hydrate.2({ reason: "CONFIG contains runtime conditional icons and listener callbacks" })
 export const CONFIG = {
   icons: isDarkMode() ? darkIcons : icons, // Dynamic based on theme
   delays: {
@@ -166,8 +162,6 @@ export const CONFIG = {
     },
   },
 };
-//@end
-
 // These mappings are constants, no dynamic behavior
 export const osMap = {
   Mac: 'macOS',
@@ -196,18 +190,16 @@ export const LANGMAP = {
   zh: ['cn', 'tw'],
 };
 
-//@hydrate({payload:{signIn,decorateSignIn,decorateProfileTrigger}})
 // signIn method to handle sign-in flow dynamically when adobeIMS is available
 const signIn = (options = {}) => {
   if (typeof window.adobeIMS?.signIn !== 'function') {
     lanaLog({ message: 'IMS signIn method not available', tags: 'gnav', errorType: 'warn' });
     return;
   }
-  window.adobeIMS.signIn(options); // Hydrated dynamically based on IMS configuration and user flow
+  window.adobeIMS.signIn(options); // 
 };
-//@end
 
-//@hydrate({payload:{signInElem,dropdownElem,decoratedElem}})
+
 // decorateSignIn to handle the dynamic creation of sign-in button or dropdown
 const decorateSignIn = async ({ rawElem, decoratedElem }) => {
   const dropdownElem = rawElem.querySelector(':scope > div:nth-child(2)');
@@ -244,9 +236,7 @@ const decorateSignIn = async ({ rawElem, decoratedElem }) => {
 
   decoratedElem.prepend(signInElem);
 };
-//@end
 
-//@hydrate({payload:{buttonElem}})
 // decorateProfileTrigger dynamically generates the profile button with runtime values
 const decorateProfileTrigger = async ({ avatar }) => {
   const [label, profileAvatar] = await replaceKeyArray(
@@ -270,7 +260,6 @@ const decorateProfileTrigger = async ({ avatar }) => {
 
   return buttonElem;
 };
-//@end
 
 let keyboardNav;
 const setupKeyboardNav = async (newMobileWithLnav) => {
@@ -496,7 +485,7 @@ export class Gnav {
     });
 
 
-   //@hydrate({payload:{localNav,title}})
+window.hydrate && window.hydrate({id:489, payload:{localNav,title}})
     localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
       localNav.classList.toggle('feds-localnav--active');
       const isActive = localNav.classList.contains('feds-localnav--active');
@@ -934,7 +923,7 @@ export class Gnav {
       </button>`;
 
 
-   //@hydrate({payload:{toggle}})
+window.hydrate && window.hydrate({id:927, payload:{toggle}})
     toggle.addEventListener('click', () => logErrorFor(async () => {
       this.toggleMenuMobile();
 
@@ -1246,7 +1235,7 @@ export class Gnav {
             originalContent = await transformTemplateToMobile(popup, item, this.isLocalNav());
             popup.querySelector('.close-icon')?.addEventListener('click', this.toggleMenuMobile);
           }
-          //@hydrate({payload:{popup,isDesktop}})
+window.hydrate && window.hydrate({id:1239, payload:{popup,isDesktop}})
           isDesktop.addEventListener('change', async () => {
             enableMobileScroll();
             if (isDesktop.matches) {
@@ -1292,7 +1281,7 @@ export class Gnav {
           </${tag}>`;
 
         // Toggle trigger's dropdown on click
-        //@hydrate({payload:{dropdownTrigger,isSectionMenu}})
+window.hydrate && window.hydrate({id:1285, payload:{dropdownTrigger,isSectionMenu,isDesktop}})
         dropdownTrigger.addEventListener('click', (e) => {
           if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
             const popup = dropdownTrigger.nextElementSibling;
