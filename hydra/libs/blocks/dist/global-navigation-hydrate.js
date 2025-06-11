@@ -190,72 +190,7 @@ import {
   getBranchBannerInfo
 } from './utilities/utilities.js';
 const hydrationToken = "global-navigation/global-navigation.js";
-const hydrationBlocks = {
-  _489: ({
-    localNav,
-    title
-  }) => {
-    localNav.querySelector('.feds-localnav-title').addEventListener('click', () => {
-      localNav.classList.toggle('feds-localnav--active');
-      const isActive = localNav.classList.contains('feds-localnav--active');
-      localNav.querySelector('.feds-localnav-title').setAttribute('aria-expanded', isActive);
-      localNav.querySelector('.feds-localnav-title').setAttribute('daa-ll', `${title}_localNav|${isActive ? 'close' : 'open'}`);
-    });
-  },
-  _927: ({
-    toggle
-  }) => {
-    toggle.addEventListener('click', () => logErrorFor(async () => {
-      this.toggleMenuMobile();
-      if (this.blocks?.search?.instance) {
-        this.blocks.search.instance.clearSearchForm();
-      } else {
-        await this.loadSearch();
-      }
-      if (this.isToggleExpanded()) setHamburgerPadding();
-    }, 'Toggle click failed', 'gnav', 'error'));
-  },
-  _1239: ({
-    popup,
-    isDesktop
-  }) => {
-    isDesktop.addEventListener('change', async () => {
-      enableMobileScroll();
-      if (isDesktop.matches) {
-        popup.innerHTML = originalContent;
-        this.block.classList.remove('new-nav');
-      } else {
-        originalContent = await transformTemplateToMobile(popup, item, this.isLocalNav());
-        popup.querySelector('.close-icon')?.addEventListener('click', this.toggleMenuMobile);
-        this.block.classList.add('new-nav');
-      }
-    });
-  },
-  _1285: ({
-    dropdownTrigger,
-    isSectionMenu,
-    isDesktop
-  }) => {
-    dropdownTrigger.addEventListener('click', e => {
-      if (!isDesktop.matches && this.newMobileNav && isSectionMenu) {
-        const popup = dropdownTrigger.nextElementSibling;
-        if (popup && this.isLocalNav()) {
-          this.updatePopupPosition(popup);
-        }
-        makeTabActive(popup);
-      } else if (isDesktop.matches && this.newMobileNav && isSectionMenu) {
-        const popup = dropdownTrigger.nextElementSibling;
-        if (popup) popup.style.removeProperty('top');
-      }
-      trigger({
-        element: dropdownTrigger,
-        event: e,
-        type: 'dropdown'
-      });
-      setActiveDropdown(dropdownTrigger);
-    });
-  }
-};
+const x=document.querySelector('header').getAttribute('data-feds');
 /**
  * Dynamic Hydration Runtime Code
  * This module provides runtime functionality for hydrating components on the client side.
@@ -274,6 +209,14 @@ const hydrationBlocks = {
  * 'id' must uniquely identify a code block in this version.
  */
 export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
+
+  const obj=window.customParseWithDomAndClasses(x,{
+    "Gnav":
+      {
+          type:Gnav,
+          inh:HGnav
+      }
+  });
   // 1. Validate Inputs
   if (!Array.isArray(rawHydratorData)) {
     console.error("Dynamic Hydration (ID Only) failed: rawHydratorData must be an array.", rawHydratorData);

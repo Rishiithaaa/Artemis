@@ -12,7 +12,8 @@ class FooterHydrate extends Footer {
 }
 
 const hydrationToken = "global-footer/global-footer.js";
-const x=document.querySelector('footer').getAttribute('data-hydrate-id');
+const x=  document.querySelector('footer').getAttribute('data-feds');
+
 /**
  * Dynamic Hydration Runtime Code
  * This module provides runtime functionality for hydrating components on the client side.
@@ -31,6 +32,13 @@ const x=document.querySelector('footer').getAttribute('data-hydrate-id');
  * 'id' must uniquely identify a code block in this version.
  */
 export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
+    const obj=window.customParseWithDomAndClasses(x,{
+    "Footer":
+      {
+          type:Footer,
+          inh:FooterHydrate
+      }
+  });
   // 1. Validate Inputs
   if (!Array.isArray(rawHydratorData)) {
     console.error("Dynamic Hydration (ID Only) failed: rawHydratorData must be an array.", rawHydratorData);
