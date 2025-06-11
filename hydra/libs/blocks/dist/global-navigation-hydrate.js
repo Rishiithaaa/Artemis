@@ -1,4 +1,4 @@
-import {Gnav} from './Gnav';
+import {Gnav} from '../global-navigation/global-navigation.js' ;
 class GnavHydrate extends Gnav {
   _489({
     localNav,
