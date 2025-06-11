@@ -1,0 +1,144 @@
+[
+  {
+    "id": 1285,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "dropdownTrigger": "sh-mbrs4ezym8eulxjd7"
+    },
+    "data": {
+      "isSectionMenu": true,
+      "isDesktop": {}
+    }
+  },
+  {
+    "id": 489,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "localNav": "sh-mbrs4f1mdsxklp0az"
+    },
+    "data": {
+      "title": "Photoshop"
+    }
+  },
+  {
+    "id": 927,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "toggle": "sh-mbrs4f1mckbwbad2u"
+    },
+    "data": {}
+  },
+  {
+    "id": 129,
+    "file": "tabs/tabs.js",
+    "elements": {
+      "tabs": [
+        "mh-mbrs4f1prd6ogvqs5"
+      ],
+      "tabLists": [
+        "mh-mbrs4f1p612ynj8xb"
+      ]
+    },
+    "data": {
+      "tabFocus": 0
+    }
+  },
+  {
+    "id": 150,
+    "file": "tabs/tabs.js",
+    "elements": {
+      "tabs": [
+        "mh-mbrs4f1prd6ogvqs5"
+      ]
+    },
+    "data": {}
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mbrs4f1tnlglcd1fs",
+      "dd": "sh-mbrs4f1t9by07zj9u"
+    },
+    "data": {
+      "num": 1,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mbrs4f1u2g8dypfiw",
+      "dd": "sh-mbrs4f1upzao4ssq7"
+    },
+    "data": {
+      "num": 2,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mbrs4f1ufzt58v93a",
+      "dd": "sh-mbrs4f1uxixi19zeq"
+    },
+    "data": {
+      "num": 3,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mbrs4f1uaosdtkxhp",
+      "dd": "sh-mbrs4f1uf5dc530qf"
+    },
+    "data": {
+      "num": 4,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mbrs4f1u1pi1j5los",
+      "dd": "sh-mbrs4f1uu963lvy2s"
+    },
+    "data": {
+      "num": 5,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mbrs4f1up827f4ypn",
+      "dd": "sh-mbrs4f1u80iqt79r3"
+    },
+    "data": {
+      "num": 6,
+      "id": 1
+    }
+  },
+  {
+    "id": 266,
+    "file": "modal/modal.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 1239,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "popup": "sh-mbrs4frfvzsgvt92y"
+    },
+    "data": {
+      "isDesktop": {}
+    }
+  }
+]
