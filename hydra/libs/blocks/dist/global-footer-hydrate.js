@@ -1,4 +1,4 @@
-import Footer from './Footer';
+import Footer from '../global-footer/global-footer.js';
 class FooterHydrate extends Footer {
   _305({
     regionPickerWrapperClass
@@ -12,17 +12,7 @@ class FooterHydrate extends Footer {
 }
 
 const hydrationToken = "global-footer/global-footer.js";
-const hydrationBlocks = {
-  _305: ({
-    regionPickerWrapperClass
-  }) => {
-    document.addEventListener('click', e => {
-      if (isRegionPickerExpanded() && !e.target.closest(`.${regionPickerWrapperClass}`)) {
-        regionPickerElem.setAttribute('aria-expanded', false);
-      }
-    });
-  }
-};
+const x=document.querySelector('global-footer').getAttribute('data-feds');
 /**
  * Dynamic Hydration Runtime Code
  * This module provides runtime functionality for hydrating components on the client side.
@@ -42,6 +32,12 @@ const hydrationBlocks = {
  */
 export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
   // 1. Validate Inputs
+      const obj = window.customParseWithDomAndClasses(x, {
+      "Footer": {
+        type: Footer,
+        inh: FooterHydrate
+      }
+    });
   if (!Array.isArray(rawHydratorData)) {
     console.error("Dynamic Hydration (ID Only) failed: rawHydratorData must be an array.", rawHydratorData);
     return;
