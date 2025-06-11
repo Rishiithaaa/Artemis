@@ -1421,8 +1421,7 @@ export default async function init(block) {
     lanaLog({ message: error.message, ...error });
     throw error;
   }
-
-   const GnavHydrate = makeSerializable(Gnav);
+  const GnavHydrate = makeSerializable(Gnav);
   const gnav = new GnavHydrate({
     content,
     block,
@@ -1430,6 +1429,7 @@ export default async function init(block) {
   });
   window.gnav = gnav;
   window.Gnav = GnavHydrate;
+  
   if (newMobileNav && !isDesktop.matches) block.classList.add('new-nav');
   await gnav.init();
   if (gnav.isLocalNav()) block.classList.add('local-nav');
