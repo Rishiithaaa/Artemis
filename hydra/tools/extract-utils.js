@@ -300,10 +300,17 @@ do {
 
   traverse(ast, {
     ImportDeclaration(path) {
-      if (path.node.specifiers.some(spec => dependencies.has(spec.local.name))) {
-        importNodes.add(path.node);
-      }
-    },
+  if (path.node.specifiers.some(spec => dependencies.has(spec.local.name))) {
+    const sourcePath = path.node.source.value;
+    if (sourcePath.startsWith('./')) {
+      // Rewrite import path from './abc/xyz.js' to '../global-navigation/abc/xyz.js'
+      const transformedPath = sourcePath.replace(/^\.\//, `../${lastTwoParts.split('/')[0]}/`);
+      path.node.source.value = transformedPath;
+    }
+    importNodes.add(path.node);
+  }
+}
+,
     FunctionDeclaration(path) {
       if (dependencies.has(path.node.id.name)) {
         extractedNodes.add(path.node);
@@ -380,7 +387,7 @@ for (const { baseClassName, newClassName, blocks } of hydratedClasses.values()) 
   );
  const injectedSnippet = classCustomSnippets[baseClassName] || '';
   const classCode = `
-import {${baseClassName}} from './${lastTwoParts}';
+import {${baseClassName}} from '../${lastTwoParts}';
 ${injectedSnippet}
 ${generator(hydratedClass).code}
 `;

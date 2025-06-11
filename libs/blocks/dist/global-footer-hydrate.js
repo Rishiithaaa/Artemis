@@ -1,6 +1,6 @@
 import {
   Footer
-} from './global-footer/global-footer.js';
+} from '../global-footer/global-footer.js';
 const x = document.querySelector('footer');
 class FooterHydrate extends Footer {
   _305({

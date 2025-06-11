@@ -1,6 +1,6 @@
 import {
   Gnav
-} from './global-navigation/global-navigation.js';
+} from '../global-navigation/global-navigation.js';
 const x = document.querySelector('header').getAttribute('data-feds');
 class GnavHydrate extends Gnav {
   _489({
@@ -191,7 +191,7 @@ import {
   setAsyncDropdownCount,
   branchBannerLoadCheck,
   getBranchBannerInfo
-} from './utilities/utilities.js';
+} from "../global-navigation/utilities/utilities.js";
 const hydrationToken = "global-navigation/global-navigation.js";
 const hydrationBlocks = {};
 /**
@@ -211,13 +211,13 @@ const hydrationBlocks = {};
  * Example element: {id: 0, code: "console.log(param1);"}
  * 'id' must uniquely identify a code block in this version.
  */
-  export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
-  const obj = window.customParseWithDomAndClasses(x, {
-  "Gnav": {
-    type: Gnav,
-    inh: GnavHydrate,
-  }
-});s
+export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
+      const obj = window.customParseWithDomAndClasses(x, {
+   "Gnav": {
+     type: Gnav,
+     inh: GnavHydrate
+   }
+  });
   // 1. Validate Inputs
   if (!Array.isArray(rawHydratorData)) {
     console.error("Dynamic Hydration (ID Only) failed: rawHydratorData must be an array.", rawHydratorData);
