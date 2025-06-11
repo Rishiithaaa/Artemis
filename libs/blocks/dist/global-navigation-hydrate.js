@@ -1,4 +1,4 @@
-import Gnav from './Gnav';
+import {Gnav} from '../global-navigation/global-navigation.js';
 class GnavHydrate extends Gnav {
   _489({
     localNav,
@@ -214,7 +214,7 @@ export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
     "Gnav":
       {
           type:Gnav,
-          inh:HGnav
+          inh:GnavHydrate
       }
   });
   // 1. Validate Inputs
