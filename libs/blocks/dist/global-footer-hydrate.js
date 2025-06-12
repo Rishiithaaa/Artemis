@@ -15,7 +15,6 @@ class FooterHydrate extends Footer {
 }
 
 const hydrationToken = "global-footer/global-footer.js";
-const hydrationBlocks = {};
 /**
  * Dynamic Hydration Runtime Code
  * This module provides runtime functionality for hydrating components on the client side.
@@ -33,6 +32,13 @@ const hydrationBlocks = {};
  * Example element: {id: 0, code: "console.log(param1);"}
  * 'id' must uniquely identify a code block in this version.
  */
+const obj = window.customParseWithDomAndClasses(x, {
+  "Footer": {
+    type: Footer,
+    inh: FooterHydrate
+  }
+});
+
 export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
   // 1. Validate Inputs
   if (!Array.isArray(rawHydratorData)) {
