@@ -349,7 +349,6 @@ const runtimeInjectionMap = {};
 // --- CLASS BLOCK HANDLING ---
 for (const { baseClassName, newClassName, blocks } of hydratedClasses.values()) {
   runtimeInjectionMap[baseClassName] = newClassName;
- // console.log('runtimeInjectionMap:', runtimeInjectionMap);
   const seen = new Set();
   const methodBlocks = blocks
     .filter(blk => {
@@ -403,21 +402,26 @@ ${generator(hydratedClass).code}
 const filteredNonClassHydrateBlocks = nonClassHydrateBlocks.filter(blk => !classBlockIds.has(blk.id));
 //console.log("Filtered Non-Class Hydrate Blocks:", filteredNonClassHydrateBlocks.length);
 function injectRuntimeInitialization(runtimeCode, classMap) {
-  //console.log('called')
   const injectionLines = Object.entries(classMap).map(([base, derived]) => {
     return `  "${base}": {\n    type: ${base},\n    inh: ${derived}\n  }`;
   });
-
   if (injectionLines.length === 0) return runtimeCode;
-
   const injectionCode = `const obj = window.customParseWithDomAndClasses(x, {\n${injectionLines.join(',\n')}\n});\n`;
-//console.log('[hydrate] Injected runtime init:\n', hydrationRuntime.slice(0, 300));
+  const match = runtimeCode.match(/export function hydrateDynamically\s*\([^)]*\)\s*\{/);
+  if (!match) {
+    console.error("hydrateDynamically function signature not found!");
+    return runtimeCode;
+  }
 
-  const modify=runtimeCode.replace(
-    /export function hydrateDynamically/,
-    `${injectionCode}\nexport function hydrateDynamically`
+  const insertIndex = match.index + match[0].length;
+
+  // Insert the injection code right after the function declaration's opening brace
+  return (
+    runtimeCode.slice(0, insertIndex) +
+    '\n' +
+    injectionCode +
+    runtimeCode.slice(insertIndex)
   );
-return modify;;
 }
 hydrationRuntime = injectRuntimeInitialization(hydrationRuntime, runtimeInjectionMap);
 

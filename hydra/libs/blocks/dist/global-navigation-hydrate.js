@@ -210,14 +210,14 @@ const hydrationToken = "global-navigation/global-navigation.js";
  * Example element: {id: 0, code: "console.log(param1);"}
  * 'id' must uniquely identify a code block in this version.
  */
-const obj = window.customParseWithDomAndClasses(x, {
-  "Gnav": {
-    type: Gnav,
-    inh: GnavHydrate
-  }
-});
-
 export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
+  const obj = window.customParseWithDomAndClasses(x, {
+    "Gnav": {
+      type: Gnav,
+      inh: GnavHydrate
+    }
+  });
+
   // 1. Validate Inputs
   if (!Array.isArray(rawHydratorData)) {
     console.error("Dynamic Hydration (ID Only) failed: rawHydratorData must be an array.", rawHydratorData);

@@ -32,14 +32,14 @@ const hydrationToken = "global-footer/global-footer.js";
  * Example element: {id: 0, code: "console.log(param1);"}
  * 'id' must uniquely identify a code block in this version.
  */
-const obj = window.customParseWithDomAndClasses(x, {
-  "Footer": {
-    type: Footer,
-    inh: FooterHydrate
-  }
-});
-
 export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
+  const obj = window.customParseWithDomAndClasses(x, {
+    "Footer": {
+      type: Footer,
+      inh: FooterHydrate
+    }
+  });
+
   // 1. Validate Inputs
   if (!Array.isArray(rawHydratorData)) {
     console.error("Dynamic Hydration (ID Only) failed: rawHydratorData must be an array.", rawHydratorData);
