@@ -55,7 +55,7 @@ function convertHydrateString(inputStr) {
 export function extractHandlers(outputPath, config, blocks) {
   const { entry } = config;
   const code = fs.readFileSync(entry, 'utf-8');
-  const hydrationRuntime = fs.readFileSync('tools/hydration-runtime.js', 'utf-8');
+  let hydrationRuntime = fs.readFileSync('tools/hydration-runtime.js', 'utf-8');
   const ast = parser.parse(code, { sourceType: 'module', ranges: true, locations: true });
   const parts = entry.split('/');
   const lastTwoParts = parts.slice(-2).join('/');
@@ -75,7 +75,6 @@ export function extractHandlers(outputPath, config, blocks) {
   const processedClassDependencies = new Set();
   const extractedClassMethods = new Set();
   const hydrateMethodNames = new Set();
-
   traverse(ast, {
   enter(path) {
     // 1. Gather all possible comments for this node
@@ -326,7 +325,7 @@ do {
           extractedNodes.add(path.node);
         }
       });
-    }
+    },
   });
 
 
@@ -344,8 +343,13 @@ const classCustomSnippets = {
   Footer: `const x = document.querySelector('footer');`,
   // Add more mappings here if needed
 };
+
+// ⬇️ Inject customParseWithDomAndClasses if class hydration exists
+const runtimeInjectionMap = {};
 // --- CLASS BLOCK HANDLING ---
 for (const { baseClassName, newClassName, blocks } of hydratedClasses.values()) {
+  runtimeInjectionMap[baseClassName] = newClassName;
+ // console.log('runtimeInjectionMap:', runtimeInjectionMap);
   const seen = new Set();
   const methodBlocks = blocks
     .filter(blk => {
@@ -398,6 +402,24 @@ ${generator(hydratedClass).code}
 // --- NON-CLASS BLOCK HANDLING ---
 const filteredNonClassHydrateBlocks = nonClassHydrateBlocks.filter(blk => !classBlockIds.has(blk.id));
 //console.log("Filtered Non-Class Hydrate Blocks:", filteredNonClassHydrateBlocks.length);
+function injectRuntimeInitialization(runtimeCode, classMap) {
+  //console.log('called')
+  const injectionLines = Object.entries(classMap).map(([base, derived]) => {
+    return `  "${base}": {\n    type: ${base},\n    inh: ${derived}\n  }`;
+  });
+
+  if (injectionLines.length === 0) return runtimeCode;
+
+  const injectionCode = `const obj = window.customParseWithDomAndClasses(x, {\n${injectionLines.join(',\n')}\n});\n`;
+//console.log('[hydrate] Injected runtime init:\n', hydrationRuntime.slice(0, 300));
+
+  const modify=runtimeCode.replace(
+    /export function hydrateDynamically/,
+    `${injectionCode}\nexport function hydrateDynamically`
+  );
+return modify;;
+}
+hydrationRuntime = injectRuntimeInitialization(hydrationRuntime, runtimeInjectionMap);
 
 if (filteredNonClassHydrateBlocks.length > 0) {
   const hydrateFunctionNames = new Set();
@@ -432,7 +454,6 @@ ${hydrationRuntime}
     beautify(
 `${extractedCode}
 const hydrationToken = "${lastTwoParts}";
-const hydrationBlocks = {};
 ${hydrationRuntime}
 `, { indent_size: 2 })
   );
