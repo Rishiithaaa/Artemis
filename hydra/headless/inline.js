@@ -297,7 +297,7 @@ if(verbEl) {
     verbEl.querySelector('#file-upload').click();
   });
 }
-/*
+
 const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]');
     for (var i = 0; i < navItem.length; i++) {
       navItem[i].addEventListener('click', (event) => {
@@ -325,7 +325,7 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
       navWrapper.classList.add('feds-nav-wrapper--expanded');
     }
   });
-*/
+
   const s = document.createElement('script');
             s.src = "https://hydra4--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
