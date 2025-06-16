@@ -263,6 +263,28 @@ export default function init(el) {
 // Click-based modal
 
 //@hydrate({payload:{}})
+{
+    // Wait for the SSR "Free trial" link to be in the DOM
+    const interval = setInterval(() => {
+      const cta = document.querySelector('a[href*="commerce.adobe.com"][aria-label*="Free trial"]');
+
+      if (cta) {
+        clearInterval(interval); // stop polling
+        // Change the href to a hash link so it doesn't navigate away
+        cta.setAttribute('href', '#twp');
+        cta.setAttribute('data-modal-path', '/fragments/modal/twp');
+        cta.setAttribute('data-modal-hash', '#twp');
+
+        // Prevent navigation and trigger modal manually
+        cta.addEventListener('click', (e) => {
+          e.preventDefault();
+          const hash = cta.getAttribute('href');
+          const details = findDetails(hash, cta);
+          getModal(details);
+          window.location.hash = hash; // Optional if you want back/forward nav
+        });
+      }
+    }, 300);
 window.addEventListener('hashchange', (e) => {
   if (!window.location.hash) {
     try {
@@ -280,5 +302,6 @@ window.addEventListener('hashchange', (e) => {
     }
   }
 });
+}
 //@end
 

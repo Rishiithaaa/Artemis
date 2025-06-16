@@ -216,21 +216,39 @@ async function getModal(details, custom) {
 const hydrationToken = "modal/modal.js";
 const hydrationBlocks = {
   _266: ({}) => {
-    window.addEventListener('hashchange', e => {
-      if (!window.location.hash) {
-        try {
-          const url = new URL(e.oldURL);
-          const dialog = document.querySelector(`.dialog-modal${url.hash}`);
-          if (dialog) closeModal(dialog);
-        } catch (error) {}
-      } else {
-        const details = findDetails(window.location.hash, null);
-        if (details) getModal(details);
-        if (e.oldURL?.includes('#')) {
-          prevHash = new URL(e.oldURL).hash;
+    {
+      const interval = setInterval(() => {
+        const cta = document.querySelector('a[href*="commerce.adobe.com"][aria-label*="Free trial"]');
+        if (cta) {
+          clearInterval(interval);
+          cta.setAttribute('href', '#twp');
+          cta.setAttribute('data-modal-path', '/fragments/modal/twp');
+          cta.setAttribute('data-modal-hash', '#twp');
+          cta.addEventListener('click', e => {
+            e.preventDefault();
+            const hash = cta.getAttribute('href');
+            const details = findDetails(hash, cta);
+            getModal(details);
+            window.location.hash = hash;
+          });
         }
-      }
-    });
+      }, 300);
+      window.addEventListener('hashchange', e => {
+        if (!window.location.hash) {
+          try {
+            const url = new URL(e.oldURL);
+            const dialog = document.querySelector(`.dialog-modal${url.hash}`);
+            if (dialog) closeModal(dialog);
+          } catch (error) {}
+        } else {
+          const details = findDetails(window.location.hash, null);
+          if (details) getModal(details);
+          if (e.oldURL?.includes('#')) {
+            prevHash = new URL(e.oldURL).hash;
+          }
+        }
+      });
+    }
   }
 };
 /**
