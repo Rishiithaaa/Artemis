@@ -35,9 +35,22 @@ const decorateMedia = (el, media) => {
   if (!media) return;
   media.classList.add('media-area');
   const mediaVideo = media.querySelector('video');
+window.hydrate && window.hydrate({id:39, payload:{mediaVideo}})
   if (mediaVideo) {
     applyHoverPlay(mediaVideo);
+    const wrapper = mediaVideo.closest('.pause-play-wrapper');
+
+if (wrapper) {
+  wrapper.addEventListener('mouseenter', () => {
+    mediaVideo.dispatchEvent(new Event('mouseenter'));
+  });
+
+  wrapper.addEventListener('mouseleave', () => {
+    mediaVideo.dispatchEvent(new Event('mouseleave'));
+  });
+}
   }
+  //@end
   if (media.children.length > 1) decorateBlockBg(el, media, { className: 'vp-media' });
 };
 
