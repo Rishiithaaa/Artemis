@@ -199,7 +199,9 @@ function decorateLayout(el) {
     media.classList.add('image');
     const video = media.querySelector('video');
     //@hydrate({payload:{video}})
-    if (video) applyHoverPlay(video);
+    if (video){ applyHoverPlay(video);
+              applyAccessibilityEvents(video);
+    }
     //@end
   }
   const picture = text?.querySelector('p picture');

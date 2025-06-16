@@ -26,7 +26,10 @@ const hydrationBlocks = {
   _202: ({
     video
   }) => {
-    if (video) applyHoverPlay(video);
+    if (video) {
+      applyHoverPlay(video);
+      applyAccessibilityEvents(video);
+    }
   }
 };
 /**
