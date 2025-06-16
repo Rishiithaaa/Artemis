@@ -325,7 +325,10 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
       navWrapper.classList.add('feds-nav-wrapper--expanded');
     }
   });
-
+  import initCard from '/libs/blocks/merch-card/merch-card.js';
+  document.querySelectorAll('merch-card').forEach(el => {
+    initCard(el);
+  });
   const s = document.createElement('script');
             s.src = "https://hydra6--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
