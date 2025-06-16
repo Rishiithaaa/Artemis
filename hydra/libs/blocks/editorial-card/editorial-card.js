@@ -1,5 +1,5 @@
 import { createTag, loadStyle, getConfig } from '../../utils/utils.js';
-import { decorateBlockBg, decorateBlockText, decorateBlockHrs, decorateTextOverrides, applyHoverPlay } from '../../utils/decorate.js';
+import { decorateBlockBg, decorateBlockText, decorateBlockHrs, decorateTextOverrides, applyHoverPlay, applyAccessibilityEvents } from '../../utils/decorate.js';
 
 const { miloLibs, codeRoot } = getConfig();
 const base = miloLibs || codeRoot;
@@ -38,17 +38,7 @@ const decorateMedia = (el, media) => {
   //@hydrate({payload:{mediaVideo}})
   if (mediaVideo) {
     applyHoverPlay(mediaVideo);
-    const wrapper = mediaVideo.closest('.pause-play-wrapper');
-
-if (wrapper) {
-  wrapper.addEventListener('mouseenter', () => {
-    mediaVideo.dispatchEvent(new Event('mouseenter'));
-  });
-
-  wrapper.addEventListener('mouseleave', () => {
-    mediaVideo.dispatchEvent(new Event('mouseleave'));
-  });
-}
+    applyAccessibilityEvents(mediaVideo);
   }
   //@end
   if (media.children.length > 1) decorateBlockBg(el, media, { className: 'vp-media' });

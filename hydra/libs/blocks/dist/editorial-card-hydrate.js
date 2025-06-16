@@ -3,7 +3,8 @@ import {
   decorateBlockText,
   decorateBlockHrs,
   decorateTextOverrides,
-  applyHoverPlay
+  applyHoverPlay,
+  applyAccessibilityEvents
 } from '../../utils/decorate.js';
 const hydrationToken = "editorial-card/editorial-card.js";
 const hydrationBlocks = {
@@ -12,15 +13,7 @@ const hydrationBlocks = {
   }) => {
     if (mediaVideo) {
       applyHoverPlay(mediaVideo);
-      const wrapper = mediaVideo.closest('.pause-play-wrapper');
-      if (wrapper) {
-        wrapper.addEventListener('mouseenter', () => {
-          mediaVideo.dispatchEvent(new Event('mouseenter'));
-        });
-        wrapper.addEventListener('mouseleave', () => {
-          mediaVideo.dispatchEvent(new Event('mouseleave'));
-        });
-      }
+      applyAccessibilityEvents(mediaVideo);
     }
   }
 };
