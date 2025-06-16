@@ -19,7 +19,8 @@ import {
   decorateIconStack,
   applyHoverPlay,
   decorateBlockBg,
-  decorateTextOverrides
+  decorateTextOverrides,
+  applyAccessibilityEvents
 } from '../../utils/decorate.js';
 const hydrationToken = "aside/aside.js";
 const hydrationBlocks = {
