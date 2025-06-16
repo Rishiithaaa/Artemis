@@ -198,7 +198,9 @@ function decorateLayout(el) {
   if (media && !el.classList.contains('notification')) {
     media.classList.add('image');
     const video = media.querySelector('video');
+    //@hydrate({payload:{video}})
     if (video) applyHoverPlay(video);
+    //@end
   }
   const picture = text?.querySelector('p picture');
   const iconArea = picture ? (picture.closest('p') || createTag('p', null, picture)) : null;
