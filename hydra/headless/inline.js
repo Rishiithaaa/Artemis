@@ -327,7 +327,7 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
   });
 
   const s = document.createElement('script');
-            s.src = "https://hydra4--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
+            s.src = "https://hydra6--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
 
 const arr = document.querySelectorAll('.caas');
