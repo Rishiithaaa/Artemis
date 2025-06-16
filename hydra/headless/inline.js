@@ -326,7 +326,7 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
     }
   });
   import initCard from '/libs/blocks/merch-card/merch-card.js';
-  document.querySelectorAll('merch-card').forEach(el => {
+  document.querySelectorAll('.merch-card').forEach(el => {
     initCard(el);
   });
   const s = document.createElement('script');
