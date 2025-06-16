@@ -2,6 +2,7 @@
 /* eslint-disable import/no-cycle */
 import { createTag, getMetadata, localizeLink, loadStyle, getConfig } from '../../utils/utils.js';
 import { decorateSectionAnalytics } from '../../martech/attributes.js';
+import './modal.merch.js';
 
 const FOCUSABLES = 'a:not(.hide-video), button:not([disabled], .locale-modal-v2 .paddle), input, textarea, select, details, [tabindex]:not([tabindex="-1"])';
 const CLOSE_ICON = `<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
@@ -264,27 +265,19 @@ export default function init(el) {
 
 //@hydrate({payload:{}})
 {
-    // Wait for the SSR "Free trial" link to be in the DOM
-    const interval = setInterval(() => {
-      const cta = document.querySelector('a[href*="commerce.adobe.com"][aria-label*="Free trial"]');
+const interval = setInterval(() => {
+  const cta = document.querySelector('a[href*="commerce.adobe.com"][aria-label*="Free trial"]');
+  if (cta) {
+    clearInterval(interval);
 
-      if (cta) {
-        clearInterval(interval); // stop polling
-        // Change the href to a hash link so it doesn't navigate away
-        cta.setAttribute('href', '#twp');
-        cta.setAttribute('data-modal-path', '/fragments/modal/twp');
-        cta.setAttribute('data-modal-hash', '#twp');
+    // OPTIONAL: Ensure correct modal attributes (if needed for fallback or analytics)
+    cta.setAttribute('data-modal', 'twp');
+    cta.setAttribute('data-modal-id', 'mini-plans-web-cta-photoshop-card');
 
-        // Prevent navigation and trigger modal manually
-        cta.addEventListener('click', (e) => {
-          e.preventDefault();
-          const hash = cta.getAttribute('href');
-          const details = findDetails(hash, cta);
-          getModal(details);
-          window.location.hash = hash; // Optional if you want back/forward nav
-        });
-      }
-    }, 300);
+    // REMOVE manual click handler – `checkout-link` will take care of opening modal
+  }
+}, 300);
+
 window.addEventListener('hashchange', (e) => {
   if (!window.location.hash) {
     try {

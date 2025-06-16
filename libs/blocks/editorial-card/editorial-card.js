@@ -38,7 +38,6 @@ const decorateMedia = (el, media) => {
 window.hydrate && window.hydrate({id:39, payload:{mediaVideo}})
   if (mediaVideo) {
     applyHoverPlay(mediaVideo);
-    applyAccessibilityEvents(mediaVideo);
   }
   //@end
   if (media.children.length > 1) decorateBlockBg(el, media, { className: 'vp-media' });

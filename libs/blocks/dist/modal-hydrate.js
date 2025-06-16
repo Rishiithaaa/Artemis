@@ -215,22 +215,14 @@ async function getModal(details, custom) {
 }
 const hydrationToken = "modal/modal.js";
 const hydrationBlocks = {
-  _266: ({}) => {
+  _267: ({}) => {
     {
       const interval = setInterval(() => {
         const cta = document.querySelector('a[href*="commerce.adobe.com"][aria-label*="Free trial"]');
         if (cta) {
           clearInterval(interval);
-          cta.setAttribute('href', '#twp');
-          cta.setAttribute('data-modal-path', '/fragments/modal/twp');
-          cta.setAttribute('data-modal-hash', '#twp');
-          cta.addEventListener('click', e => {
-            e.preventDefault();
-            const hash = cta.getAttribute('href');
-            const details = findDetails(hash, cta);
-            getModal(details);
-            window.location.hash = hash;
-          });
+          cta.setAttribute('data-modal', 'twp');
+          cta.setAttribute('data-modal-id', 'mini-plans-web-cta-photoshop-card');
         }
       }, 300);
       window.addEventListener('hashchange', e => {
