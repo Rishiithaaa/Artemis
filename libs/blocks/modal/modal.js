@@ -266,7 +266,7 @@ export default function init(el) {
 window.hydrate && window.hydrate({id:267})
 {
 const interval = setInterval(() => {
-  const cta = document.querySelectorAll('a[href*="commerce.adobe.com"][aria-label*="Free trial"]');
+  const cta = document.querySelector('a[href*="commerce.adobe.com"][aria-label*="Free trial"]');
   if (cta) {
     clearInterval(interval);
 
