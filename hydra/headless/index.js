@@ -117,6 +117,11 @@ const hydrationTasks = await page.evaluate(() => window.__hydrate__);
     });
   }
   convertRelativeImagePaths(); // run before returning HTML
+    // 💡 Clear data-mouseevent to re-trigger event binding on client
+document.querySelectorAll('video[data-mouseevent="true"]').forEach(video => {
+  video.removeAttribute('data-mouseevent');
+});
+
     // const cssEntries = cssObject;
     const midPoint = Math.ceil(cssEntries.length / 2);
     const firstHalf = cssEntries.slice(0, midPoint);
