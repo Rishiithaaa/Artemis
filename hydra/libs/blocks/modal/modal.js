@@ -265,18 +265,22 @@ export default function init(el) {
 
 //@hydrate({payload:{}})
 {
-const interval = setInterval(() => {
-  const cta = document.querySelector('a[href*="commerce.adobe.com"][aria-label*="Free trial"]');
-  if (cta) {
-    clearInterval(interval);
+{
+  const interval = setInterval(() => {
+    const ctas = document.querySelectorAll('a[href*="commerce.adobe.com"][aria-label*="Free trial"]');
+    if (ctas.length > 0) {
+      clearInterval(interval);
 
-    // OPTIONAL: Ensure correct modal attributes (if needed for fallback or analytics)
-    cta.setAttribute('data-modal', 'twp');
-    cta.setAttribute('data-modal-id', 'mini-plans-web-cta-photoshop-card');
+      ctas.forEach(cta => {
+        // Assign modal attributes to enable in-place modal rendering
+        cta.setAttribute('data-modal', 'twp');
+        cta.setAttribute('data-modal-id', 'mini-plans-web-cta-photoshop-card');
+      });
 
-    // REMOVE manual click handler – `checkout-link` will take care of opening modal
-  }
-}, 300);
+      // No manual click handler needed – handled by `checkout-link`
+    }
+  }, 300);
+}
 
 window.addEventListener('hashchange', (e) => {
   if (!window.location.hash) {

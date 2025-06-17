@@ -217,14 +217,18 @@ const hydrationToken = "modal/modal.js";
 const hydrationBlocks = {
   _267: ({}) => {
     {
-      const interval = setInterval(() => {
-        const cta = document.querySelector('a[href*="commerce.adobe.com"][aria-label*="Free trial"]');
-        if (cta) {
-          clearInterval(interval);
-          cta.setAttribute('data-modal', 'twp');
-          cta.setAttribute('data-modal-id', 'mini-plans-web-cta-photoshop-card');
-        }
-      }, 300);
+      {
+        const interval = setInterval(() => {
+          const ctas = document.querySelectorAll('a[href*="commerce.adobe.com"][aria-label*="Free trial"]');
+          if (ctas.length > 0) {
+            clearInterval(interval);
+            ctas.forEach(cta => {
+              cta.setAttribute('data-modal', 'twp');
+              cta.setAttribute('data-modal-id', 'mini-plans-web-cta-photoshop-card');
+            });
+          }
+        }, 300);
+      }
       window.addEventListener('hashchange', e => {
         if (!window.location.hash) {
           try {
