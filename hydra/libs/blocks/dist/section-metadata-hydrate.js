@@ -1,3 +1,17 @@
+async function handleStyle(text, section) {
+  if (!text || !section) return;
+  const styles = text.split(', ').map(style => style.replaceAll(' ', '-'));
+  const sticky = styles.find(style => style === 'sticky-top' || style === 'sticky-bottom');
+  if (sticky) {
+    const {
+      default: handleStickySection
+    } = await import('./sticky-section.js');
+    await handleStickySection(sticky, section);
+  }
+  if (styles.includes('masonry')) styles.push('masonry-up');
+  section.classList.add(...styles);
+}
+
 function getDelayTime(time) {
   if (time > 99) return time;
   return time * 1000;
@@ -12,7 +26,14 @@ function handleDelay(time, section) {
 }
 const hydrationToken = "section-metadata/section-metadata.js";
 const hydrationBlocks = {
-  _84: ({
+  _82: async({
+    v,
+    y,
+    section
+  }) => {
+    if (y) await handleStyle(v, section);
+  },
+  _89: ({
     x,
     section
   }) => {

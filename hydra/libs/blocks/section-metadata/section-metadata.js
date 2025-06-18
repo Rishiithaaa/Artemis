@@ -74,12 +74,17 @@ export const getMetadata = (el) => [...el.childNodes].reduce((rdx, row) => {
 export default async function init(el) {
   const section = el.closest('.section');
   const metadata = getMetadata(el);
-  if (metadata.style) await handleStyle(metadata.style.text, section);
+      const x = metadata.delay?.text
+      const y=metadata.style
+      const v=metadata.style?.text
+      const w=metadata.delay
+      //@hydrate({payload:{v,y,section}})
+  if (y) await handleStyle(v, section);
+  //@end
   if (metadata.background) handleBackground(metadata, section);
   if (metadata.layout) handleLayout(metadata.layout.text, section);
   if (metadata.masonry) handleMasonry(metadata.masonry.text, section);
-  if (metadata.delay) {
-    const x = metadata.delay.text
+  if (w) {
 //@hydrate({payload:{x,section}})
     handleDelay(x, section);
     //@end

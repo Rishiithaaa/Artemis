@@ -1,1 +1,312 @@
-[{"id":1285,"file":"global-navigation/global-navigation.js","elements":{"dropdownTrigger":"sh-mc0omxive3ecpqdt1"},"data":{"isSectionMenu":true,"isDesktop":{}}},{"id":202,"file":"aside/aside.js","elements":{"video":"sh-mc0omxjhtk300wgak"},"data":{}},{"id":202,"file":"aside/aside.js","elements":{"video":"sh-mc0omxjibm3wc7t3s"},"data":{}},{"id":202,"file":"aside/aside.js","elements":{"video":"sh-mc0omxjiey158mwdv"},"data":{}},{"id":39,"file":"editorial-card/editorial-card.js","elements":{},"data":{}},{"id":39,"file":"editorial-card/editorial-card.js","elements":{},"data":{}},{"id":39,"file":"editorial-card/editorial-card.js","elements":{},"data":{}},{"id":39,"file":"editorial-card/editorial-card.js","elements":{"mediaVideo":"sh-mc0omxqzm5ehbbt7o"},"data":{}},{"id":39,"file":"editorial-card/editorial-card.js","elements":{"mediaVideo":"sh-mc0omxqzyglwu2aia"},"data":{}},{"id":39,"file":"editorial-card/editorial-card.js","elements":{},"data":{}},{"id":489,"file":"global-navigation/global-navigation.js","elements":{"localNav":"sh-mc0omxt3vuv1wqmoh"},"data":{"title":"Photoshop"}},{"id":927,"file":"global-navigation/global-navigation.js","elements":{"toggle":"sh-mc0omxt49agpyo5st"},"data":{}},{"id":202,"file":"aside/aside.js","elements":{},"data":{}},{"id":129,"file":"tabs/tabs.js","elements":{"tabs":["mh-mc0omxunjz4v7svzh"],"tabLists":["mh-mc0omxunoecddj83q"]},"data":{"tabFocus":0}},{"id":150,"file":"tabs/tabs.js","elements":{"tabs":["mh-mc0omxunjz4v7svzh"]},"data":{}},{"id":154,"file":"accordion/accordion.js","elements":{"button":"sh-mc0omxuy4k3d28wkz","dd":"sh-mc0omxuy42pws0thp"},"data":{"num":1,"id":1}},{"id":154,"file":"accordion/accordion.js","elements":{"button":"sh-mc0omxuy8qab7bjyn","dd":"sh-mc0omxuy8eme65h8y"},"data":{"num":2,"id":1}},{"id":154,"file":"accordion/accordion.js","elements":{"button":"sh-mc0omxuylms7ox1mb","dd":"sh-mc0omxuylk10dzol6"},"data":{"num":3,"id":1}},{"id":154,"file":"accordion/accordion.js","elements":{"button":"sh-mc0omxuydwhr280yt","dd":"sh-mc0omxuyj08ev07e5"},"data":{"num":4,"id":1}},{"id":154,"file":"accordion/accordion.js","elements":{"button":"sh-mc0omxuyb7r33xoct","dd":"sh-mc0omxuyzpi1p0yoo"},"data":{"num":5,"id":1}},{"id":154,"file":"accordion/accordion.js","elements":{"button":"sh-mc0omxuyxol2ccx4c","dd":"sh-mc0omxuyj8zw3dyu6"},"data":{"num":6,"id":1}},{"id":267,"file":"modal/modal.js","elements":{},"data":{}},{"id":1239,"file":"global-navigation/global-navigation.js","elements":{"popup":"sh-mc0omz32dl468fr6c"},"data":{"isDesktop":{}}}]
+[
+  {
+    "id": 1285,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "dropdownTrigger": "sh-mc24emj4whff8yds4"
+    },
+    "data": {
+      "isSectionMenu": true,
+      "isDesktop": {}
+    }
+  },
+  {
+    "id": 489,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "localNav": "sh-mc24emn2xyhg82qht"
+    },
+    "data": {
+      "title": "Photoshop"
+    }
+  },
+  {
+    "id": 927,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "toggle": "sh-mc24emn3mdn44x461"
+    },
+    "data": {}
+  },
+  {
+    "id": 82,
+    "file": "section-metadata/section-metadata.js",
+    "elements": {
+      "section": "sh-mc24emp7bcbq9i5e0"
+    },
+    "data": {
+      "v": "sticky bottom, static links",
+      "y": {
+        "content": {},
+        "text": "sticky bottom, static links"
+      }
+    }
+  },
+  {
+    "id": 202,
+    "file": "aside/aside.js",
+    "elements": {
+      "video": "sh-mc24emphfbhkba7ty"
+    },
+    "data": {}
+  },
+  {
+    "id": 202,
+    "file": "aside/aside.js",
+    "elements": {
+      "video": "sh-mc24emphwz6haw32n"
+    },
+    "data": {}
+  },
+  {
+    "id": 202,
+    "file": "aside/aside.js",
+    "elements": {
+      "video": "sh-mc24emphb03cc4bv3"
+    },
+    "data": {}
+  },
+  {
+    "id": 82,
+    "file": "section-metadata/section-metadata.js",
+    "elements": {
+      "section": "sh-mc24emz8ogpo8xftu"
+    },
+    "data": {
+      "v": "static links, three-up",
+      "y": {
+        "content": {},
+        "text": "static links, three-up"
+      }
+    }
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
+    "elements": {
+      "mediaVideo": "sh-mc24emzgzfeogwsu4"
+    },
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
+    "elements": {
+      "mediaVideo": "sh-mc24emzhq4v6h7iak"
+    },
+    "data": {}
+  },
+  {
+    "id": 202,
+    "file": "aside/aside.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 82,
+    "file": "section-metadata/section-metadata.js",
+    "elements": {
+      "section": "sh-mc24enab1vkkp7irp"
+    },
+    "data": {
+      "v": "static links",
+      "y": {
+        "content": {},
+        "text": "static links"
+      }
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mc24enagpl75w5zhp",
+      "dd": "sh-mc24enagej3wrmbev"
+    },
+    "data": {
+      "num": 1,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mc24enagsmew05rss",
+      "dd": "sh-mc24enagwjxtpsjze"
+    },
+    "data": {
+      "num": 2,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mc24enaguv9hk47sp",
+      "dd": "sh-mc24enagultz5qgcv"
+    },
+    "data": {
+      "num": 3,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mc24enagkc7um9gqj",
+      "dd": "sh-mc24enagqts7i8unm"
+    },
+    "data": {
+      "num": 4,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mc24enagjuhhif32s",
+      "dd": "sh-mc24enagkorysc8n7"
+    },
+    "data": {
+      "num": 5,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mc24enagjm8luhbu7",
+      "dd": "sh-mc24enagqz1ixiiej"
+    },
+    "data": {
+      "num": 6,
+      "id": 1
+    }
+  },
+  {
+    "id": 82,
+    "file": "section-metadata/section-metadata.js",
+    "elements": {
+      "section": "sh-mc24enasc89wj67dy"
+    },
+    "data": {
+      "v": "xl spacing, three up, grid width 8",
+      "y": {
+        "content": {},
+        "text": "xl spacing, three up, grid width 8"
+      }
+    }
+  },
+  {
+    "id": 129,
+    "file": "tabs/tabs.js",
+    "elements": {
+      "tabs": [
+        "mh-mc24enb4te8wz18oi"
+      ],
+      "tabLists": [
+        "mh-mc24enb4zasv2bru6"
+      ]
+    },
+    "data": {
+      "tabFocus": 0
+    }
+  },
+  {
+    "id": 150,
+    "file": "tabs/tabs.js",
+    "elements": {
+      "tabs": [
+        "mh-mc24enb4te8wz18oi"
+      ]
+    },
+    "data": {}
+  },
+  {
+    "id": 82,
+    "file": "section-metadata/section-metadata.js",
+    "elements": {
+      "section": "sh-mc24enb7dvde03q36"
+    },
+    "data": {
+      "v": "xl spacing, two merch cards",
+      "y": {
+        "content": {},
+        "text": "xl spacing, two merch cards"
+      }
+    }
+  },
+  {
+    "id": 82,
+    "file": "section-metadata/section-metadata.js",
+    "elements": {
+      "section": "sh-mc24enkwoaj6rk43p"
+    },
+    "data": {
+      "v": "xl spacing, one merch card",
+      "y": {
+        "content": {},
+        "text": "xl spacing, one merch card"
+      }
+    }
+  },
+  {
+    "id": 1239,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "popup": "sh-mc24enrdbcp2ubv5u"
+    },
+    "data": {
+      "isDesktop": {}
+    }
+  },
+  {
+    "id": 82,
+    "file": "section-metadata/section-metadata.js",
+    "elements": {
+      "section": "sh-mc24enuiljfsp8bm6"
+    },
+    "data": {
+      "v": "xl spacing, two merch cards",
+      "y": {
+        "content": {},
+        "text": "xl spacing, two merch cards"
+      }
+    }
+  },
+  {
+    "id": 267,
+    "file": "modal/modal.js",
+    "elements": {},
+    "data": {}
+  }
+]

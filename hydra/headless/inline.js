@@ -330,7 +330,7 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
     initCard(el);
   });
   const s = document.createElement('script');
-            s.src = "https://hydra6--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
+            s.src = "https://sample1--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
 
 const arr = document.querySelectorAll('.caas');

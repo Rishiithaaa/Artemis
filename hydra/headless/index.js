@@ -161,7 +161,7 @@ const minifiedHtml = minify(html, {
  
   await browser.close();
   await fs.writeFileSync("output.html", minifiedHtml);
-  await fs.writeFileSync("output.json", JSON.stringify(hydrationTasks));
+  await fs.writeFileSync("output.json", JSON.stringify(hydrationTasks,null,2));
   const endTime = performance.now();
   console.log(`⏳ Execution time: ${(endTime - startTime).toFixed(2)} ms`);
 };
