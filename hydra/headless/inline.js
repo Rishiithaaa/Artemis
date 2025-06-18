@@ -298,6 +298,27 @@ if(verbEl) {
   });
 }
 
+  (function () {
+    const stickySection = document.querySelector('.promo-sticky-section');
+    if (!stickySection) return;
+
+    let lastScrollTop = 0;
+    const scrollThreshold = 100; // adjust based on when you want the hiding
+
+    window.addEventListener('scroll', function () {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      if (scrollTop > scrollThreshold) {
+        stickySection.classList.add('hide-sticky-section');
+      } else {
+        stickySection.classList.remove('hide-sticky-section');
+      }
+
+      lastScrollTop = scrollTop;
+    });
+  })();
+
+
 const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]');
     for (var i = 0; i < navItem.length; i++) {
       navItem[i].addEventListener('click', (event) => {
@@ -329,12 +350,7 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
   document.querySelectorAll('.merch-card').forEach(el => {
     initCard(el);
   });
-  import init from '/scripts/section-metadata.js';
 
-  const metadataEl = document.querySelector('.section-metadata');
-  if (metadataEl) {
-    init(metadataEl);
-  }
   const s = document.createElement('script');
             s.src = "https://sample1--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
