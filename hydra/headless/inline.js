@@ -301,7 +301,7 @@ if(verbEl) {
 (function () {
   const stickySection = document.querySelector('.promo-sticky-section');
   if (!stickySection) return;
-  const scrollThreshold = 500;
+  const scrollThreshold = 650;
   window.addEventListener('scroll', function () {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
