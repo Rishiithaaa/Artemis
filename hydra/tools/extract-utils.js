@@ -439,7 +439,14 @@ if (filteredNonClassHydrateBlocks.length > 0) {
     return true;
   });
 
-  const nonClassfnsArr = filteredNonClassHydrateBlocks.map(blk => `_${blk.id}: ${blk.code}`);
+  //const nonClassfnsArr = filteredNonClassHydrateBlocks.map(blk => `_${blk.id}: ${blk.code}`);
+const nonClassfnsArr = filteredNonClassHydrateBlocks.map(blk => {
+  const containsAwait = blk.code.includes('await');
+  const updatedCode = containsAwait
+    ? blk.code.replace(/^(\s*)\(\s*\{/, '$1async ({') // Insert async before arrow function if needed
+    : blk.code;
+  return `_${blk.id}: ${updatedCode}`;
+});
 
 
   const nonClassCode = `
