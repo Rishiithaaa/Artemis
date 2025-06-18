@@ -302,27 +302,19 @@ if(verbEl) {
   const stickySection = document.querySelector('.promo-sticky-section');
   if (!stickySection) return;
 
-  const scrollThreshold = 250; // When to trigger
-  const delay = 500; // Delay in ms before showing
-
-  let isVisible = false;
-  let timeoutId = null;
+  const scrollThreshold = 200;
 
   window.addEventListener('scroll', function () {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    if (scrollTop > scrollThreshold && !isVisible) {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        stickySection.classList.remove('hide-sticky-section');
-        isVisible = true;
-      }, delay);
-    } else if (scrollTop <= scrollThreshold && isVisible) {
-      clearTimeout(timeoutId);
-      stickySection.classList.add('hide-sticky-section');
-      isVisible = false;
+
+    if (scrollTop > scrollThreshold) {
+      stickySection.classList.remove('hide-sticky-section'); // ✅ show when scrolled
+    } else {
+      stickySection.classList.add('hide-sticky-section'); // ✅ hide when near top
     }
   });
 })();
+
 
 const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]');
     for (var i = 0; i < navItem.length; i++) {
