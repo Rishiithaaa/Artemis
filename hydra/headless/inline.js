@@ -298,26 +298,31 @@ if(verbEl) {
   });
 }
 
-  (function () {
-    const stickySection = document.querySelector('.promo-sticky-section');
-    if (!stickySection) return;
+(function () {
+  const stickySection = document.querySelector('.promo-sticky-section');
+  if (!stickySection) return;
 
-    let lastScrollTop = 0;
-    const scrollThreshold = 150; // adjust based on when you want the hiding
+  const scrollThreshold = 250; // When to trigger
+  const delay = 500; // Delay in ms before showing
 
-    window.addEventListener('scroll', function () {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  let isVisible = false;
+  let timeoutId = null;
 
-      if (scrollTop > scrollThreshold) {
-  stickySection.classList.remove('hide-sticky-section');
-} else {
-  stickySection.classList.add('hide-sticky-section');
-}
-
-      lastScrollTop = scrollTop;
-    });
-  })();
-
+  window.addEventListener('scroll', function () {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop > scrollThreshold && !isVisible) {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        stickySection.classList.remove('hide-sticky-section');
+        isVisible = true;
+      }, delay);
+    } else if (scrollTop <= scrollThreshold && isVisible) {
+      clearTimeout(timeoutId);
+      stickySection.classList.add('hide-sticky-section');
+      isVisible = false;
+    }
+  });
+})();
 
 const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]');
     for (var i = 0; i < navItem.length; i++) {
