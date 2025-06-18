@@ -74,10 +74,10 @@ export const getMetadata = (el) => [...el.childNodes].reduce((rdx, row) => {
 export default async function init(el) {
   const section = el.closest('.section');
   const metadata = getMetadata(el);
-      const x = metadata.delay?.text
-      const y=metadata.style
-      const v=metadata.style?.text
-      const w=metadata.delay
+      const x = metadata.delay?.text;
+      const y=metadata.style;
+      const v=metadata.style?.text;
+      const w=metadata.delay;
 window.hydrate && window.hydrate({id:82, payload:{v,y,section}})
   if (y) await handleStyle(v, section);
   //@end
