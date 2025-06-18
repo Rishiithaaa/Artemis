@@ -3,7 +3,7 @@
     "id": 1285,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "dropdownTrigger": "sh-mc2dp5ayfwxlbk370"
+      "dropdownTrigger": "sh-mc2drqha5by1eybw6"
     },
     "data": {
       "isSectionMenu": true,
@@ -14,7 +14,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc2dp5b83ku92wt7q"
+      "section": "sh-mc2drqhf2cpvcij0r"
     },
     "data": {
       "v": "sticky bottom, static links",
@@ -28,7 +28,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc2dp5bjbo4l5osf6"
+      "video": "sh-mc2drqhnziwprwaq8"
     },
     "data": {}
   },
@@ -36,7 +36,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc2dp5bjenuyeytbg"
+      "video": "sh-mc2drqhngyjoyxb1j"
     },
     "data": {}
   },
@@ -44,25 +44,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc2dp5bjqtyho6pdp"
-    },
-    "data": {}
-  },
-  {
-    "id": 489,
-    "file": "global-navigation/global-navigation.js",
-    "elements": {
-      "localNav": "sh-mc2dp5elxqlxo97ho"
-    },
-    "data": {
-      "title": "Photoshop"
-    }
-  },
-  {
-    "id": 927,
-    "file": "global-navigation/global-navigation.js",
-    "elements": {
-      "toggle": "sh-mc2dp5emc5anevsss"
+      "video": "sh-mc2drqhnmmrwepl8p"
     },
     "data": {}
   },
@@ -70,7 +52,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc2dp5epw3abdzd3h"
+      "section": "sh-mc2drqkm2xyrni95x"
     },
     "data": {
       "v": "static links, three-up",
@@ -83,6 +65,26 @@
   {
     "id": 39,
     "file": "editorial-card/editorial-card.js",
+    "elements": {
+      "mediaVideo": "sh-mc2drqkpf6n37s3x0"
+    },
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
     "elements": {},
     "data": {}
   },
@@ -96,28 +98,26 @@
     "id": 39,
     "file": "editorial-card/editorial-card.js",
     "elements": {
-      "mediaVideo": "sh-mc2dp5eyvr5ughvp0"
+      "mediaVideo": "sh-mc2drqkq7dbmw0qbe"
     },
     "data": {}
   },
   {
-    "id": 39,
-    "file": "editorial-card/editorial-card.js",
-    "elements": {},
-    "data": {}
-  },
-  {
-    "id": 39,
-    "file": "editorial-card/editorial-card.js",
+    "id": 489,
+    "file": "global-navigation/global-navigation.js",
     "elements": {
-      "mediaVideo": "sh-mc2dp5eyzkk7tstyx"
+      "localNav": "sh-mc2drql3919zw4opy"
     },
-    "data": {}
+    "data": {
+      "title": "Photoshop"
+    }
   },
   {
-    "id": 39,
-    "file": "editorial-card/editorial-card.js",
-    "elements": {},
+    "id": 927,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "toggle": "sh-mc2drql4ppisewjo4"
+    },
     "data": {}
   },
   {
@@ -130,7 +130,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc2dp5hvk59xvd1g6"
+      "section": "sh-mc2drqngpipcqyyb3"
     },
     "data": {
       "v": "xl spacing, three up, grid width 8",
@@ -144,7 +144,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc2dp5hxmoz2rc26b"
+      "section": "sh-mc2drqnil2u44ovvt"
     },
     "data": {
       "v": "static links",
@@ -158,8 +158,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc2dp5i42vqohj2kr",
-      "dd": "sh-mc2dp5i4fft20ax7g"
+      "button": "sh-mc2drqnqbizthy3y8",
+      "dd": "sh-mc2drqnq0j4i40wzq"
     },
     "data": {
       "num": 1,
@@ -170,8 +170,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc2dp5i43zrgf6aop",
-      "dd": "sh-mc2dp5i47ye0vpr95"
+      "button": "sh-mc2drqnqcstw7s2pb",
+      "dd": "sh-mc2drqnqg0e95zq9y"
     },
     "data": {
       "num": 2,
@@ -182,8 +182,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc2dp5i54yqjo6cqw",
-      "dd": "sh-mc2dp5i5caofjah6p"
+      "button": "sh-mc2drqnq8il3yonxu",
+      "dd": "sh-mc2drqnqvojmp9odl"
     },
     "data": {
       "num": 3,
@@ -194,8 +194,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc2dp5i543yxrw24u",
-      "dd": "sh-mc2dp5i5z5dh69k6h"
+      "button": "sh-mc2drqnq7s7gkix57",
+      "dd": "sh-mc2drqnq392i9w7u4"
     },
     "data": {
       "num": 4,
@@ -206,8 +206,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc2dp5i5zv78en5s3",
-      "dd": "sh-mc2dp5i5r88v0c624"
+      "button": "sh-mc2drqnqfg1iud419",
+      "dd": "sh-mc2drqnqlvtpyo547"
     },
     "data": {
       "num": 5,
@@ -218,8 +218,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc2dp5i5cpjmoon40",
-      "dd": "sh-mc2dp5i5ixdb77rlw"
+      "button": "sh-mc2drqnqvb93dabgp",
+      "dd": "sh-mc2drqnq2tx58rw9t"
     },
     "data": {
       "num": 6,
@@ -231,10 +231,10 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mc2dp5i8yqunn0utw"
+        "mh-mc2drqns3rtz42qxq"
       ],
       "tabLists": [
-        "mh-mc2dp5i85pvv0mwg2"
+        "mh-mc2drqnsh8jvdapk7"
       ]
     },
     "data": {
@@ -246,7 +246,7 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mc2dp5i8yqunn0utw"
+        "mh-mc2drqns3rtz42qxq"
       ]
     },
     "data": {}
@@ -255,7 +255,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc2dp5ibxlbb4l3mw"
+      "section": "sh-mc2drqnudxxn3ej1l"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -269,7 +269,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc2dp5luqx9un5gpl"
+      "section": "sh-mc2drqr3pprrf7olv"
     },
     "data": {
       "v": "xl spacing, one merch card",
@@ -283,7 +283,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc2dp5pbk7f0wgn8x"
+      "section": "sh-mc2drqurkxlggpjte"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -303,7 +303,7 @@
     "id": 1239,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "popup": "sh-mc2dp66r0jlxq6dik"
+      "popup": "sh-mc2drrekxzq7zaq3k"
     },
     "data": {
       "isDesktop": {}

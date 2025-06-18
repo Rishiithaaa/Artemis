@@ -301,16 +301,14 @@ if(verbEl) {
 (function () {
   const stickySection = document.querySelector('.promo-sticky-section');
   if (!stickySection) return;
-
-  const scrollThreshold = 200;
-
+  const scrollThreshold = 270;
   window.addEventListener('scroll', function () {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
     if (scrollTop > scrollThreshold) {
-      stickySection.classList.remove('hide-sticky-section'); // ✅ show when scrolled
+      stickySection.classList.remove('hide-sticky-section');
     } else {
-      stickySection.classList.add('hide-sticky-section'); // ✅ hide when near top
+      stickySection.classList.add('hide-sticky-section'); 
     }
   });
 })();
