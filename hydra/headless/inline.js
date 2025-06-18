@@ -329,6 +329,12 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
   document.querySelectorAll('.merch-card').forEach(el => {
     initCard(el);
   });
+  import init from '/scripts/section-metadata.js';
+
+  const metadataEl = document.querySelector('.section-metadata');
+  if (metadataEl) {
+    init(metadataEl);
+  }
   const s = document.createElement('script');
             s.src = "https://sample1--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
