@@ -31,7 +31,7 @@ const hydrationBlocks = {
     y,
     section
   }) => {
-    if (y) await handleStyle(x, section);
+    if (y) await handleStyle(v, section);
   },
   _89: ({
     x,

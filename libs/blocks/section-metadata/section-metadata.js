@@ -79,7 +79,7 @@ export default async function init(el) {
       const v=metadata.style?.text;
       const w=metadata.delay;
 window.hydrate && window.hydrate({id:82, payload:{v,y,section}})
-  if (y) await handleStyle(x, section);
+  if (y) await handleStyle(v, section);
   //@end
   if (metadata.background) handleBackground(metadata, section);
   if (metadata.layout) handleLayout(metadata.layout.text, section);
