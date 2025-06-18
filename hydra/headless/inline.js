@@ -303,7 +303,7 @@ if(verbEl) {
     if (!stickySection) return;
 
     let lastScrollTop = 0;
-    const scrollThreshold = 100; // adjust based on when you want the hiding
+    const scrollThreshold = 150; // adjust based on when you want the hiding
 
     window.addEventListener('scroll', function () {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
