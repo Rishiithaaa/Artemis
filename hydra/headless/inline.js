@@ -309,10 +309,10 @@ if(verbEl) {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
       if (scrollTop > scrollThreshold) {
-        stickySection.classList.add('hide-sticky-section');
-      } else {
-        stickySection.classList.remove('hide-sticky-section');
-      }
+  stickySection.classList.remove('hide-sticky-section');
+} else {
+  stickySection.classList.add('hide-sticky-section');
+}
 
       lastScrollTop = scrollTop;
     });
