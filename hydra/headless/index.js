@@ -65,9 +65,8 @@ const run = async () => {
         req.continue();
     }
   });
-
-//const url = "https://main--cc--adobecom.aem.live/products/photoshop?milolibs=local&georouting=off";
-const url = "https://main--cc--adobecom.aem.live/products/illustrator?milolibs=local&georouting=off";
+const url = "https://main--cc--adobecom.aem.live/products/photoshop?milolibs=local&georouting=off";
+//const url = "https://main--cc--adobecom.aem.live/products/illustrator?milolibs=local&georouting=off";
   await page.goto(url, {
     waitUntil: "networkidle0",
   });

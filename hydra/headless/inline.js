@@ -347,7 +347,7 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
   });
 
   const s = document.createElement('script');
-            s.src = "https://artemisIllus--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
+            s.src = "https://artemisPhoto--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
 
 
