@@ -3,8 +3,8 @@
     "id": 197,
     "file": "hero-marquee/hero-marquee.js",
     "elements": {
-      "videoEl": "sh-mc7jp65zj63fuq8s9",
-      "pausePlayWrapper": "sh-mc7jp65z732a6t7s0"
+      "videoEl": "sh-mc7mdhrws1uwd2xng",
+      "pausePlayWrapper": "sh-mc7mdhrw5wtns4g80"
     },
     "data": {}
   },
@@ -12,7 +12,7 @@
     "id": 1285,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "dropdownTrigger": "sh-mc7jp69ko7vwfm4ne"
+      "dropdownTrigger": "sh-mc7mdhtzzcgrzuicq"
     },
     "data": {
       "isSectionMenu": true,
@@ -20,20 +20,10 @@
     }
   },
   {
-    "id": 489,
-    "file": "global-navigation/global-navigation.js",
-    "elements": {
-      "localNav": "sh-mc7jp69qk4krt5pab"
-    },
-    "data": {
-      "title": "Illustrator"
-    }
-  },
-  {
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7jp69qp7ktquwhh"
+      "section": "sh-mc7mdhu2r4cysaptf"
     },
     "data": {
       "v": "sticky bottom, static links",
@@ -44,10 +34,20 @@
     }
   },
   {
+    "id": 489,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "localNav": "sh-mc7mdhu46a42qfk7k"
+    },
+    "data": {
+      "title": "Illustrator"
+    }
+  },
+  {
     "id": 927,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "toggle": "sh-mc7jp69v8sjvwyzou"
+      "toggle": "sh-mc7mdhu949ecm6t7n"
     },
     "data": {}
   },
@@ -55,7 +55,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc7jp6cje0bjyskws"
+      "video": "sh-mc7mdhv0zm8ifz0m5"
     },
     "data": {}
   },
@@ -63,7 +63,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc7jp6cjkc6ierqpf"
+      "video": "sh-mc7mdhv0qkfsj0xvd"
     },
     "data": {}
   },
@@ -71,7 +71,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc7jp6cje7tmnw029"
+      "video": "sh-mc7mdhv0og3f8t740"
     },
     "data": {}
   },
@@ -79,7 +79,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7jp6cjiprljv73h"
+      "section": "sh-mc7mdhv0f62qwt0xd"
     },
     "data": {
       "v": "l spacing",
@@ -93,7 +93,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7jp6cp5aiwnf2n6"
+      "section": "sh-mc7mdhv51jr7nrl2d"
     },
     "data": {
       "v": "no spacing",
@@ -107,7 +107,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7jp6g48nsjh8zs8"
+      "section": "sh-mc7mdhvxpstwgsnhf"
     },
     "data": {
       "v": "three-up",
@@ -122,10 +122,10 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mc7jp6l8o5j0jyui5"
+        "mh-mc7mdhwyn42kvqma2"
       ],
       "tabLists": [
-        "mh-mc7jp6l81b4v0tqbz"
+        "mh-mc7mdhwy6ft236f14"
       ]
     },
     "data": {
@@ -137,7 +137,7 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mc7jp6l8o5j0jyui5"
+        "mh-mc7mdhwyn42kvqma2"
       ]
     },
     "data": {}
@@ -146,7 +146,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7jp6lh02u9a12a4"
+      "section": "sh-mc7mdhx1cabzqtgrp"
     },
     "data": {
       "v": "xl spacing, two merch cards, static links",
@@ -160,7 +160,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7jp6r0nv2c6o3ga"
+      "section": "sh-mc7mdhy9v6exdkjby"
     },
     "data": {
       "v": "xl spacing, one merch card, static links",
@@ -174,7 +174,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7jp6zmiyi6xy2fs"
+      "section": "sh-mc7mdhz8c29naqzb8"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -194,7 +194,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7jp7ggm1e74dbxq"
+      "section": "sh-mc7mdi13xeafrlehu"
     },
     "data": {
       "v": "static links, l spacing",
@@ -208,8 +208,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7jp7gls792rqkus",
-      "dd": "sh-mc7jp7glam5su8yqv"
+      "button": "sh-mc7mdi16m3xsddzbz",
+      "dd": "sh-mc7mdi16qvidssign"
     },
     "data": {
       "num": 1,
@@ -220,8 +220,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7jp7glb5d11iik1",
-      "dd": "sh-mc7jp7glnq15p4fqh"
+      "button": "sh-mc7mdi188p7pnq8ny",
+      "dd": "sh-mc7mdi18cfyykzl3w"
     },
     "data": {
       "num": 2,
@@ -232,8 +232,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7jp7glqj48e6exm",
-      "dd": "sh-mc7jp7glfnrzl38ar"
+      "button": "sh-mc7mdi18hnmjj542x",
+      "dd": "sh-mc7mdi18goca78f99"
     },
     "data": {
       "num": 3,
@@ -244,8 +244,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7jp7glx901c8ohh",
-      "dd": "sh-mc7jp7glqsg8taw5l"
+      "button": "sh-mc7mdi18vyue03x6r",
+      "dd": "sh-mc7mdi184ps5ikuni"
     },
     "data": {
       "num": 4,
@@ -256,8 +256,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7jp7glll9fpds4p",
-      "dd": "sh-mc7jp7gl4lwxbtc1n"
+      "button": "sh-mc7mdi18v2nh6t6y8",
+      "dd": "sh-mc7mdi18cxzgvbil2"
     },
     "data": {
       "num": 5,
@@ -268,8 +268,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7jp7gmujq9dpyhb",
-      "dd": "sh-mc7jp7gmrf157v7pj"
+      "button": "sh-mc7mdi182n2jojoba",
+      "dd": "sh-mc7mdi18euhgi3d5p"
     },
     "data": {
       "num": 6,
@@ -280,8 +280,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7jp7gml39d55m23",
-      "dd": "sh-mc7jp7gmwl5r6g6vq"
+      "button": "sh-mc7mdi18hksidj8t9",
+      "dd": "sh-mc7mdi18s4fr9uegt"
     },
     "data": {
       "num": 7,
@@ -292,7 +292,7 @@
     "id": 1239,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "popup": "sh-mc7jp7jsdw991wffy"
+      "popup": "sh-mc7mdiljnmvqq7jx9"
     },
     "data": {
       "isDesktop": {}
