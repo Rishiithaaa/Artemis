@@ -2,7 +2,6 @@ import fs from "fs";
 import puppeteer from "puppeteer";
 import { performance } from "perf_hooks";
 import { minify } from 'html-minifier';
-
 const scriptContent = fs.readFileSync('./headless/inline.js', 'utf-8');
 
 const run = async () => {

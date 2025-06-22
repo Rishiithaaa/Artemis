@@ -347,8 +347,9 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
   });
 
   const s = document.createElement('script');
-            s.src = "https://artemis2--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
+            s.src = "https://sample--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
+
 
 const arr = document.querySelectorAll('.caas');
 if(arr.length > 0) {

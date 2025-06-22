@@ -1,9 +1,18 @@
 [
   {
+    "id": 197,
+    "file": "hero-marquee/hero-marquee.js",
+    "elements": {
+      "videoEl": "sh-mc7jp65zj63fuq8s9",
+      "pausePlayWrapper": "sh-mc7jp65z732a6t7s0"
+    },
+    "data": {}
+  },
+  {
     "id": 1285,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "dropdownTrigger": "sh-mc35c7ffxhxy7ls6f"
+      "dropdownTrigger": "sh-mc7jp69ko7vwfm4ne"
     },
     "data": {
       "isSectionMenu": true,
@@ -11,10 +20,20 @@
     }
   },
   {
+    "id": 489,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "localNav": "sh-mc7jp69qk4krt5pab"
+    },
+    "data": {
+      "title": "Illustrator"
+    }
+  },
+  {
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc35c7fqlx6alb1ux"
+      "section": "sh-mc7jp69qp7ktquwhh"
     },
     "data": {
       "v": "sticky bottom, static links",
@@ -25,20 +44,10 @@
     }
   },
   {
-    "id": 489,
-    "file": "global-navigation/global-navigation.js",
-    "elements": {
-      "localNav": "sh-mc35c7gbwmxj2xtcb"
-    },
-    "data": {
-      "title": "Illustrator"
-    }
-  },
-  {
     "id": 927,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "toggle": "sh-mc35c7gb9phdknblv"
+      "toggle": "sh-mc7jp69v8sjvwyzou"
     },
     "data": {}
   },
@@ -46,7 +55,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc35c7nam04ai29vv"
+      "video": "sh-mc7jp6cje0bjyskws"
     },
     "data": {}
   },
@@ -54,7 +63,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc35c7nbxywre708c"
+      "video": "sh-mc7jp6cjkc6ierqpf"
     },
     "data": {}
   },
@@ -62,7 +71,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc35c7nby06wraj0q"
+      "video": "sh-mc7jp6cje7tmnw029"
     },
     "data": {}
   },
@@ -70,7 +79,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc35c7nbsltmha90y"
+      "section": "sh-mc7jp6cjiprljv73h"
     },
     "data": {
       "v": "l spacing",
@@ -84,7 +93,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc35c7nlvhblse5tk"
+      "section": "sh-mc7jp6cp5aiwnf2n6"
     },
     "data": {
       "v": "no spacing",
@@ -98,7 +107,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc35c7uqsv1i6088y"
+      "section": "sh-mc7jp6g48nsjh8zs8"
     },
     "data": {
       "v": "three-up",
@@ -113,10 +122,10 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mc35c81iu1o7acncb"
+        "mh-mc7jp6l8o5j0jyui5"
       ],
       "tabLists": [
-        "mh-mc35c81idkoctdtk9"
+        "mh-mc7jp6l81b4v0tqbz"
       ]
     },
     "data": {
@@ -128,7 +137,7 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mc35c81iu1o7acncb"
+        "mh-mc7jp6l8o5j0jyui5"
       ]
     },
     "data": {}
@@ -137,7 +146,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc35c81mg5zso98i8"
+      "section": "sh-mc7jp6lh02u9a12a4"
     },
     "data": {
       "v": "xl spacing, two merch cards, static links",
@@ -148,20 +157,10 @@
     }
   },
   {
-    "id": 1239,
-    "file": "global-navigation/global-navigation.js",
-    "elements": {
-      "popup": "sh-mc35c86gaixdcvfcn"
-    },
-    "data": {
-      "isDesktop": {}
-    }
-  },
-  {
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc35c895j6zm4mkrn"
+      "section": "sh-mc7jp6r0nv2c6o3ga"
     },
     "data": {
       "v": "xl spacing, one merch card, static links",
@@ -175,7 +174,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc35c8gcz94ulpxgj"
+      "section": "sh-mc7jp6zmiyi6xy2fs"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -195,7 +194,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc35c8u9uaxjnom3w"
+      "section": "sh-mc7jp7ggm1e74dbxq"
     },
     "data": {
       "v": "static links, l spacing",
@@ -209,8 +208,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc35c8udlylwmdivv",
-      "dd": "sh-mc35c8udcs1k2lbj7"
+      "button": "sh-mc7jp7gls792rqkus",
+      "dd": "sh-mc7jp7glam5su8yqv"
     },
     "data": {
       "num": 1,
@@ -221,8 +220,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc35c8ue12tn3m00e",
-      "dd": "sh-mc35c8uecmsfs6s5r"
+      "button": "sh-mc7jp7glb5d11iik1",
+      "dd": "sh-mc7jp7glnq15p4fqh"
     },
     "data": {
       "num": 2,
@@ -233,8 +232,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc35c8ueoa6gf83cn",
-      "dd": "sh-mc35c8ue23fk2yvft"
+      "button": "sh-mc7jp7glqj48e6exm",
+      "dd": "sh-mc7jp7glfnrzl38ar"
     },
     "data": {
       "num": 3,
@@ -245,8 +244,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc35c8ue3c68swucj",
-      "dd": "sh-mc35c8ue9lq5txbtb"
+      "button": "sh-mc7jp7glx901c8ohh",
+      "dd": "sh-mc7jp7glqsg8taw5l"
     },
     "data": {
       "num": 4,
@@ -257,8 +256,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc35c8uefi5jpuf2k",
-      "dd": "sh-mc35c8uedf2o7qpfr"
+      "button": "sh-mc7jp7glll9fpds4p",
+      "dd": "sh-mc7jp7gl4lwxbtc1n"
     },
     "data": {
       "num": 5,
@@ -269,8 +268,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc35c8ueacxqfd6xo",
-      "dd": "sh-mc35c8uecmpoq9dsb"
+      "button": "sh-mc7jp7gmujq9dpyhb",
+      "dd": "sh-mc7jp7gmrf157v7pj"
     },
     "data": {
       "num": 6,
@@ -281,12 +280,22 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc35c8ueooitq915o",
-      "dd": "sh-mc35c8ue9e2hpfk9z"
+      "button": "sh-mc7jp7gml39d55m23",
+      "dd": "sh-mc7jp7gmwl5r6g6vq"
     },
     "data": {
       "num": 7,
       "id": 1
+    }
+  },
+  {
+    "id": 1239,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "popup": "sh-mc7jp7jsdw991wffy"
+    },
+    "data": {
+      "isDesktop": {}
     }
   }
 ]
