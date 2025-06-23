@@ -362,3 +362,95 @@ if(arr.length > 0) {
         caasInit(elem)
     });
 }
+
+(() => {
+const osMap = {
+  Mac: 'macOS',
+  Win: 'windows',
+  Linux: 'linux',
+  CrOS: 'chromeOS',
+  Android: 'android',
+  iPad: 'iPadOS',
+  iPhone: 'iOS',
+};
+
+  window.universalNavComponents = ['appswitcher', 'profile'];
+  window.alloy_all_configured = true;
+
+  const unavVersion = '1.4';
+  const env = location.hostname.includes('stage') ? 'stage' : 'prod';
+      const getDevice = () => {
+        const agent = navigator.userAgent;
+        for (const [os, osName] of Object.entries(osMap)) {
+          if (agent.includes(os)) return osName;
+        }
+        return 'linux';
+      };
+
+  const loadUnavScript = () =>
+    new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.src = `https://${env}.adobeccstatic.com/unav/${unavVersion}/UniversalNav.js`;
+      script.onload = resolve;
+      document.head.appendChild(script);
+    });
+
+  const loadUnavCSS = () => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `https://${env}.adobeccstatic.com/unav/${unavVersion}/UniversalNav.css`;
+    document.head.appendChild(link);
+  };
+
+  loadUnavCSS();
+  loadUnavScript().then(async () => {
+    const waitForIMS = () =>
+      new Promise((resolve) => {
+        if (window.adobeIMS?.initialized) return resolve();
+        window.addEventListener('IMS:Ready', resolve, { once: true });
+      });
+
+    await waitForIMS();
+
+    const visitorGuid = window.adobeIMS?.getAccessToken?.()?.parsedToken?.sub || 'guest';
+
+    const config = {
+      target: document.querySelector('.universal-nav-container'),
+      env,
+      locale: 'en_US',
+      countryCode: 'US',
+      imsClientId: 'adobedotcom-cc',
+      theme: 'light',
+      analyticsContext: {
+        consumer: {
+          name: 'adobecom',
+          version: '1.0',
+          platform: 'Web',
+          device: getDevice(),
+          os_version: navigator.platform,
+        },
+        event: { visitor_guid: visitorGuid },
+        onAnalyticsEvent: (data) => {
+        },
+      },
+      children: [
+        { name: 'app-switcher' },
+        {
+          name: 'profile',
+          attributes: {
+            isSignUpRequired: false,
+            callbacks: {
+              onSignIn: () => window.adobeIMS?.signIn('unav'),
+              onSignUp: () => window.adobeIMS?.signIn('unav'),
+            },
+          },
+        },
+      ],
+    };
+
+    await window.UniversalNav(config);
+  });
+})();
+
+
+
