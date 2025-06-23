@@ -3,27 +3,16 @@
     "id": 197,
     "file": "hero-marquee/hero-marquee.js",
     "elements": {
-      "videoEl": "sh-mc7mdhrws1uwd2xng",
-      "pausePlayWrapper": "sh-mc7mdhrw5wtns4g80"
+      "videoEl": "sh-mc8y1mr0nbdsvn9b4",
+      "pausePlayWrapper": "sh-mc8y1mr05o4bk71i7"
     },
     "data": {}
-  },
-  {
-    "id": 1285,
-    "file": "global-navigation/global-navigation.js",
-    "elements": {
-      "dropdownTrigger": "sh-mc7mdhtzzcgrzuicq"
-    },
-    "data": {
-      "isSectionMenu": true,
-      "isDesktop": {}
-    }
   },
   {
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7mdhu2r4cysaptf"
+      "section": "sh-mc8y1mtaydmykd2s9"
     },
     "data": {
       "v": "sticky bottom, static links",
@@ -34,10 +23,21 @@
     }
   },
   {
+    "id": 1285,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "dropdownTrigger": "sh-mc8y1mtfu5afblnxc"
+    },
+    "data": {
+      "isSectionMenu": true,
+      "isDesktop": {}
+    }
+  },
+  {
     "id": 489,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "localNav": "sh-mc7mdhu46a42qfk7k"
+      "localNav": "sh-mc8y1mtki2arhjnk5"
     },
     "data": {
       "title": "Illustrator"
@@ -47,7 +47,7 @@
     "id": 927,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "toggle": "sh-mc7mdhu949ecm6t7n"
+      "toggle": "sh-mc8y1mtpoyutnxboy"
     },
     "data": {}
   },
@@ -55,7 +55,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc7mdhv0zm8ifz0m5"
+      "video": "sh-mc8y1muooibx94c6i"
     },
     "data": {}
   },
@@ -63,7 +63,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc7mdhv0qkfsj0xvd"
+      "video": "sh-mc8y1muoh9i35a2dg"
     },
     "data": {}
   },
@@ -71,7 +71,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc7mdhv0og3f8t740"
+      "video": "sh-mc8y1muore9sogk8i"
     },
     "data": {}
   },
@@ -79,7 +79,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7mdhv0f62qwt0xd"
+      "section": "sh-mc8y1mup2r9l18g36"
     },
     "data": {
       "v": "l spacing",
@@ -93,7 +93,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7mdhv51jr7nrl2d"
+      "section": "sh-mc8y1mutihn898tif"
     },
     "data": {
       "v": "no spacing",
@@ -107,7 +107,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7mdhvxpstwgsnhf"
+      "section": "sh-mc8y1mw4qwwhwr03y"
     },
     "data": {
       "v": "three-up",
@@ -122,10 +122,10 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mc7mdhwyn42kvqma2"
+        "mh-mc8y1mxmfr33l2kdd"
       ],
       "tabLists": [
-        "mh-mc7mdhwy6ft236f14"
+        "mh-mc8y1mxm4aexocv3t"
       ]
     },
     "data": {
@@ -137,7 +137,7 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mc7mdhwyn42kvqma2"
+        "mh-mc8y1mxmfr33l2kdd"
       ]
     },
     "data": {}
@@ -146,7 +146,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7mdhx1cabzqtgrp"
+      "section": "sh-mc8y1mxo54s5yjh2s"
     },
     "data": {
       "v": "xl spacing, two merch cards, static links",
@@ -160,7 +160,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7mdhy9v6exdkjby"
+      "section": "sh-mc8y1mzlhuggb6m0t"
     },
     "data": {
       "v": "xl spacing, one merch card, static links",
@@ -174,7 +174,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7mdhz8c29naqzb8"
+      "section": "sh-mc8y1n0wotm6nps4b"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -194,7 +194,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc7mdi13xeafrlehu"
+      "section": "sh-mc8y1n3p0weq98i42"
     },
     "data": {
       "v": "static links, l spacing",
@@ -208,8 +208,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7mdi16m3xsddzbz",
-      "dd": "sh-mc7mdi16qvidssign"
+      "button": "sh-mc8y1n3rhwk0ss0sy",
+      "dd": "sh-mc8y1n3r0aljdyvgr"
     },
     "data": {
       "num": 1,
@@ -220,8 +220,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7mdi188p7pnq8ny",
-      "dd": "sh-mc7mdi18cfyykzl3w"
+      "button": "sh-mc8y1n3re2d0zeb0r",
+      "dd": "sh-mc8y1n3rxs1x21rt8"
     },
     "data": {
       "num": 2,
@@ -232,8 +232,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7mdi18hnmjj542x",
-      "dd": "sh-mc7mdi18goca78f99"
+      "button": "sh-mc8y1n3r1r2ci43gt",
+      "dd": "sh-mc8y1n3rb9djoncai"
     },
     "data": {
       "num": 3,
@@ -244,8 +244,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7mdi18vyue03x6r",
-      "dd": "sh-mc7mdi184ps5ikuni"
+      "button": "sh-mc8y1n3rd9lnxbuyp",
+      "dd": "sh-mc8y1n3rn0md5l07j"
     },
     "data": {
       "num": 4,
@@ -256,8 +256,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7mdi18v2nh6t6y8",
-      "dd": "sh-mc7mdi18cxzgvbil2"
+      "button": "sh-mc8y1n3ry17ixo891",
+      "dd": "sh-mc8y1n3rd0bfka452"
     },
     "data": {
       "num": 5,
@@ -268,8 +268,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7mdi182n2jojoba",
-      "dd": "sh-mc7mdi18euhgi3d5p"
+      "button": "sh-mc8y1n3rhc1bxtpcw",
+      "dd": "sh-mc8y1n3rrdejde2jl"
     },
     "data": {
       "num": 6,
@@ -280,8 +280,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc7mdi18hksidj8t9",
-      "dd": "sh-mc7mdi18s4fr9uegt"
+      "button": "sh-mc8y1n3ro7npqu0iv",
+      "dd": "sh-mc8y1n3r5iwym9722"
     },
     "data": {
       "num": 7,
@@ -292,7 +292,7 @@
     "id": 1239,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "popup": "sh-mc7mdiljnmvqq7jx9"
+      "popup": "sh-mc8y1nke5wvc566xx"
     },
     "data": {
       "isDesktop": {}

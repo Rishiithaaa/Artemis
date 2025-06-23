@@ -124,7 +124,8 @@ document.querySelectorAll('video[data-mouseevent="true"]').forEach(video => {
     const firstHalf = cssEntries.slice(0, midPoint);
   const secondHalf = cssEntries.slice(midPoint);
     return document.documentElement.outerHTML
-    .replace('</head>', `<style>${firstHalf.map(([_, css]) => css).join('\n')}</style></head>`)
+    .replace('</head>', `<style>${firstHalf.map(([_, css]) => css).join('\n')}</style>
+    <meta name="universal-nav" content="on"></head>`)
     .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
     .replace(/<script\b[^>]*\/>/gi, '')
     .replace(/<link\b[^>]*rel=["']preload["'][^>]*>/gi, '')
