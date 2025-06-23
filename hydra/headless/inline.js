@@ -431,7 +431,6 @@ const osMap = {
         },
         event: { visitor_guid: visitorGuid },
         onAnalyticsEvent: (data) => {
-          console.log('📊 UNav Analytics Event:', data);
         },
       },
       children: [
