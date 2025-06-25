@@ -345,9 +345,63 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
   document.querySelectorAll('.merch-card').forEach(el => {
     initCard(el);
   });
+  (() => {
+  // Utility to detect mobile view (you can adjust breakpoint as needed)
+  const isMobile = () => window.matchMedia('(max-width: 767px)').matches;
+
+  // Setup dropdown toggle on mobile only
+  const setupDropdownToggles = () => {
+    const headlines = document.querySelectorAll('.feds-menu-headline');
+
+    headlines.forEach((headline) => {
+      const parent = headline.closest('li');
+      const navItems = parent?.querySelector('.feds-navItems');
+
+      if (!navItems) return;
+
+      // Collapse initially in mobile
+      if (isMobile()) {
+        navItems.style.display = 'none';
+
+        headline.setAttribute('tabindex', '0'); // Make keyboard-accessible
+        headline.style.cursor = 'pointer';
+
+        // Toggle open/close on click
+        headline.addEventListener('click', () => {
+          const isOpen = navItems.style.display === 'block';
+          navItems.style.display = isOpen ? 'none' : 'block';
+          headline.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // Also allow toggling via keyboard
+        headline.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            headline.click();
+          }
+        });
+      }
+    });
+  };
+
+  // Run once DOM is ready
+  if (document.readyState !== 'loading') {
+    setupDropdownToggles();
+  } else {
+    document.addEventListener('DOMContentLoaded', setupDropdownToggles);
+  }
+
+  // Optional: Recheck on window resize (e.g., if viewport switches)
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.feds-navItems').forEach((item) => {
+      item.style.display = isMobile() ? 'none' : 'block';
+    });
+  });
+})();
+
 
   const s = document.createElement('script');
-            s.src = "https://artemisPhoto--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
+            s.src = "https://sample--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
 
 
