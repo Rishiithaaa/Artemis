@@ -180,6 +180,33 @@ document.querySelectorAll('video').forEach(video => {
   video.classList.add('lazy-video');
 });
 
+const FINAL_IMAGE_URL = "https://www.adobe.com/products/media_1360e829a01a4308c13168983349f11072384e156.jpg?width=768&format=webply&optimize=medium";
+
+// Replace full <picture> with a simplified one if it matches the LCP image
+document.querySelectorAll('picture').forEach(picture => {
+  const img = picture.querySelector('img');
+  if (!img) return;
+
+  const src = img.getAttribute('src') || "";
+  if (!src.includes("media_1360e829a01a4308c13168983349f11072384e156.jpg")) return;
+
+  // Create a new simplified <picture>
+  const simplifiedPicture = document.createElement("picture");
+
+  const newImg = document.createElement("img");
+  newImg.setAttribute("src", FINAL_IMAGE_URL);
+  newImg.setAttribute("width", "768");
+  newImg.setAttribute("height", "460");
+  newImg.setAttribute("alt", "Hero image");
+  newImg.setAttribute("fetchpriority", "high");
+  newImg.setAttribute("loading", "eager");
+  newImg.classList.add("lcp-candidate");
+
+  simplifiedPicture.appendChild(newImg);
+  picture.replaceWith(simplifiedPicture);
+});
+
+
     // const cssEntries = cssObject;
     const midPoint = Math.ceil(cssEntries.length / 2);
     const firstHalf = cssEntries.slice(0, midPoint);
@@ -197,6 +224,9 @@ document.querySelectorAll('video').forEach(video => {
     .replace(/<meta\b[^>]*http-equiv=["']content-security-policy["'][^>]*>/gi, '')
     .replace(/<style>\s*body\s*{\s*display\s*:\s*none\s*;\s*}\s*<\/style>/gi, '')
     .replace(/<style>[^<]*body\s*{\s*display\s*:\s*none[^<]*<\/style>/gi, '')
+    .replace('<head>', 
+  `<head>
+    <link rel="preload" as="image" href="https://www.adobe.com/products/media_1360e829a01a4308c13168983349f11072384e156.jpg?width=768&format=webply&optimize=medium" fetchpriority="high">`)
     .replace('</body>', 
         `<style>.consonant-Wrapper {height: unset !important;} ${secondHalf.map(([_, css]) => css).join('\n')}</style>
         <script type="module">
