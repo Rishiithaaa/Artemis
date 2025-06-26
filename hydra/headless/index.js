@@ -206,8 +206,7 @@ document.querySelectorAll('picture').forEach(picture => {
     .replace(/<meta\b[^>]*http-equiv=["']content-security-policy["'][^>]*>/gi, '')
     .replace(/<style>\s*body\s*{\s*display\s*:\s*none\s*;\s*}\s*<\/style>/gi, '')
     .replace(/<style>[^<]*body\s*{\s*display\s*:\s*none[^<]*<\/style>/gi, '')
-    .replace('<head>', 
-  `<head>
+    .replace('</title>', `</title>
     <link rel="preload" as="image" href="https://www.adobe.com/products/media_1360e829a01a4308c13168983349f11072384e156.jpg?width=768&format=webply&optimize=medium" fetchpriority="high">`)
     .replace('</body>', 
         `<style>.consonant-Wrapper {height: unset !important;} ${secondHalf.map(([_, css]) => css).join('\n')}</style>

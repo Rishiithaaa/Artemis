@@ -9,7 +9,7 @@
     "id": 1285,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "dropdownTrigger": "sh-mcdosjq9ul00almhw"
+      "dropdownTrigger": "sh-mcdpmt9l7am2li69m"
     },
     "data": {
       "isSectionMenu": true,
@@ -20,7 +20,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdosjqbzlsrz93c2"
+      "section": "sh-mcdpmt9q2vi94erj0"
     },
     "data": {
       "v": "sticky bottom, static links",
@@ -34,7 +34,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mcdosjqk2v54ej146"
+      "video": "sh-mcdpmt9xknnfk27bn"
     },
     "data": {}
   },
@@ -42,7 +42,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mcdosjqkuhvxunw8b"
+      "video": "sh-mcdpmt9xu4p2ztruw"
     },
     "data": {}
   },
@@ -50,7 +50,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mcdosjqk444gvpxrg"
+      "video": "sh-mcdpmt9xw91lnp1rt"
     },
     "data": {}
   },
@@ -58,7 +58,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdosjrafizc0hg2j"
+      "section": "sh-mcdpmtak956a93t8s"
     },
     "data": {
       "v": "static links, three-up",
@@ -77,8 +77,14 @@
   {
     "id": 39,
     "file": "editorial-card/editorial-card.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
     "elements": {
-      "mediaVideo": "sh-mcdosjrc6nixe6fun"
+      "mediaVideo": "sh-mcdpmtan8q3amxov6"
     },
     "data": {}
   },
@@ -92,14 +98,8 @@
     "id": 39,
     "file": "editorial-card/editorial-card.js",
     "elements": {
-      "mediaVideo": "sh-mcdosjrd222fj1cgd"
+      "mediaVideo": "sh-mcdpmtanhfjvpqf0j"
     },
-    "data": {}
-  },
-  {
-    "id": 39,
-    "file": "editorial-card/editorial-card.js",
-    "elements": {},
     "data": {}
   },
   {
@@ -112,7 +112,7 @@
     "id": 489,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "localNav": "sh-mcdosjrysg4ayvlj0"
+      "localNav": "sh-mcdpmtavfbiascj28"
     },
     "data": {
       "title": "Photoshop"
@@ -122,9 +122,23 @@
     "id": 927,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "toggle": "sh-mcdosjryz9qzvm0yg"
+      "toggle": "sh-mcdpmtavk4zkgczaq"
     },
     "data": {}
+  },
+  {
+    "id": 82,
+    "file": "section-metadata/section-metadata.js",
+    "elements": {
+      "section": "sh-mcdpmtbal4bho79kc"
+    },
+    "data": {
+      "v": "xl spacing, three up, grid width 8",
+      "y": {
+        "content": {},
+        "text": "xl spacing, three up, grid width 8"
+      }
+    }
   },
   {
     "id": 202,
@@ -136,21 +150,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdosjs1i04b42cr0"
-    },
-    "data": {
-      "v": "xl spacing, three up, grid width 8",
-      "y": {
-        "content": {},
-        "text": "xl spacing, three up, grid width 8"
-      }
-    }
-  },
-  {
-    "id": 82,
-    "file": "section-metadata/section-metadata.js",
-    "elements": {
-      "section": "sh-mcdosjs2mnym33df0"
+      "section": "sh-mcdpmtbchsa06ydu7"
     },
     "data": {
       "v": "static links",
@@ -164,8 +164,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mcdosjs6ituwdg1zx",
-      "dd": "sh-mcdosjs6isn8ebkuw"
+      "button": "sh-mcdpmtbe0jmh9pl8x",
+      "dd": "sh-mcdpmtberjhims1kz"
     },
     "data": {
       "num": 1,
@@ -176,8 +176,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mcdosjs6f7wh62ttg",
-      "dd": "sh-mcdosjs6z1kdoh9x9"
+      "button": "sh-mcdpmtbekzjkv6tao",
+      "dd": "sh-mcdpmtbe36b7cbmsz"
     },
     "data": {
       "num": 2,
@@ -188,8 +188,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mcdosjs63h0nuqd1k",
-      "dd": "sh-mcdosjs6027e77gme"
+      "button": "sh-mcdpmtbek0lpjbram",
+      "dd": "sh-mcdpmtbe05haqbmhh"
     },
     "data": {
       "num": 3,
@@ -200,8 +200,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mcdosjs6cz3f0pa51",
-      "dd": "sh-mcdosjs6u2l1cobht"
+      "button": "sh-mcdpmtbevf032wvd5",
+      "dd": "sh-mcdpmtbek3hfstnrk"
     },
     "data": {
       "num": 4,
@@ -212,8 +212,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mcdosjs6eyd7q2skt",
-      "dd": "sh-mcdosjs6vq2yor7zx"
+      "button": "sh-mcdpmtbe20nzajr8m",
+      "dd": "sh-mcdpmtbe5joierp9f"
     },
     "data": {
       "num": 5,
@@ -224,8 +224,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mcdosjs6fhifidto0",
-      "dd": "sh-mcdosjs6w84a28ahh"
+      "button": "sh-mcdpmtbemssuaovu3",
+      "dd": "sh-mcdpmtbebozxyayqz"
     },
     "data": {
       "num": 6,
@@ -237,10 +237,10 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mcdosjsib4a395j4s"
+        "mh-mcdpmtbj14rwe9w6g"
       ],
       "tabLists": [
-        "mh-mcdosjsi874i3st03"
+        "mh-mcdpmtbj9vqk0j6d0"
       ]
     },
     "data": {
@@ -252,7 +252,7 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mcdosjsib4a395j4s"
+        "mh-mcdpmtbj14rwe9w6g"
       ]
     },
     "data": {}
@@ -261,7 +261,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdosjsmjxd06jkun"
+      "section": "sh-mcdpmtbm42bgxxq28"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -275,7 +275,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdosjtt80rlkshtn"
+      "section": "sh-mcdpmtcimdanz7tpv"
     },
     "data": {
       "v": "xl spacing, one merch card",
@@ -289,7 +289,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdosjucw2hpl91rv"
+      "section": "sh-mcdpmtd2uidqr9ffa"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -309,7 +309,7 @@
     "id": 1239,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "popup": "sh-mcdoski4jre3bo53t"
+      "popup": "sh-mcdpmu07dj4mwedd1"
     },
     "data": {
       "isDesktop": {}
