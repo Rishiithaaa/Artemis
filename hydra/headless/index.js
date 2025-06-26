@@ -118,6 +118,78 @@ document.querySelectorAll('video[data-mouseevent="true"]').forEach(video => {
   video.removeAttribute('data-mouseevent');
 });
 
+document.querySelectorAll('video[data-video-source]').forEach(video => {
+  const source = video.querySelector('source');
+  
+  if (source && source.src === video.getAttribute('data-video-source')) {
+    video.removeChild(source);             // Prevents early download
+  }
+
+  video.removeAttribute('src');            // Clear direct src attribute if any
+  video.setAttribute('preload', 'none');   // Ensure no preloading
+  //video.load();                            // Reset video element
+});
+
+const svgPlaceholder = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUzNiIgaGVpZ2h0PSI1MTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NjY2NjYzsiLz48L3N2Zz4=";
+
+const LCP_IMAGE_URL = "media_1360e829a01a4308c13168983349f11072384e156.jpg";
+
+// ✅ Handle <picture> blocks
+document.querySelectorAll('picture').forEach(picture => {
+  const img = picture.querySelector('img');
+  if (!img) return;
+
+  const imgSrc = img.getAttribute('src') || "";
+
+  // Mark the LCP image (only one should be eager)
+  if (imgSrc.includes(LCP_IMAGE_URL)) {
+    img.classList.add("lcp-candidate");
+    img.setAttribute("loading", "eager");
+    img.setAttribute("fetchpriority", "high");
+    return;
+  }
+
+  picture.classList.add("lazy-picture");
+
+  // Convert <source> to lazy
+  picture.querySelectorAll('source').forEach(source => {
+    const srcset = source.getAttribute('srcset');
+    if (srcset) {
+      source.setAttribute('data-srcset', srcset);
+      source.removeAttribute('srcset');
+    }
+  });
+
+  // Convert <img> to lazy
+  const realSrc = img.getAttribute('src');
+  if (realSrc) {
+    img.setAttribute('data-src', realSrc);
+    img.setAttribute('src', svgPlaceholder);
+  }
+});
+
+// ✅ Handle <img> tags NOT inside <picture> and not already processed
+document.querySelectorAll('img:not(.lcp-candidate):not([data-src])').forEach(img => {
+  // Ignore if already inside a <picture>
+  if (img.closest('picture')) return;
+
+  const src = img.getAttribute('src');
+  if (!src) return;
+
+  img.classList.add('lazy-image');
+  img.setAttribute('data-src', src);
+  img.setAttribute('src', svgPlaceholder);
+});
+
+// ✅ Handle <video> lazy loading (poster + source)
+document.querySelectorAll('video').forEach(video => {
+  const poster = video.getAttribute('poster');
+  if (poster) {
+    video.setAttribute('data-poster', poster);
+    video.removeAttribute('poster');
+  }
+  });
+
     // const cssEntries = cssObject;
     const midPoint = Math.ceil(cssEntries.length / 2);
     const firstHalf = cssEntries.slice(0, midPoint);

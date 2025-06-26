@@ -266,8 +266,6 @@ if (IMS_GUEST) {
     },
   };
 }
-
-
 const miloLibs = setLibs(LIBS);
 const unityLibs = getUnityLibs();
 // Import base milo features and run them
@@ -345,64 +343,209 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
   document.querySelectorAll('.merch-card').forEach(el => {
     initCard(el);
   });
-  (() => {
-  // Utility to detect mobile view (you can adjust breakpoint as needed)
-  const isMobile = () => window.matchMedia('(max-width: 767px)').matches;
-
-  // Setup dropdown toggle on mobile only
-  const setupDropdownToggles = () => {
-    const headlines = document.querySelectorAll('.feds-menu-headline');
-
-    headlines.forEach((headline) => {
-      const parent = headline.closest('li');
-      const navItems = parent?.querySelector('.feds-navItems');
-
-      if (!navItems) return;
-
-      // Collapse initially in mobile
-      if (isMobile()) {
-        navItems.style.display = 'none';
-
-        headline.setAttribute('tabindex', '0'); // Make keyboard-accessible
-        headline.style.cursor = 'pointer';
-
-        // Toggle open/close on click
-        headline.addEventListener('click', () => {
-          const isOpen = navItems.style.display === 'block';
-          navItems.style.display = isOpen ? 'none' : 'block';
-          headline.setAttribute('aria-expanded', !isOpen);
-        });
-
-        // Also allow toggling via keyboard
-        headline.addEventListener('keypress', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            headline.click();
-          }
-        });
-      }
-    });
-  };
-
-  // Run once DOM is ready
-  if (document.readyState !== 'loading') {
-    setupDropdownToggles();
-  } else {
-    document.addEventListener('DOMContentLoaded', setupDropdownToggles);
-  }
-
-  // Optional: Recheck on window resize (e.g., if viewport switches)
-  window.addEventListener('resize', () => {
-    document.querySelectorAll('.feds-navItems').forEach((item) => {
-      item.style.display = isMobile() ? 'none' : 'block';
-    });
-  });
-})();
 
 
   const s = document.createElement('script');
             s.src = "https://sample--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
+
+
+
+function onLcpImagesLoaded(callback) {
+  // Select all images with the class 'lcp-candidate'
+  const lcpImages = document.querySelectorAll('img.lcp-candidate');
+  const totalImages = lcpImages.length;
+
+  if (totalImages === 0) {
+    // If there are no images with this class, run the callback immediately
+    if (typeof callback === 'function') {
+      callback();
+    }
+    return;
+  }
+
+  let loadedImagesCount = 0;
+
+  function imageLoadedOrErrored() {
+    loadedImagesCount++;
+    if (loadedImagesCount === totalImages) {
+      // All images have either loaded or errored
+      if (typeof callback === 'function') {
+        callback();
+      }
+    }
+  }
+
+  lcpImages.forEach(img => {
+    // Check if the image is already complete (e.g., cached)
+    if (img.complete) {
+      imageLoadedOrErrored();
+    } else {
+      img.addEventListener('load', imageLoadedOrErrored);
+      img.addEventListener('error', imageLoadedOrErrored); // Also count errors
+    }
+  });
+}
+
+onLcpImagesLoaded(() => {
+    // lazy-load.js
+    // Target all elements that need lazy loading
+    const lazyElements = document.querySelectorAll('.lazy-picture, .lazy-image, .lazy-video');
+
+    if (!lazyElements.length) {
+        // console.log("No elements found for lazy loading.");
+        return;
+    }
+
+    if ('IntersectionObserver' in window) {
+        const lazyElementObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+
+                    if (element.classList.contains('lazy-picture')) {
+                        // Handle <picture> elements
+                        const imgTag = element.querySelector('img');
+                        const sourceTags = element.querySelectorAll('source');
+
+                        sourceTags.forEach(source => {
+                            if (source.dataset.srcset) {
+                                source.srcset = source.dataset.srcset;
+                            }
+                        });
+                        if (imgTag) {
+                            if (imgTag.dataset.srcset) {
+                                imgTag.srcset = imgTag.dataset.srcset;
+                            }
+                            if (imgTag.dataset.src) {
+                                imgTag.src = imgTag.dataset.src;
+                            }
+                        }
+                        element.classList.add('lazy-loaded');
+                        // console.log("Lazy loaded <picture>:", imgTag ? imgTag.getAttribute('src') : 'picture element');
+
+                    } else if (element.classList.contains('lazy-image')) {
+                        // Handle standalone <img> elements
+                        const imgTag = element; // The element itself is the img
+                        if (imgTag.dataset.srcset) {
+                            imgTag.srcset = imgTag.dataset.srcset;
+                        }
+                        if (imgTag.dataset.src) {
+                            imgTag.src = imgTag.dataset.src;
+                        }
+                        element.classList.add('lazy-loaded');
+                        // console.log("Lazy loaded <img>:", imgTag.getAttribute('src'));
+
+                    } else if (element.classList.contains('lazy-video')) {
+                        // Handle <video> elements (specifically for poster)
+                        const videoElement = element;
+                        if (videoElement.dataset.poster) {
+                            videoElement.poster = videoElement.dataset.poster;
+                            videoElement.removeAttribute('data-poster'); // Clean up
+                        }
+                        // If you were to lazy load video sources, you'd handle data-src on <source> here
+                        // and then potentially call videoElement.load();
+                        element.classList.add('lazy-loaded'); // Or 'video-poster-loaded'
+                        // console.log("Lazy loaded video poster for:", videoElement);
+                    }
+
+                    // Common cleanup for all types
+                    if (element.classList.contains('lazy-picture')) element.classList.remove('lazy-picture');
+                    if (element.classList.contains('lazy-image')) element.classList.remove('lazy-image');
+                    if (element.classList.contains('lazy-video')) element.classList.remove('lazy-video');
+                    
+                    lazyElementObserver.unobserve(element);
+                }
+            });
+        }, {
+            rootMargin: "0px 0px 200px 0px" // Start loading 200px before viewport
+        });
+
+        lazyElements.forEach(function(lazyElement) {
+            lazyElementObserver.observe(lazyElement);
+        });
+
+    } else {
+        // Fallback for older browsers
+        console.warn("IntersectionObserver not supported. Loading all lazy elements as fallback.");
+        lazyElements.forEach(function(element) {
+            if (element.classList.contains('lazy-picture')) {
+                const imgTag = element.querySelector('img');
+                const sourceTags = element.querySelectorAll('source');
+                sourceTags.forEach(source => { if (source.dataset.srcset) source.srcset = source.dataset.srcset; });
+                if (imgTag) {
+                    if (imgTag.dataset.srcset) imgTag.srcset = imgTag.dataset.srcset;
+                    if (imgTag.dataset.src) imgTag.src = imgTag.dataset.src;
+                }
+            } else if (element.classList.contains('lazy-image')) {
+                const imgTag = element;
+                if (imgTag.dataset.srcset) imgTag.srcset = imgTag.dataset.srcset;
+                if (imgTag.dataset.src) imgTag.src = imgTag.dataset.src;
+            } else if (element.classList.contains('lazy-video')) {
+                const videoElement = element;
+                if (videoElement.dataset.poster) videoElement.poster = videoElement.dataset.poster;
+            }
+            // Common cleanup for fallback
+            if (element.classList.contains('lazy-picture')) element.classList.remove('lazy-picture');
+            if (element.classList.contains('lazy-image')) element.classList.remove('lazy-image');
+            if (element.classList.contains('lazy-video')) element.classList.remove('lazy-video');
+            element.classList.add('lazy-loaded-fallback');
+        });
+    }
+
+    document.querySelectorAll('video[data-video-source]').forEach(video => {
+        const src = video.getAttribute('data-video-source');
+
+        // Only add <source> if not already present
+        if (!video.querySelector('source')) {
+            const source = document.createElement('source');
+            source.src = src;
+            source.type = 'video/mp4'; // Adjust if needed (e.g., 'video/webm')
+            video.appendChild(source);
+        }
+    });
+});
+
+            
+            function runWhenDOMReady(callback) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', callback);
+  } else {
+    callback(); // Already ready
+  }
+}
+
+runWhenDOMReady(() => {
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        const src = video.getAttribute('data-video-source');
+        if (!video.querySelector('source')) {
+          const source = document.createElement('source');
+          source.src = src;
+          source.type = 'video/mp4';
+          video.appendChild(source);
+          video.load();
+        }
+        obs.unobserve(video);
+      }
+    });
+  }, {
+    rootMargin: '0px 0px 200px 0px',
+    threshold: 0.01,
+  });
+
+  document.querySelectorAll('video[data-video-source]').forEach(video => {
+    const existing = video.querySelector('source');
+    if (existing) video.removeChild(existing);
+    video.setAttribute('preload', 'none');
+
+    observer.observe(video);
+    console.log('👁️ Watching:', video);
+  });
+});
+
 
 
 const arr = document.querySelectorAll('.caas');
@@ -427,7 +570,6 @@ const osMap = {
   iPad: 'iPadOS',
   iPhone: 'iOS',
 };
-
   window.universalNavComponents = ['appswitcher', 'profile'];
   window.alloy_all_configured = true;
 
@@ -505,6 +647,3 @@ const osMap = {
     await window.UniversalNav(config);
   });
 })();
-
-
-
