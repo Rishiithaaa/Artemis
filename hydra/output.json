@@ -6,21 +6,10 @@
     "data": {}
   },
   {
-    "id": 1285,
-    "file": "global-navigation/global-navigation.js",
-    "elements": {
-      "dropdownTrigger": "sh-mcdpmt9l7am2li69m"
-    },
-    "data": {
-      "isSectionMenu": true,
-      "isDesktop": {}
-    }
-  },
-  {
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdpmt9q2vi94erj0"
+      "section": "sh-mcdpzasw91kkdxfdr"
     },
     "data": {
       "v": "sticky bottom, static links",
@@ -31,10 +20,21 @@
     }
   },
   {
+    "id": 1285,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "dropdownTrigger": "sh-mcdpzat1seioeoem3"
+    },
+    "data": {
+      "isSectionMenu": true,
+      "isDesktop": {}
+    }
+  },
+  {
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mcdpmt9xknnfk27bn"
+      "video": "sh-mcdpzat7b6kezy8lh"
     },
     "data": {}
   },
@@ -42,7 +42,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mcdpmt9xu4p2ztruw"
+      "video": "sh-mcdpzat7u347hkfg4"
     },
     "data": {}
   },
@@ -50,7 +50,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mcdpmt9xw91lnp1rt"
+      "video": "sh-mcdpzat7rp4plwekq"
     },
     "data": {}
   },
@@ -58,7 +58,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdpmtak956a93t8s"
+      "section": "sh-mcdpzau3yqtk521us"
     },
     "data": {
       "v": "static links, three-up",
@@ -84,8 +84,14 @@
     "id": 39,
     "file": "editorial-card/editorial-card.js",
     "elements": {
-      "mediaVideo": "sh-mcdpmtan8q3amxov6"
+      "mediaVideo": "sh-mcdpzau619mcxjfj7"
     },
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
+    "elements": {},
     "data": {}
   },
   {
@@ -98,21 +104,15 @@
     "id": 39,
     "file": "editorial-card/editorial-card.js",
     "elements": {
-      "mediaVideo": "sh-mcdpmtanhfjvpqf0j"
+      "mediaVideo": "sh-mcdpzau6hm990i5y2"
     },
-    "data": {}
-  },
-  {
-    "id": 39,
-    "file": "editorial-card/editorial-card.js",
-    "elements": {},
     "data": {}
   },
   {
     "id": 489,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "localNav": "sh-mcdpmtavfbiascj28"
+      "localNav": "sh-mcdpzauhwcz26txwu"
     },
     "data": {
       "title": "Photoshop"
@@ -122,7 +122,7 @@
     "id": 927,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "toggle": "sh-mcdpmtavk4zkgczaq"
+      "toggle": "sh-mcdpzauh8pxaegqlh"
     },
     "data": {}
   },
@@ -130,7 +130,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdpmtbal4bho79kc"
+      "section": "sh-mcdpzav3f0knpmlgi"
     },
     "data": {
       "v": "xl spacing, three up, grid width 8",
@@ -150,7 +150,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdpmtbchsa06ydu7"
+      "section": "sh-mcdpzav7kwb9mlaod"
     },
     "data": {
       "v": "static links",
@@ -164,8 +164,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mcdpmtbe0jmh9pl8x",
-      "dd": "sh-mcdpmtberjhims1kz"
+      "button": "sh-mcdpzavfjab3s7qme",
+      "dd": "sh-mcdpzavf9o3ehmgcq"
     },
     "data": {
       "num": 1,
@@ -176,8 +176,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mcdpmtbekzjkv6tao",
-      "dd": "sh-mcdpmtbe36b7cbmsz"
+      "button": "sh-mcdpzavftz1ooxsah",
+      "dd": "sh-mcdpzavfy0dvzt3lp"
     },
     "data": {
       "num": 2,
@@ -188,8 +188,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mcdpmtbek0lpjbram",
-      "dd": "sh-mcdpmtbe05haqbmhh"
+      "button": "sh-mcdpzavfvfg22a0rb",
+      "dd": "sh-mcdpzavf5rxqr51sy"
     },
     "data": {
       "num": 3,
@@ -200,8 +200,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mcdpmtbevf032wvd5",
-      "dd": "sh-mcdpmtbek3hfstnrk"
+      "button": "sh-mcdpzavfuhia3eshf",
+      "dd": "sh-mcdpzavfg3csk9q1z"
     },
     "data": {
       "num": 4,
@@ -212,8 +212,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mcdpmtbe20nzajr8m",
-      "dd": "sh-mcdpmtbe5joierp9f"
+      "button": "sh-mcdpzavft64xp0g2u",
+      "dd": "sh-mcdpzavf3h5hv9r4m"
     },
     "data": {
       "num": 5,
@@ -224,8 +224,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mcdpmtbemssuaovu3",
-      "dd": "sh-mcdpmtbebozxyayqz"
+      "button": "sh-mcdpzavfeinpbmgba",
+      "dd": "sh-mcdpzavfy6ntsx07p"
     },
     "data": {
       "num": 6,
@@ -237,10 +237,10 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mcdpmtbj14rwe9w6g"
+        "mh-mcdpzavhq151a1ymq"
       ],
       "tabLists": [
-        "mh-mcdpmtbj9vqk0j6d0"
+        "mh-mcdpzavh59po72621"
       ]
     },
     "data": {
@@ -252,7 +252,7 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mcdpmtbj14rwe9w6g"
+        "mh-mcdpzavhq151a1ymq"
       ]
     },
     "data": {}
@@ -261,7 +261,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdpmtbm42bgxxq28"
+      "section": "sh-mcdpzavj66bgpniuo"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -275,7 +275,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdpmtcimdanz7tpv"
+      "section": "sh-mcdpzawk0ev2xz96k"
     },
     "data": {
       "v": "xl spacing, one merch card",
@@ -289,7 +289,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mcdpmtd2uidqr9ffa"
+      "section": "sh-mcdpzax60g5qs1wg2"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -309,7 +309,7 @@
     "id": 1239,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "popup": "sh-mcdpmu07dj4mwedd1"
+      "popup": "sh-mcdpzbk0faywof77w"
     },
     "data": {
       "isDesktop": {}
