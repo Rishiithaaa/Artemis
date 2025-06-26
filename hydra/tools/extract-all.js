@@ -12,7 +12,7 @@ export async function extractAllComponents() {
   await processHydratedFiles(sourceDir, outputDir, blocks);
 //console.log('Hydration blocks:', blocks);
   // Generate unified loader
-  const baseUrl = 'https://sample--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/';
+  const baseUrl = 'https://sample1--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/';
   const hydratedFiles = fs.readdirSync(outputDir)
     .filter(file => file.endsWith('-hydrate.js'))
     .map(file => `import('${baseUrl}${file}');`)

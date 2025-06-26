@@ -346,204 +346,73 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
 
 
   const s = document.createElement('script');
-            s.src = "https://sample--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
+            s.src = "https://sample1--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
 
 
-
 function onLcpImagesLoaded(callback) {
-  // Select all images with the class 'lcp-candidate'
   const lcpImages = document.querySelectorAll('img.lcp-candidate');
-  const totalImages = lcpImages.length;
+  if (!lcpImages.length) return callback?.();
 
-  if (totalImages === 0) {
-    // If there are no images with this class, run the callback immediately
-    if (typeof callback === 'function') {
-      callback();
-    }
-    return;
-  }
-
-  let loadedImagesCount = 0;
-
-  function imageLoadedOrErrored() {
-    loadedImagesCount++;
-    if (loadedImagesCount === totalImages) {
-      // All images have either loaded or errored
-      if (typeof callback === 'function') {
-        callback();
-      }
-    }
-  }
+  let loaded = 0;
+  const done = () => { if (++loaded === lcpImages.length) callback?.(); };
 
   lcpImages.forEach(img => {
-    // Check if the image is already complete (e.g., cached)
     if (img.complete) {
-      imageLoadedOrErrored();
+      done();
     } else {
-      img.addEventListener('load', imageLoadedOrErrored);
-      img.addEventListener('error', imageLoadedOrErrored); // Also count errors
+      img.addEventListener('load', done);
+      img.addEventListener('error', done);
     }
   });
 }
 
 onLcpImagesLoaded(() => {
-    // lazy-load.js
-    // Target all elements that need lazy loading
-    const lazyElements = document.querySelectorAll('.lazy-picture, .lazy-image, .lazy-video');
+  const lazyElements = document.querySelectorAll('.lazy-picture, .lazy-image, .lazy-video');
+  if (!lazyElements.length) return;
 
-    if (!lazyElements.length) {
-        // console.log("No elements found for lazy loading.");
-        return;
-    }
-
-    if ('IntersectionObserver' in window) {
-        const lazyElementObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    const element = entry.target;
-
-                    if (element.classList.contains('lazy-picture')) {
-                        // Handle <picture> elements
-                        const imgTag = element.querySelector('img');
-                        const sourceTags = element.querySelectorAll('source');
-
-                        sourceTags.forEach(source => {
-                            if (source.dataset.srcset) {
-                                source.srcset = source.dataset.srcset;
-                            }
-                        });
-                        if (imgTag) {
-                            if (imgTag.dataset.srcset) {
-                                imgTag.srcset = imgTag.dataset.srcset;
-                            }
-                            if (imgTag.dataset.src) {
-                                imgTag.src = imgTag.dataset.src;
-                            }
-                        }
-                        element.classList.add('lazy-loaded');
-                        // console.log("Lazy loaded <picture>:", imgTag ? imgTag.getAttribute('src') : 'picture element');
-
-                    } else if (element.classList.contains('lazy-image')) {
-                        // Handle standalone <img> elements
-                        const imgTag = element; // The element itself is the img
-                        if (imgTag.dataset.srcset) {
-                            imgTag.srcset = imgTag.dataset.srcset;
-                        }
-                        if (imgTag.dataset.src) {
-                            imgTag.src = imgTag.dataset.src;
-                        }
-                        element.classList.add('lazy-loaded');
-                        // console.log("Lazy loaded <img>:", imgTag.getAttribute('src'));
-
-                    } else if (element.classList.contains('lazy-video')) {
-                        // Handle <video> elements (specifically for poster)
-                        const videoElement = element;
-                        if (videoElement.dataset.poster) {
-                            videoElement.poster = videoElement.dataset.poster;
-                            videoElement.removeAttribute('data-poster'); // Clean up
-                        }
-                        // If you were to lazy load video sources, you'd handle data-src on <source> here
-                        // and then potentially call videoElement.load();
-                        element.classList.add('lazy-loaded'); // Or 'video-poster-loaded'
-                        // console.log("Lazy loaded video poster for:", videoElement);
-                    }
-
-                    // Common cleanup for all types
-                    if (element.classList.contains('lazy-picture')) element.classList.remove('lazy-picture');
-                    if (element.classList.contains('lazy-image')) element.classList.remove('lazy-image');
-                    if (element.classList.contains('lazy-video')) element.classList.remove('lazy-video');
-                    
-                    lazyElementObserver.unobserve(element);
-                }
-            });
-        }, {
-            rootMargin: "0px 0px 200px 0px" // Start loading 200px before viewport
-        });
-
-        lazyElements.forEach(function(lazyElement) {
-            lazyElementObserver.observe(lazyElement);
-        });
-
-    } else {
-        // Fallback for older browsers
-        console.warn("IntersectionObserver not supported. Loading all lazy elements as fallback.");
-        lazyElements.forEach(function(element) {
-            if (element.classList.contains('lazy-picture')) {
-                const imgTag = element.querySelector('img');
-                const sourceTags = element.querySelectorAll('source');
-                sourceTags.forEach(source => { if (source.dataset.srcset) source.srcset = source.dataset.srcset; });
-                if (imgTag) {
-                    if (imgTag.dataset.srcset) imgTag.srcset = imgTag.dataset.srcset;
-                    if (imgTag.dataset.src) imgTag.src = imgTag.dataset.src;
-                }
-            } else if (element.classList.contains('lazy-image')) {
-                const imgTag = element;
-                if (imgTag.dataset.srcset) imgTag.srcset = imgTag.dataset.srcset;
-                if (imgTag.dataset.src) imgTag.src = imgTag.dataset.src;
-            } else if (element.classList.contains('lazy-video')) {
-                const videoElement = element;
-                if (videoElement.dataset.poster) videoElement.poster = videoElement.dataset.poster;
-            }
-            // Common cleanup for fallback
-            if (element.classList.contains('lazy-picture')) element.classList.remove('lazy-picture');
-            if (element.classList.contains('lazy-image')) element.classList.remove('lazy-image');
-            if (element.classList.contains('lazy-video')) element.classList.remove('lazy-video');
-            element.classList.add('lazy-loaded-fallback');
-        });
-    }
-
-    document.querySelectorAll('video[data-video-source]').forEach(video => {
-        const src = video.getAttribute('data-video-source');
-
-        // Only add <source> if not already present
-        if (!video.querySelector('source')) {
-            const source = document.createElement('source');
-            source.src = src;
-            source.type = 'video/mp4'; // Adjust if needed (e.g., 'video/webm')
-            video.appendChild(source);
-        }
-    });
-});
-
-            
-            function runWhenDOMReady(callback) {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', callback);
-  } else {
-    callback(); // Already ready
-  }
-}
-
-runWhenDOMReady(() => {
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const video = entry.target;
-        const src = video.getAttribute('data-video-source');
-        if (!video.querySelector('source')) {
-          const source = document.createElement('source');
-          source.src = src;
-          source.type = 'video/mp4';
-          video.appendChild(source);
-          video.load();
+      if (!entry.isIntersecting) return;
+
+      const el = entry.target;
+
+      if (el.classList.contains('lazy-picture')) {
+        const img = el.querySelector('img');
+        const sources = el.querySelectorAll('source');
+        sources.forEach(s => s.srcset = s.dataset.srcset || s.srcset);
+        if (img) {
+          img.src = img.dataset.src || img.src;
+          img.srcset = img.dataset.srcset || img.srcset;
         }
-        obs.unobserve(video);
+      } else if (el.classList.contains('lazy-image')) {
+        el.src = el.dataset.src || el.src;
+        el.srcset = el.dataset.srcset || el.srcset;
+      } else if (el.classList.contains('lazy-video')) {
+        if (el.dataset.poster) {
+          el.poster = el.dataset.poster;
+        }
+
+        const videoSrc = el.getAttribute('data-video-source');
+        if (videoSrc && !el.querySelector('source')) {
+          const source = document.createElement('source');
+          source.src = videoSrc;
+          source.type = 'video/mp4';
+          el.appendChild(source);
+          el.load();
+        }
       }
+
+      el.classList.add('lazy-loaded');
+      el.classList.remove('lazy-picture', 'lazy-image', 'lazy-video');
+      obs.unobserve(el);
     });
   }, {
-    rootMargin: '0px 0px 200px 0px',
+    rootMargin: "0px 0px 200px 0px",
     threshold: 0.01,
   });
 
-  document.querySelectorAll('video[data-video-source]').forEach(video => {
-    const existing = video.querySelector('source');
-    if (existing) video.removeChild(existing);
-    video.setAttribute('preload', 'none');
-
-    observer.observe(video);
-    console.log('👁️ Watching:', video);
-  });
+  lazyElements.forEach(el => observer.observe(el));
 });
 
 
