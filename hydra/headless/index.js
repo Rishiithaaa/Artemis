@@ -76,25 +76,7 @@ const url = "https://main--cc--adobecom.aem.live/products/photoshop?milolibs=loc
 await page.waitForSelector(".feds-footer-wrapper");
   // Wait for a key element to be sure the page is ready
   await page.waitForSelector("#page-load-ok-milo");
-//   Extract HTML
-//   Inject inline styles
-  // await page.evaluate((cssMap) => {
-  //   const head = document.querySelector("head");
-  //   for (const [url, cssContent] of Object.entries(cssMap)) {
-  //     const styleTag = document.createElement("style");
-  //     styleTag.textContent = cssContent;
-  //     head.appendChild(styleTag); 
 
-  //   }
-  //   const meta = document.createElement("meta");
-  //   meta.setAttribute('name', 'robots');
-  //   meta.setAttribute('content', 'noindex,nofollow');
-  //   head.appendChild(meta);
-  // }, Object.fromEntries(cssMap));
-  // const cssEntries = Object.entries(cssMap);
-  // const midPoint = Math.ceil(cssEntries.length / 2);
-  // const firstHalf = cssEntries.slice(0, midPoint);
-  // const secondHalf = cssEntries.slice(midPoint);
 const hydrationTasks = await page.evaluate(() => window.__hydrate__);
   let html = await page.evaluate(function(scriptContent, cssEntries,hydrationTasks) { 
 
