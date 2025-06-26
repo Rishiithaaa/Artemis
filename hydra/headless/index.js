@@ -18,8 +18,6 @@ const run = async () => {
     height: 9000
   } });
   const page = await browser.newPage();
-
-  // Store CSS content mapped to URLs
   const cssMap = new Map();
   const cssPromises = [];
 
