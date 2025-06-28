@@ -200,7 +200,7 @@ function decorateLayout(el) {
     const video = media.querySelector('video');
     //@hydrate({payload:{video}})
     if (video){ applyHoverPlay(video);
-              applyAccessibilityEvents(video);
+              //applyAccessibilityEvents(video);
     }
     //@end
   }

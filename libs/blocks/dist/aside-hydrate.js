@@ -29,7 +29,6 @@ const hydrationBlocks = {
   }) => {
     if (video) {
       applyHoverPlay(video);
-      applyAccessibilityEvents(video);
     }
   }
 };

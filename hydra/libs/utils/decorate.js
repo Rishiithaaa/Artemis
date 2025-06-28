@@ -306,6 +306,8 @@ export function handlePause(event) {
 }
 
 export function applyHoverPlay(video) {
+  //@hydrate({payload:{video}})
+  {
   if (!video) return;
   if (video.hasAttribute('data-hoverplay')) {
     video.parentElement.addEventListener('focus', handlePause);
@@ -317,9 +319,13 @@ export function applyHoverPlay(video) {
       video.setAttribute('data-mouseevent', true);
     }
   }
+  //@end
+}
 }
 
 export function applyAccessibilityEvents(videoEl) {
+  //@hydrate({payload:{videoEl}})
+  {
   const pausePlayWrapper = videoEl.parentElement.querySelector('.pause-play-wrapper') || videoEl.closest('.pause-play-wrapper');
   if (pausePlayWrapper?.querySelector('.accessibility-control')) {
     pausePlayWrapper.addEventListener('click', handlePause);
@@ -330,6 +336,8 @@ export function applyAccessibilityEvents(videoEl) {
     videoEl.addEventListener('playing', (event) => syncPausePlayIcon(videoEl, event));
     videoEl.addEventListener('ended', () => syncPausePlayIcon(videoEl));
   }
+  //@end
+}
 }
 
 function setObjectFitAndPos(text, pic, bgEl, objFitOptions) {
