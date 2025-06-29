@@ -1,0 +1,85 @@
+{
+  "__type__": "Gnav",
+  "__type": "Gnav",
+  "__args": [
+    {
+      "content": {
+        "__type__": "HTMLBodyElement"
+      },
+      "block": {
+        "__type__": "HTMLElement",
+        "id": "sh-m9wiciw2xo42hj9me"
+      },
+      "newMobileNav": true
+    }
+  ],
+  "content": {
+    "__type__": "HTMLBodyElement"
+  },
+  "block": {
+    "__type__": "HTMLElement",
+    "id": "sh-m9wiciw2xo42hj9me"
+  },
+  "customLinks": [],
+  "blocks": {
+    "search": {
+      "config": {
+        "icon": "<svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" focusable=\"false\"><path d=\"M14 2A8 8 0 0 0 7.4 14.5L2.4 19.4a1.5 1.5 0 0 0 2.1 2.1L9.5 16.6A8 8 0 1 0 14 2Zm0 14.1A6.1 6.1 0 1 1 20.1 10 6.1 6.1 0 0 1 14 16.1Z\"></path></svg>"
+      }
+    },
+    "breadcrumbs": {
+      "wrapper": ""
+    },
+    "universalNav": {
+      "__type__": "HTMLElement",
+      "id": "sh-m9wiciw2ya8gxmu92"
+    }
+  },
+  "universalNavComponents": [
+    "profile",
+    "appswitcher",
+    "notifications",
+    "cart"
+  ],
+  "useUniversalNav": true,
+  "elements": {
+    "curtain": {
+      "__type__": "HTMLElement",
+      "id": "sh-m9wiciw2byll2s2i2"
+    },
+    "aside": "",
+    "mainNav": {
+      "__type__": "HTMLElement",
+      "id": "sh-m9wiciw2fdevwdgfh"
+    },
+    "navWrapper": {
+      "__type__": "HTMLElement",
+      "id": "sh-m9wiciw27ejetg7pa"
+    },
+    "localNav": {
+      "__type__": "HTMLElement",
+      "id": "sh-mchuz34q4humuvo4o"
+    },
+    "mobileToggle": {
+      "__type__": "HTMLElement",
+      "id": "sh-mchuz34qpge613ii8"
+    },
+    "topnav": {
+      "__type__": "HTMLElement",
+      "id": "sh-m9wiciw21e5dkf7ms"
+    },
+    "breadcrumbsWrapper": {
+      "__type__": "HTMLElement",
+      "id": "sh-m9wiciw21s5gt7u5x"
+    },
+    "topnavWrapper": {
+      "__type__": "HTMLElement",
+      "id": "sh-m9wiciw256cbeohaw"
+    }
+  },
+  "newMobileNav": true,
+  "mainNavItemCount": 5,
+  "originalTitle": [
+    "Photoshop"
+  ]
+}
