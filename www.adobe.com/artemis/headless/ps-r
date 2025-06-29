@@ -13608,24 +13608,6 @@ Analytics manifest name: photoshop">
             }
             )();
 
-            document.addEventListener('click', (event) => {
-                const openElemSelector = '.global-navigation [aria-expanded="true"]';
-                const isClickedElemOpen = [...document.querySelectorAll(openElemSelector)].find( (openItem) => openItem.parentElement.contains(event.target));
-                if (!isClickedElemOpen) {
-                    navItem.forEach(el => el.setAttribute('aria-expanded', 'false'));
-                }
-            }
-            );
-            const hamburger = document.querySelector('.feds-toggle');
-            hamburger.addEventListener('click', (event) => {
-                const navWrapper = document.getElementById('feds-nav-wrapper');
-                if (navWrapper.matches('.feds-nav-wrapper--expanded')) {
-                    navWrapper.classList.remove('feds-nav-wrapper--expanded');
-                } else {
-                    navWrapper.classList.add('feds-nav-wrapper--expanded');
-                }
-            }
-            );
             import initCard from '/libs/blocks/merch-card/merch-card.js';
             document.querySelectorAll('.merch-card').forEach(el => {
                 initCard(el);
