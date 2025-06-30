@@ -153,7 +153,7 @@ class GnavHydrate extends Gnav {
     });
     return this.ready;
   };
-makeTabActive = (popup) => {
+   makeTabActive = (popup) => {
       const tabbuttons = popup.querySelectorAll('.global-navigation .tabs button');
       const tabpanels = popup.querySelectorAll('.global-navigation .tab-content [role="tabpanel"]');
       closeAllTabs(tabbuttons, tabpanels);
@@ -364,8 +364,7 @@ export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
       const argNames = Object.keys(resolvedArgs);
       const argValues = argNames.map(name => resolvedArgs[name]);
       console.log(argNames);
-
-      obj[`_${rawTask.id}`](resolvedArgs);
+            obj[`_${rawTask.id}`](resolvedArgs);
 
       // 6. Execute the User's Hydration Code for this specific instance
       // const hydrateAction = new Function(...argNames, blockCodeString);

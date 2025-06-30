@@ -54,7 +54,7 @@ class GnavHydrate extends Gnav {
         if (popup && this.isLocalNav()) {
           this.updatePopupPosition(popup);
         }
-        makeTabActive(popup);
+        this.makeTabActive(popup);
       } else if (isDesktop.matches && this.newMobileNav && isSectionMenu) {
         const popup = dropdownTrigger.nextElementSibling;
         if (popup) popup.style.removeProperty('top');

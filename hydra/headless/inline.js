@@ -321,8 +321,8 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
         });
         event.currentTarget.setAttribute('aria-expanded', isOpen == 'false' ? 'true' : 'false');
     }, false);
-  }
-  document.addEventListener('click', (event) => {
+  } 
+     document.addEventListener('click', (event) => {
       const openElemSelector = '.global-navigation [aria-expanded="true"]';
       const isClickedElemOpen = [...document.querySelectorAll(openElemSelector)]
       .find((openItem) => openItem.parentElement.contains(event.target));
@@ -340,6 +340,17 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
     }
   });
   */
+if (!window.matchMedia('(min-width: 900px)').matches)
+  document.querySelector('header').classList.add('new-nav');
+document.addEventListener('click', (e) => {
+  const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]');
+  const openElemSelector = '.global-navigation [aria-expanded="true"]';
+  const isClickedElemOpen = [...document.querySelectorAll(openElemSelector)].find( (openItem) => openItem.parentElement.contains(event.target));
+  if (!isClickedElemOpen) {
+      navItem.forEach(el => el.setAttribute('aria-expanded', 'false'));
+  }
+}
+);
   import initCard from '/libs/blocks/merch-card/merch-card.js';
   document.querySelectorAll('.merch-card').forEach(el => {
     initCard(el);
