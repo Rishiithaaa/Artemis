@@ -13608,7 +13608,19 @@ Analytics manifest name: photoshop">
             }
             )();
 
-            import initCard from '/libs/blocks/merch-card/merch-card.js';
+              function updateNavMode() {
+    const header = document.querySelector('header');
+    const isDesktop = window.matchMedia('(min-width: 900px)').matches;
+    if (!isDesktop) {
+      header.classList.add('new-nav');
+    } else {
+      header.classList.remove('new-nav');
+    }
+  }
+
+  updateNavMode();
+  window.addEventListener('resize', updateNavMode);
+import initCard from '/libs/blocks/merch-card/merch-card.js';
             document.querySelectorAll('.merch-card').forEach(el => {
                 initCard(el);
             }
