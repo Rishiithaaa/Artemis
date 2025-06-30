@@ -3,7 +3,7 @@
     "id": 1285,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "dropdownTrigger": "sh-mchuz33rl7phzh2vm"
+      "dropdownTrigger": "sh-mcilm3z7h0lb1p9on"
     },
     "data": {
       "isSectionMenu": true,
@@ -14,7 +14,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mchuz33ux9kys6awg"
+      "section": "sh-mcilm3zjeugylnxtv"
     },
     "data": {
       "v": "sticky bottom, static links",
@@ -28,7 +28,7 @@
     "id": 328,
     "file": "utils/decorate.js",
     "elements": {
-      "videoEl": "sh-mchuz343nn3hfpve9"
+      "videoEl": "sh-mcilm3zry622dx6j9"
     },
     "data": {}
   },
@@ -36,7 +36,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mchuz343nn3hfpve9"
+      "video": "sh-mcilm3zry622dx6j9"
     },
     "data": {}
   },
@@ -44,7 +44,7 @@
     "id": 328,
     "file": "utils/decorate.js",
     "elements": {
-      "videoEl": "sh-mchuz344cqz148er3"
+      "videoEl": "sh-mcilm3zsmwkyk60xa"
     },
     "data": {}
   },
@@ -52,7 +52,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mchuz344cqz148er3"
+      "video": "sh-mcilm3zsmwkyk60xa"
     },
     "data": {}
   },
@@ -60,7 +60,7 @@
     "id": 328,
     "file": "utils/decorate.js",
     "elements": {
-      "videoEl": "sh-mchuz3445acbsozb8"
+      "videoEl": "sh-mcilm3zsdv9h85xrw"
     },
     "data": {}
   },
@@ -68,7 +68,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mchuz3445acbsozb8"
+      "video": "sh-mcilm3zsdv9h85xrw"
     },
     "data": {}
   },
@@ -76,7 +76,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mchuz343nn3hfpve9"
+      "video": "sh-mcilm3zsmwkyk60xa"
     },
     "data": {}
   },
@@ -84,7 +84,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mchuz343nn3hfpve9"
+      "video": "sh-mcilm3zsmwkyk60xa"
     },
     "data": {}
   },
@@ -92,7 +92,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mchuz344cqz148er3"
+      "video": "sh-mcilm3zsdv9h85xrw"
     },
     "data": {}
   },
@@ -100,7 +100,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mchuz344cqz148er3"
+      "video": "sh-mcilm3zsdv9h85xrw"
     },
     "data": {}
   },
@@ -108,7 +108,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mchuz3445acbsozb8"
+      "video": "sh-mcilm3zry622dx6j9"
     },
     "data": {}
   },
@@ -116,7 +116,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mchuz3445acbsozb8"
+      "video": "sh-mcilm3zry622dx6j9"
     },
     "data": {}
   },
@@ -124,7 +124,7 @@
     "id": 489,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "localNav": "sh-mchuz34q4humuvo4o"
+      "localNav": "sh-mcilm405ymxc3xwmi"
     },
     "data": {
       "title": "Photoshop"
@@ -134,7 +134,7 @@
     "id": 927,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "toggle": "sh-mchuz34qpge613ii8"
+      "toggle": "sh-mcilm4054e2bygdtf"
     },
     "data": {}
   },
@@ -142,7 +142,7 @@
     "id": 328,
     "file": "utils/decorate.js",
     "elements": {
-      "videoEl": "sh-mchuz3598xt3wvux0"
+      "videoEl": "sh-mcilm40efk4sva7o0"
     },
     "data": {}
   },
@@ -150,7 +150,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mchuz3598xt3wvux0"
+      "video": "sh-mcilm40efk4sva7o0"
     },
     "data": {}
   },
@@ -158,7 +158,7 @@
     "id": 328,
     "file": "utils/decorate.js",
     "elements": {
-      "videoEl": "sh-mchuz35alksronmpn"
+      "videoEl": "sh-mcilm40e4sk8wkg90"
     },
     "data": {}
   },
@@ -166,7 +166,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mchuz35alksronmpn"
+      "video": "sh-mcilm40e4sk8wkg90"
     },
     "data": {}
   },
@@ -174,7 +174,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mchuz35a8tm06htgw"
+      "section": "sh-mcilm40e4t741y6jg"
     },
     "data": {
       "v": "static links, three-up",
@@ -187,8 +187,20 @@
   {
     "id": 39,
     "file": "editorial-card/editorial-card.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
     "elements": {
-      "mediaVideo": "sh-mchuz3598xt3wvux0"
+      "mediaVideo": "sh-mcilm40efk4sva7o0"
     },
     "data": {}
   },
@@ -196,7 +208,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mchuz3598xt3wvux0"
+      "video": "sh-mcilm40efk4sva7o0"
     },
     "data": {}
   },
@@ -215,14 +227,8 @@
   {
     "id": 39,
     "file": "editorial-card/editorial-card.js",
-    "elements": {},
-    "data": {}
-  },
-  {
-    "id": 39,
-    "file": "editorial-card/editorial-card.js",
     "elements": {
-      "mediaVideo": "sh-mchuz35alksronmpn"
+      "mediaVideo": "sh-mcilm40e4sk8wkg90"
     },
     "data": {}
   },
@@ -230,44 +236,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mchuz35alksronmpn"
-    },
-    "data": {}
-  },
-  {
-    "id": 39,
-    "file": "editorial-card/editorial-card.js",
-    "elements": {},
-    "data": {}
-  },
-  {
-    "id": 202,
-    "file": "aside/aside.js",
-    "elements": {},
-    "data": {}
-  },
-  {
-    "id": 129,
-    "file": "tabs/tabs.js",
-    "elements": {
-      "tabs": [
-        "mh-mchuz36dyfdppbevm"
-      ],
-      "tabLists": [
-        "mh-mchuz36dwi9wuyo7q"
-      ]
-    },
-    "data": {
-      "tabFocus": 0
-    }
-  },
-  {
-    "id": 150,
-    "file": "tabs/tabs.js",
-    "elements": {
-      "tabs": [
-        "mh-mchuz36dyfdppbevm"
-      ]
+      "video": "sh-mcilm40e4sk8wkg90"
     },
     "data": {}
   },
@@ -275,7 +244,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mchuz36e4oyymnt4y"
+      "section": "sh-mcilm4171nwts8cum"
     },
     "data": {
       "v": "xl spacing, three up, grid width 8",
@@ -286,24 +255,16 @@
     }
   },
   {
-    "id": 82,
-    "file": "section-metadata/section-metadata.js",
-    "elements": {
-      "section": "sh-mchuz36hkskqhc7pw"
-    },
-    "data": {
-      "v": "xl spacing, two merch cards",
-      "y": {
-        "content": {},
-        "text": "xl spacing, two merch cards"
-      }
-    }
+    "id": 202,
+    "file": "aside/aside.js",
+    "elements": {},
+    "data": {}
   },
   {
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mchuz36h8tii10x8n"
+      "section": "sh-mcilm41a9rtmydkj1"
     },
     "data": {
       "v": "static links",
@@ -317,8 +278,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mchuz36icvkesvbkm",
-      "dd": "sh-mchuz36i8now2sg81"
+      "button": "sh-mcilm41fwvr1gbosi",
+      "dd": "sh-mcilm41fu76nnxhf5"
     },
     "data": {
       "num": 1,
@@ -329,8 +290,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mchuz36iexdjwooud",
-      "dd": "sh-mchuz36invhuqxy36"
+      "button": "sh-mcilm41gkjowri1ta",
+      "dd": "sh-mcilm41gmmettrz11"
     },
     "data": {
       "num": 2,
@@ -341,8 +302,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mchuz36i4ffl7xbum",
-      "dd": "sh-mchuz36idylkmphxe"
+      "button": "sh-mcilm41gip5fpfco9",
+      "dd": "sh-mcilm41gb9eywcm8y"
     },
     "data": {
       "num": 3,
@@ -353,8 +314,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mchuz36i02anuq591",
-      "dd": "sh-mchuz36iqzyhplt8g"
+      "button": "sh-mcilm41g0p3snr923",
+      "dd": "sh-mcilm41gjdl394yil"
     },
     "data": {
       "num": 4,
@@ -365,8 +326,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mchuz36ih8bfw1jfu",
-      "dd": "sh-mchuz36ivv264dru3"
+      "button": "sh-mcilm41gfjcweo52a",
+      "dd": "sh-mcilm41ggddbtbvfa"
     },
     "data": {
       "num": 5,
@@ -377,8 +338,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mchuz36i30u67a386",
-      "dd": "sh-mchuz36ihl31wmw16"
+      "button": "sh-mcilm41gi2o9fgf0y",
+      "dd": "sh-mcilm41g3lli7zbs6"
     },
     "data": {
       "num": 6,
@@ -386,10 +347,49 @@
     }
   },
   {
+    "id": 129,
+    "file": "tabs/tabs.js",
+    "elements": {
+      "tabs": [
+        "mh-mcilm41joawsiv9yd"
+      ],
+      "tabLists": [
+        "mh-mcilm41jljmn6z1jf"
+      ]
+    },
+    "data": {
+      "tabFocus": 0
+    }
+  },
+  {
+    "id": 150,
+    "file": "tabs/tabs.js",
+    "elements": {
+      "tabs": [
+        "mh-mcilm41joawsiv9yd"
+      ]
+    },
+    "data": {}
+  },
+  {
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mchuz37hm2c8miyap"
+      "section": "sh-mcilm41lsj0fm18la"
+    },
+    "data": {
+      "v": "xl spacing, two merch cards",
+      "y": {
+        "content": {},
+        "text": "xl spacing, two merch cards"
+      }
+    }
+  },
+  {
+    "id": 82,
+    "file": "section-metadata/section-metadata.js",
+    "elements": {
+      "section": "sh-mcilm42lxsp4k4g5a"
     },
     "data": {
       "v": "xl spacing, one merch card",
@@ -403,7 +403,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mchuz382htscqoblr"
+      "section": "sh-mcilm4345jlwb0pfd"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -423,7 +423,7 @@
     "id": 1239,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "popup": "sh-mchuz44d0ap7r4d37"
+      "popup": "sh-mcilm4oyl3tgxeoa5"
     },
     "data": {
       "isDesktop": {}

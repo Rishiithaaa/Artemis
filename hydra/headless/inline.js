@@ -311,7 +311,7 @@ if(verbEl) {
   });
 })();
 
-
+/*
 const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]');
     for (var i = 0; i < navItem.length; i++) {
       navItem[i].addEventListener('click', (event) => {
@@ -339,6 +339,7 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
       navWrapper.classList.add('feds-nav-wrapper--expanded');
     }
   });
+  */
   import initCard from '/libs/blocks/merch-card/merch-card.js';
   document.querySelectorAll('.merch-card').forEach(el => {
     initCard(el);
@@ -346,7 +347,7 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
 
 
   const s = document.createElement('script');
-            s.src = "https://gnav--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
+            s.src = "https://gnav2--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
 
 
