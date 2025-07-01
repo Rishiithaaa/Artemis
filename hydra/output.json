@@ -3,8 +3,8 @@
     "id": 197,
     "file": "hero-marquee/hero-marquee.js",
     "elements": {
-      "videoEl": "sh-mc8y5jhgpirsykxb5",
-      "pausePlayWrapper": "sh-mc8y5jhg433yxlnbp"
+      "videoEl": "sh-mckx602gjqi42bb63",
+      "pausePlayWrapper": "sh-mckx602gs4xmhoc3k"
     },
     "data": {}
   },
@@ -12,7 +12,7 @@
     "id": 1285,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "dropdownTrigger": "sh-mc8y5jjuo6qifb54p"
+      "dropdownTrigger": "sh-mckx6051e25vllw57"
     },
     "data": {
       "isSectionMenu": true,
@@ -23,7 +23,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc8y5jju55rh4vhoj"
+      "section": "sh-mckx6053tex4lm3kb"
     },
     "data": {
       "v": "sticky bottom, static links",
@@ -37,7 +37,7 @@
     "id": 489,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "localNav": "sh-mc8y5jk1ipr391mnr"
+      "localNav": "sh-mckx60577zkpgqb9b"
     },
     "data": {
       "title": "Illustrator"
@@ -47,7 +47,7 @@
     "id": 927,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "toggle": "sh-mc8y5jk6u1u28moc0"
+      "toggle": "sh-mckx605cnzq9e281i"
     },
     "data": {}
   },
@@ -55,7 +55,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc8y5jl9jgfutoxcm"
+      "video": "sh-mckx60680m51a2ibn"
     },
     "data": {}
   },
@@ -63,7 +63,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc8y5jl957ik6xxvz"
+      "video": "sh-mckx6068a0zu9cvt1"
     },
     "data": {}
   },
@@ -71,7 +71,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mc8y5jl91gifoqunc"
+      "video": "sh-mckx6068y5rm4hcjc"
     },
     "data": {}
   },
@@ -79,7 +79,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc8y5jlavlqh0t67l"
+      "section": "sh-mckx60691ji22sr29"
     },
     "data": {
       "v": "l spacing",
@@ -93,7 +93,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc8y5jlek5jq178t6"
+      "section": "sh-mckx606dsxma7f52a"
     },
     "data": {
       "v": "no spacing",
@@ -107,7 +107,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc8y5jmnlwo77r2q0"
+      "section": "sh-mckx6079cbgtji15z"
     },
     "data": {
       "v": "three-up",
@@ -122,10 +122,10 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mc8y5joef5zx775lc"
+        "mh-mckx608eg5m7y4xyo"
       ],
       "tabLists": [
-        "mh-mc8y5joez66jf6aqc"
+        "mh-mckx608eqncaey7py"
       ]
     },
     "data": {
@@ -137,7 +137,7 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mc8y5joef5zx775lc"
+        "mh-mckx608eg5m7y4xyo"
       ]
     },
     "data": {}
@@ -146,7 +146,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc8y5jogdtit8e353"
+      "section": "sh-mckx608g7auzmmcbx"
     },
     "data": {
       "v": "xl spacing, two merch cards, static links",
@@ -160,7 +160,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc8y5jq81n1wq0svc"
+      "section": "sh-mckx60a2i1caecr46"
     },
     "data": {
       "v": "xl spacing, one merch card, static links",
@@ -174,7 +174,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc8y5jrm7f3le57b6"
+      "section": "sh-mckx60bslcj54ewkk"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -194,7 +194,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mc8y5jui5ivd3rtpq"
+      "section": "sh-mckx60gg88rqc6dks"
     },
     "data": {
       "v": "static links, l spacing",
@@ -208,8 +208,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc8y5juj9clg7i9b6",
-      "dd": "sh-mc8y5juj7q85r9e78"
+      "button": "sh-mckx60gjp36dra5lj",
+      "dd": "sh-mckx60gjs5a0zlcp0"
     },
     "data": {
       "num": 1,
@@ -220,8 +220,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc8y5julghozmctl8",
-      "dd": "sh-mc8y5julcunnwcs2s"
+      "button": "sh-mckx60gjll0fcvpze",
+      "dd": "sh-mckx60gj0n0visyrq"
     },
     "data": {
       "num": 2,
@@ -232,8 +232,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc8y5julny9uih44w",
-      "dd": "sh-mc8y5jul4yfgkv1t4"
+      "button": "sh-mckx60gjavxq2g99u",
+      "dd": "sh-mckx60gjwlylqxxop"
     },
     "data": {
       "num": 3,
@@ -244,8 +244,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc8y5jul16ru8244m",
-      "dd": "sh-mc8y5jul4m6obrv0c"
+      "button": "sh-mckx60gjcn26rk00j",
+      "dd": "sh-mckx60gjkuk95gmdu"
     },
     "data": {
       "num": 4,
@@ -256,8 +256,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc8y5julddpwfpl7w",
-      "dd": "sh-mc8y5julqrwx4rjb1"
+      "button": "sh-mckx60gjcu9h0rasn",
+      "dd": "sh-mckx60gjjm997jo0i"
     },
     "data": {
       "num": 5,
@@ -268,8 +268,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc8y5julwsve4c1gi",
-      "dd": "sh-mc8y5jul0kl7ylqwk"
+      "button": "sh-mckx60gj1es601beu",
+      "dd": "sh-mckx60gjlty7v7ppj"
     },
     "data": {
       "num": 6,
@@ -280,8 +280,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mc8y5jul52artuqfo",
-      "dd": "sh-mc8y5julegi4hn0es"
+      "button": "sh-mckx60gjdvx85496j",
+      "dd": "sh-mckx60gjjkg1liz83"
     },
     "data": {
       "num": 7,
@@ -292,7 +292,7 @@
     "id": 1239,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "popup": "sh-mc8y5kc5vacjak9ff"
+      "popup": "sh-mckx60wjyky4cs6h6"
     },
     "data": {
       "isDesktop": {}
