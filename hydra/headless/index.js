@@ -101,7 +101,7 @@ document.querySelectorAll('video[data-mouseevent="true"]').forEach(video => {
 
 // 🔹 Placeholder for lazy <img>
 const svgPlaceholder = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUzNiIgaGVpZ2h0PSI1MTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NjY2NjYzsiLz48L3N2Zz4=";
-const LCP_IMAGE_URL = "media_1360e829a01a4308c13168983349f11072384e156.jpg";
+const LCP_IMAGE_URL = "media_1932f853d5dddbb1775f7f0e8333c2dfaa9cf9515.png";
 
 // 🔹 Modify <picture> tags
 document.querySelectorAll('picture').forEach(picture => {
@@ -161,7 +161,7 @@ document.querySelectorAll('video').forEach(video => {
   video.classList.add('lazy-video');
 });
 
-const FINAL_IMAGE_URL = "https://www.adobe.com/products/media_1360e829a01a4308c13168983349f11072384e156.jpg?width=768&format=webply&optimize=medium";
+const FINAL_IMAGE_URL = "https://www.adobe.com/products/media_1932f853d5dddbb1775f7f0e8333c2dfaa9cf9515.png?width=768&format=webply&optimize=medium";
 
 // Replace full <picture> with a simplified one if it matches the LCP image
 document.querySelectorAll('picture').forEach(picture => {
@@ -169,7 +169,7 @@ document.querySelectorAll('picture').forEach(picture => {
   if (!img) return;
 
   const src = img.getAttribute('src') || "";
-  if (!src.includes("media_1360e829a01a4308c13168983349f11072384e156.jpg")) return;
+  if (!src.includes("media_1932f853d5dddbb1775f7f0e8333c2dfaa9cf9515.png")) return;
 
   // Create a new simplified <picture>
   const simplifiedPicture = document.createElement("picture");

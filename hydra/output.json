@@ -3,7 +3,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mckvzmf3n3qxfpq7x"
+      "section": "sh-mckwbdnvu6dze45hw"
     },
     "data": {
       "v": "sticky bottom",
@@ -14,35 +14,10 @@
     }
   },
   {
-    "id": 1285,
-    "file": "global-navigation/global-navigation.js",
-    "elements": {
-      "dropdownTrigger": "sh-mckvzmgv2zk0auye7"
-    },
-    "data": {
-      "isSectionMenu": true,
-      "isDesktop": {}
-    }
-  },
-  {
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mckvzmgv20eaz362y"
-    },
-    "data": {
-      "v": "l spacing, grid-width-8",
-      "y": {
-        "content": {},
-        "text": "l spacing, grid-width-8"
-      }
-    }
-  },
-  {
-    "id": 82,
-    "file": "section-metadata/section-metadata.js",
-    "elements": {
-      "section": "sh-mckvzmgysn3uj0g2l"
+      "section": "sh-mckwbdp9xkuyhuuhw"
     },
     "data": {
       "v": "static links",
@@ -53,25 +28,11 @@
     }
   },
   {
-    "id": 82,
-    "file": "section-metadata/section-metadata.js",
-    "elements": {
-      "section": "sh-mckvzmgzewtacydb9"
-    },
-    "data": {
-      "v": "container, three up, static links",
-      "y": {
-        "content": {},
-        "text": "container, three up, static links"
-      }
-    }
-  },
-  {
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh1tb7m4di81",
-      "dd": "sh-mckvzmh1vt6nm9ack"
+      "button": "sh-mckwbdpcjo30q4rwg",
+      "dd": "sh-mckwbdpc66sm4eyh3"
     },
     "data": {
       "num": 1,
@@ -82,8 +43,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh1tevnddce9",
-      "dd": "sh-mckvzmh1w9q63hddb"
+      "button": "sh-mckwbdpcre63zop2n",
+      "dd": "sh-mckwbdpci5i9xrrp9"
     },
     "data": {
       "num": 2,
@@ -94,8 +55,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh1ukd3tgv6m",
-      "dd": "sh-mckvzmh1wvn0bqlgv"
+      "button": "sh-mckwbdpctrz2g4cu1",
+      "dd": "sh-mckwbdpctwc70pm60"
     },
     "data": {
       "num": 3,
@@ -106,8 +67,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh1dwf6y17nw",
-      "dd": "sh-mckvzmh1atf6s9qcu"
+      "button": "sh-mckwbdpcdt21fv9f8",
+      "dd": "sh-mckwbdpcq2bfksxnj"
     },
     "data": {
       "num": 4,
@@ -118,8 +79,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh1913eaa4r5",
-      "dd": "sh-mckvzmh1sc84uiaok"
+      "button": "sh-mckwbdpcmh7f3cp9x",
+      "dd": "sh-mckwbdpc07cvsb7kq"
     },
     "data": {
       "num": 5,
@@ -130,8 +91,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh10a4tisol4",
-      "dd": "sh-mckvzmh1kmle52exb"
+      "button": "sh-mckwbdpcoannclvdj",
+      "dd": "sh-mckwbdpczu3r1p19r"
     },
     "data": {
       "num": 6,
@@ -142,8 +103,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh1yh451vvg2",
-      "dd": "sh-mckvzmh1fhl2n93gd"
+      "button": "sh-mckwbdpc2u5ql136s",
+      "dd": "sh-mckwbdpch6wq6uboj"
     },
     "data": {
       "num": 7,
@@ -154,8 +115,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh1gsg049ija",
-      "dd": "sh-mckvzmh1ctqb6de56"
+      "button": "sh-mckwbdpcz7xfa6f82",
+      "dd": "sh-mckwbdpchlbdj7rq2"
     },
     "data": {
       "num": 8,
@@ -166,8 +127,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh29x6es3xmx",
-      "dd": "sh-mckvzmh22z476k2b1"
+      "button": "sh-mckwbdpc5sxk4z3pw",
+      "dd": "sh-mckwbdpckjsij32vz"
     },
     "data": {
       "num": 9,
@@ -178,8 +139,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh2k6nk55vpj",
-      "dd": "sh-mckvzmh2kuzjcmt9m"
+      "button": "sh-mckwbdpcz65u8ifbk",
+      "dd": "sh-mckwbdpcje8d031lv"
     },
     "data": {
       "num": 10,
@@ -190,8 +151,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh2e73tzxo9i",
-      "dd": "sh-mckvzmh2p2cc15b6b"
+      "button": "sh-mckwbdpci3x7q2213",
+      "dd": "sh-mckwbdpc6oduenc0p"
     },
     "data": {
       "num": 11,
@@ -202,8 +163,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh29erbw0yqd",
-      "dd": "sh-mckvzmh2orxwfdpq2"
+      "button": "sh-mckwbdpcd3domajcd",
+      "dd": "sh-mckwbdpc207duaa5e"
     },
     "data": {
       "num": 12,
@@ -214,8 +175,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh250cxlle8v",
-      "dd": "sh-mckvzmh2cc2j2a6jb"
+      "button": "sh-mckwbdpczmhpe2b7i",
+      "dd": "sh-mckwbdpcmc6wsnnbp"
     },
     "data": {
       "num": 13,
@@ -226,8 +187,8 @@
     "id": 154,
     "file": "accordion/accordion.js",
     "elements": {
-      "button": "sh-mckvzmh2tke96rd2d",
-      "dd": "sh-mckvzmh2noibklgen"
+      "button": "sh-mckwbdpcvl3pfrre4",
+      "dd": "sh-mckwbdpcies7t29of"
     },
     "data": {
       "num": 14,
@@ -235,20 +196,18 @@
     }
   },
   {
-    "id": 489,
-    "file": "global-navigation/global-navigation.js",
+    "id": 328,
+    "file": "utils/decorate.js",
     "elements": {
-      "localNav": "sh-mckvzmh4fv8s0fet7"
+      "videoEl": "sh-mckwbdphfb6z3umjo"
     },
-    "data": {
-      "title": "Lightroom"
-    }
+    "data": {}
   },
   {
-    "id": 927,
-    "file": "global-navigation/global-navigation.js",
+    "id": 310,
+    "file": "utils/decorate.js",
     "elements": {
-      "toggle": "sh-mckvzmh84qnxgk5jh"
+      "video": "sh-mckwbdphfb6z3umjo"
     },
     "data": {}
   },
@@ -256,7 +215,7 @@
     "id": 328,
     "file": "utils/decorate.js",
     "elements": {
-      "videoEl": "sh-mckvzmmpljenl9zkf"
+      "videoEl": "sh-mckwbdphsuzzk9f0z"
     },
     "data": {}
   },
@@ -264,39 +223,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mckvzmmpljenl9zkf"
-    },
-    "data": {}
-  },
-  {
-    "id": 328,
-    "file": "utils/decorate.js",
-    "elements": {
-      "videoEl": "sh-mckvzmmp5ux37x2au"
-    },
-    "data": {}
-  },
-  {
-    "id": 310,
-    "file": "utils/decorate.js",
-    "elements": {
-      "video": "sh-mckvzmmp5ux37x2au"
-    },
-    "data": {}
-  },
-  {
-    "id": 310,
-    "file": "utils/decorate.js",
-    "elements": {
-      "video": "sh-mckvzmmpljenl9zkf"
-    },
-    "data": {}
-  },
-  {
-    "id": 310,
-    "file": "utils/decorate.js",
-    "elements": {
-      "video": "sh-mckvzmmp5ux37x2au"
+      "video": "sh-mckwbdphsuzzk9f0z"
     },
     "data": {}
   },
@@ -304,7 +231,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mckvzmmqsgt0ompgn"
+      "section": "sh-mckwbdph1l25xtux5"
     },
     "data": {
       "v": "no spacing",
@@ -319,10 +246,10 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mckvzmms04xwsukb9"
+        "mh-mckwbdpjbsz7iozct"
       ],
       "tabLists": [
-        "mh-mckvzmmsdz3uqlabz"
+        "mh-mckwbdpjydsouvbsb"
       ]
     },
     "data": {
@@ -334,7 +261,7 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mckvzmms04xwsukb9"
+        "mh-mckwbdpjbsz7iozct"
       ]
     },
     "data": {}
@@ -343,7 +270,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mckvzmmuiyv554rae"
+      "section": "sh-mckwbdpm8y5u16jg1"
     },
     "data": {
       "v": "xl spacing, three merch cards",
@@ -357,7 +284,80 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mckvzmv6curw0c6wu"
+      "section": "sh-mckwbdpmwzjsaui0x"
+    },
+    "data": {
+      "v": "l spacing, grid-width-8",
+      "y": {
+        "content": {},
+        "text": "l spacing, grid-width-8"
+      }
+    }
+  },
+  {
+    "id": 310,
+    "file": "utils/decorate.js",
+    "elements": {
+      "video": "sh-mckwbdphfb6z3umjo"
+    },
+    "data": {}
+  },
+  {
+    "id": 310,
+    "file": "utils/decorate.js",
+    "elements": {
+      "video": "sh-mckwbdphsuzzk9f0z"
+    },
+    "data": {}
+  },
+  {
+    "id": 82,
+    "file": "section-metadata/section-metadata.js",
+    "elements": {
+      "section": "sh-mckwbdpnrp1qmliwi"
+    },
+    "data": {
+      "v": "container, three up, static links",
+      "y": {
+        "content": {},
+        "text": "container, three up, static links"
+      }
+    }
+  },
+  {
+    "id": 1285,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "dropdownTrigger": "sh-mckwbdppte2levx0g"
+    },
+    "data": {
+      "isSectionMenu": true,
+      "isDesktop": {}
+    }
+  },
+  {
+    "id": 489,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "localNav": "sh-mckwbdpylm2bmmnrq"
+    },
+    "data": {
+      "title": "Lightroom"
+    }
+  },
+  {
+    "id": 927,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "toggle": "sh-mckwbdq46nzvw353i"
+    },
+    "data": {}
+  },
+  {
+    "id": 82,
+    "file": "section-metadata/section-metadata.js",
+    "elements": {
+      "section": "sh-mckwbdr4vms5t8jv7"
     },
     "data": {
       "v": "one merch card, xl spacing",
@@ -371,7 +371,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mckvzn2dnqxvqkri4"
+      "section": "sh-mckwbds3s2llnk5bh"
     },
     "data": {
       "v": "two merch cards, center",
@@ -391,7 +391,7 @@
     "id": 1239,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "popup": "sh-mckvzn95ygrebznku"
+      "popup": "sh-mckwbehoqy741ljec"
     },
     "data": {
       "isDesktop": {}
