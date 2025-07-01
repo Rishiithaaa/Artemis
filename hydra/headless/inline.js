@@ -370,7 +370,7 @@ document.addEventListener('click', (e) => {
 
 
   const s = document.createElement('script');
-            s.src = "https://gnav2--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
+            s.src = "https://ArtemisPhotoshop--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
 
 
