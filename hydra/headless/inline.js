@@ -150,7 +150,6 @@ const locales = {
   vn_en: { ietf: 'en-VN', tk: 'pps7abe.css' },
 };
 
-// Add any config options.
 const CONFIG = {
   codeRoot: '/acrobat',
   contentRoot: '/dc-shared',
