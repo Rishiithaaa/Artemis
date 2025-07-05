@@ -339,7 +339,7 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
     }
   });
   */
-
+/*
   function updateNavMode() {
     const header = document.querySelector('header');
     const isDesktop = window.matchMedia('(min-width: 900px)').matches;
@@ -352,7 +352,7 @@ const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]')
 
   updateNavMode();
   window.addEventListener('resize', updateNavMode);
-
+*/
 document.addEventListener('click', (e) => {
   const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]');
   const openElemSelector = '.global-navigation [aria-expanded="true"]';
