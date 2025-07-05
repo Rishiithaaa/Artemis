@@ -270,18 +270,12 @@ export default function init(el) {
     const ctas = document.querySelectorAll('a[href*="commerce.adobe.com"][aria-label*="Free trial"]');
     if (ctas.length > 0) {
       clearInterval(interval);
-
       ctas.forEach(cta => {
-        // Assign modal attributes to enable in-place modal rendering
         cta.setAttribute('data-modal', 'twp');
-        cta.setAttribute('data-modal-id', 'mini-plans-web-cta-photoshop-card');
       });
-
-      // No manual click handler needed – handled by `checkout-link`
     }
   }, 300);
 }
-
 window.addEventListener('hashchange', (e) => {
   if (!window.location.hash) {
     try {
@@ -289,7 +283,6 @@ window.addEventListener('hashchange', (e) => {
       const dialog = document.querySelector(`.dialog-modal${url.hash}`);
       if (dialog) closeModal(dialog);
     } catch (error) {
-      /* do nothing */
     }
   } else {
     const details = findDetails(window.location.hash, null);

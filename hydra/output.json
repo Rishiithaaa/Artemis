@@ -3,7 +3,7 @@
     "id": 1285,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "dropdownTrigger": "sh-mckupla7dcxccnitm"
+      "dropdownTrigger": "sh-mcq65egvj8rczhvrd"
     },
     "data": {
       "isSectionMenu": true,
@@ -14,7 +14,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mckuplaelte6d97u9"
+      "section": "sh-mcq65egxjd11xuem4"
     },
     "data": {
       "v": "sticky bottom, static links",
@@ -28,7 +28,7 @@
     "id": 328,
     "file": "utils/decorate.js",
     "elements": {
-      "videoEl": "sh-mckuplali0pahc5cv"
+      "videoEl": "sh-mcq65eh528n4w083n"
     },
     "data": {}
   },
@@ -36,7 +36,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mckuplali0pahc5cv"
+      "video": "sh-mcq65eh528n4w083n"
     },
     "data": {}
   },
@@ -44,7 +44,7 @@
     "id": 328,
     "file": "utils/decorate.js",
     "elements": {
-      "videoEl": "sh-mckuplal8k997w9j5"
+      "videoEl": "sh-mcq65eh6pw3pbvmt2"
     },
     "data": {}
   },
@@ -52,7 +52,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mckuplal8k997w9j5"
+      "video": "sh-mcq65eh6pw3pbvmt2"
     },
     "data": {}
   },
@@ -60,7 +60,7 @@
     "id": 328,
     "file": "utils/decorate.js",
     "elements": {
-      "videoEl": "sh-mckuplamewytguj77"
+      "videoEl": "sh-mcq65eh6b1ugqkg5p"
     },
     "data": {}
   },
@@ -68,7 +68,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mckuplamewytguj77"
+      "video": "sh-mcq65eh6b1ugqkg5p"
     },
     "data": {}
   },
@@ -76,7 +76,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mckuplal8k997w9j5"
+      "video": "sh-mcq65eh6b1ugqkg5p"
     },
     "data": {}
   },
@@ -84,7 +84,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mckuplal8k997w9j5"
+      "video": "sh-mcq65eh6b1ugqkg5p"
     },
     "data": {}
   },
@@ -92,7 +92,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mckuplamewytguj77"
+      "video": "sh-mcq65eh528n4w083n"
     },
     "data": {}
   },
@@ -100,7 +100,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mckuplamewytguj77"
+      "video": "sh-mcq65eh528n4w083n"
     },
     "data": {}
   },
@@ -108,7 +108,7 @@
     "id": 202,
     "file": "aside/aside.js",
     "elements": {
-      "video": "sh-mckuplali0pahc5cv"
+      "video": "sh-mcq65eh6pw3pbvmt2"
     },
     "data": {}
   },
@@ -116,7 +116,25 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mckuplali0pahc5cv"
+      "video": "sh-mcq65eh6pw3pbvmt2"
+    },
+    "data": {}
+  },
+  {
+    "id": 489,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "localNav": "sh-mcq65ehnife4zpdw0"
+    },
+    "data": {
+      "title": "Photoshop"
+    }
+  },
+  {
+    "id": 927,
+    "file": "global-navigation/global-navigation.js",
+    "elements": {
+      "toggle": "sh-mcq65ehnvqqleoyxq"
     },
     "data": {}
   },
@@ -124,7 +142,7 @@
     "id": 328,
     "file": "utils/decorate.js",
     "elements": {
-      "videoEl": "sh-mckupldme4zq1q5i7"
+      "videoEl": "sh-mcq65ehzhz44btrdi"
     },
     "data": {}
   },
@@ -132,7 +150,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mckupldme4zq1q5i7"
+      "video": "sh-mcq65ehzhz44btrdi"
     },
     "data": {}
   },
@@ -140,7 +158,7 @@
     "id": 328,
     "file": "utils/decorate.js",
     "elements": {
-      "videoEl": "sh-mckupldms254wt2tp"
+      "videoEl": "sh-mcq65ei0m1baesyv3"
     },
     "data": {}
   },
@@ -148,7 +166,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mckupldms254wt2tp"
+      "video": "sh-mcq65ei0m1baesyv3"
     },
     "data": {}
   },
@@ -156,7 +174,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mckupldn1d1c0fsii"
+      "section": "sh-mcq65ei0cn1ub1rxg"
     },
     "data": {
       "v": "static links, three-up",
@@ -176,7 +194,7 @@
     "id": 39,
     "file": "editorial-card/editorial-card.js",
     "elements": {
-      "mediaVideo": "sh-mckupldms254wt2tp"
+      "mediaVideo": "sh-mcq65ei0m1baesyv3"
     },
     "data": {}
   },
@@ -184,7 +202,7 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mckupldms254wt2tp"
+      "video": "sh-mcq65ei0m1baesyv3"
     },
     "data": {}
   },
@@ -197,8 +215,20 @@
   {
     "id": 39,
     "file": "editorial-card/editorial-card.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
+    "elements": {},
+    "data": {}
+  },
+  {
+    "id": 39,
+    "file": "editorial-card/editorial-card.js",
     "elements": {
-      "mediaVideo": "sh-mckupldme4zq1q5i7"
+      "mediaVideo": "sh-mcq65ehzhz44btrdi"
     },
     "data": {}
   },
@@ -206,131 +236,21 @@
     "id": 310,
     "file": "utils/decorate.js",
     "elements": {
-      "video": "sh-mckupldme4zq1q5i7"
+      "video": "sh-mcq65ehzhz44btrdi"
     },
     "data": {}
   },
   {
-    "id": 39,
-    "file": "editorial-card/editorial-card.js",
+    "id": 202,
+    "file": "aside/aside.js",
     "elements": {},
-    "data": {}
-  },
-  {
-    "id": 39,
-    "file": "editorial-card/editorial-card.js",
-    "elements": {},
-    "data": {}
-  },
-  {
-    "id": 489,
-    "file": "global-navigation/global-navigation.js",
-    "elements": {
-      "localNav": "sh-mckupldusw9ullq7m"
-    },
-    "data": {
-      "title": "Photoshop"
-    }
-  },
-  {
-    "id": 927,
-    "file": "global-navigation/global-navigation.js",
-    "elements": {
-      "toggle": "sh-mckuplduax8sbn6uo"
-    },
     "data": {}
   },
   {
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mckuplgld1x9h152k"
-    },
-    "data": {
-      "v": "static links",
-      "y": {
-        "content": {},
-        "text": "static links"
-      }
-    }
-  },
-  {
-    "id": 154,
-    "file": "accordion/accordion.js",
-    "elements": {
-      "button": "sh-mckuplgo8p2u2k0on",
-      "dd": "sh-mckuplgoujputzz2r"
-    },
-    "data": {
-      "num": 1,
-      "id": 1
-    }
-  },
-  {
-    "id": 154,
-    "file": "accordion/accordion.js",
-    "elements": {
-      "button": "sh-mckuplgobo8zmuhwa",
-      "dd": "sh-mckuplgonhzvnhr72"
-    },
-    "data": {
-      "num": 2,
-      "id": 1
-    }
-  },
-  {
-    "id": 154,
-    "file": "accordion/accordion.js",
-    "elements": {
-      "button": "sh-mckuplgorvfarv2mq",
-      "dd": "sh-mckuplgotqpoty0rm"
-    },
-    "data": {
-      "num": 3,
-      "id": 1
-    }
-  },
-  {
-    "id": 154,
-    "file": "accordion/accordion.js",
-    "elements": {
-      "button": "sh-mckuplgodprdmuy8e",
-      "dd": "sh-mckuplgoq33bpg97u"
-    },
-    "data": {
-      "num": 4,
-      "id": 1
-    }
-  },
-  {
-    "id": 154,
-    "file": "accordion/accordion.js",
-    "elements": {
-      "button": "sh-mckuplgosko921skd",
-      "dd": "sh-mckuplgoklpcqulez"
-    },
-    "data": {
-      "num": 5,
-      "id": 1
-    }
-  },
-  {
-    "id": 154,
-    "file": "accordion/accordion.js",
-    "elements": {
-      "button": "sh-mckuplgobq2151z2l",
-      "dd": "sh-mckuplgocg5p7efd3"
-    },
-    "data": {
-      "num": 6,
-      "id": 1
-    }
-  },
-  {
-    "id": 82,
-    "file": "section-metadata/section-metadata.js",
-    "elements": {
-      "section": "sh-mckuplgrlfn0n4swj"
+      "section": "sh-mcq65eisxjdh34rim"
     },
     "data": {
       "v": "xl spacing, three up, grid width 8",
@@ -341,20 +261,28 @@
     }
   },
   {
-    "id": 202,
-    "file": "aside/aside.js",
-    "elements": {},
-    "data": {}
+    "id": 82,
+    "file": "section-metadata/section-metadata.js",
+    "elements": {
+      "section": "sh-mcq65eitk7g2ru38k"
+    },
+    "data": {
+      "v": "static links",
+      "y": {
+        "content": {},
+        "text": "static links"
+      }
+    }
   },
   {
     "id": 129,
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mckuplh17w5wd4q3x"
+        "mh-mcq65eizwkxltcloi"
       ],
       "tabLists": [
-        "mh-mckuplh15gvc9yeeb"
+        "mh-mcq65eizb86jfnohb"
       ]
     },
     "data": {
@@ -366,16 +294,88 @@
     "file": "tabs/tabs.js",
     "elements": {
       "tabs": [
-        "mh-mckuplh17w5wd4q3x"
+        "mh-mcq65eizwkxltcloi"
       ]
     },
     "data": {}
   },
   {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mcq65ej3zdzlhoe4n",
+      "dd": "sh-mcq65ej3gkull0maj"
+    },
+    "data": {
+      "num": 1,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mcq65ej3wp66dviqu",
+      "dd": "sh-mcq65ej3m4jhiz93v"
+    },
+    "data": {
+      "num": 2,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mcq65ej3fjfudcl78",
+      "dd": "sh-mcq65ej3aqif4hnwr"
+    },
+    "data": {
+      "num": 3,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mcq65ej3yokvumxqd",
+      "dd": "sh-mcq65ej35ccwp7gxu"
+    },
+    "data": {
+      "num": 4,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mcq65ej39x10e84oy",
+      "dd": "sh-mcq65ej3e72xgum1m"
+    },
+    "data": {
+      "num": 5,
+      "id": 1
+    }
+  },
+  {
+    "id": 154,
+    "file": "accordion/accordion.js",
+    "elements": {
+      "button": "sh-mcq65ej3dwz2qlil7",
+      "dd": "sh-mcq65ej34fy17suq1"
+    },
+    "data": {
+      "num": 6,
+      "id": 1
+    }
+  },
+  {
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mckuplh4572dvvnsy"
+      "section": "sh-mcq65ej458jqobfzv"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -389,7 +389,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mckupljhb1jxqvnfm"
+      "section": "sh-mcq65ek95qcgb20oo"
     },
     "data": {
       "v": "xl spacing, one merch card",
@@ -403,7 +403,7 @@
     "id": 82,
     "file": "section-metadata/section-metadata.js",
     "elements": {
-      "section": "sh-mckuplkhy95kk2cpm"
+      "section": "sh-mcq65ekuxnzawrut3"
     },
     "data": {
       "v": "xl spacing, two merch cards",
@@ -423,7 +423,7 @@
     "id": 1239,
     "file": "global-navigation/global-navigation.js",
     "elements": {
-      "popup": "sh-mckupm3sd4kf170bs"
+      "popup": "sh-mcq65f7b6goqorry4"
     },
     "data": {
       "isDesktop": {}
