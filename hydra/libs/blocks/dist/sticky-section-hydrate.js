@@ -64,6 +64,32 @@ function handleStickyPromobar(section, delay) {
     });
   }, delay || 0);
 }
+
+export default async function handleStickySection(sticky, section) {
+  const main = document.querySelector('main');
+  switch (sticky) {
+    case 'sticky-top': {
+      const { debounce } = await import('../../utils/action.js');
+      window.addEventListener('resize', debounce(() => handleTopHeight(section)));
+      handleTopHeight(section);
+      main.prepend(section);
+      break;
+    }
+    case 'sticky-bottom': {
+      if (section.querySelector(':is(.promobar, .notification)')) {
+        const metadata = getMetadata(section.querySelector('.section-metadata'));
+        const delay = getDelayTime(metadata.delay?.text);
+        if (delay) setTimeout(() => { handleStickyPromobar(section, delay); }, delay);
+        else handleStickyPromobar(section, delay);
+      }
+      main.append(section);
+      break;
+    }
+    default:
+      break;
+  }
+}
+
 const hydrationToken = "section-metadata/sticky-section.js";
 const hydrationBlocks = {
   _65: async ({
