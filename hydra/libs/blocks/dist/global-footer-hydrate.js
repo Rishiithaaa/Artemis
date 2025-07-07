@@ -36,6 +36,18 @@ class FooterHydrate extends Footer {
     }
   }
 }
+import {
+  loadBlock,
+  decorateAutoBlock,
+  decorateLinks,
+  getMetadata,
+  getConfig,
+  localizeLink,
+  loadStyle,
+  getFederatedUrl,
+  getFedsPlaceholderConfig,
+} from '../../utils/utils.js';
+
 
 const hydrationToken = "global-footer/global-footer.js";
 
