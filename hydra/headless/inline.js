@@ -294,7 +294,7 @@ if(verbEl) {
     verbEl.querySelector('#file-upload').click();
   });
 }
-
+/*
 (function () {
   const stickySection = document.querySelector('.promo-sticky-section');
   if (!stickySection) return;
@@ -310,7 +310,6 @@ if(verbEl) {
   });
 })();
 
-/*
 const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]');
     for (var i = 0; i < navItem.length; i++) {
       navItem[i].addEventListener('click', (event) => {
@@ -369,7 +368,7 @@ document.addEventListener('click', (e) => {
 
 
   const s = document.createElement('script');
-            s.src = "https://hero--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
+            s.src = "https://sticky--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
 
 

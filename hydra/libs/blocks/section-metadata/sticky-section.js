@@ -47,9 +47,22 @@ function handleStickyPromobar(section, delay) {
   if (section.querySelector(':is(.promobar, .notification)')) {
     io.observe(document.querySelector('footer'));
   }
+  setTimeout(() => {
+    const threshold = 650;
+    window.addEventListener('scroll', function fallbackScrollHandler() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      if (scrollTop > threshold) {
+        section.classList.remove('hide-sticky-section');
+      } else {
+        section.classList.add('hide-sticky-section');
+      }
+    });
+  }, delay || 0); 
 }
 
 export default async function handleStickySection(sticky, section) {
+  //@hydrate({payload:{sticky,section}})
+  {
   const main = document.querySelector('main');
   switch (sticky) {
     case 'sticky-top': {
@@ -72,4 +85,6 @@ export default async function handleStickySection(sticky, section) {
     default:
       break;
   }
+}
+//@end
 }
