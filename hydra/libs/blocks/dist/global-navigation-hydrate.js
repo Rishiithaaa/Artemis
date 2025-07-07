@@ -27,7 +27,7 @@ class GnavHydrate extends Gnav {
       if (this.isToggleExpanded()) setHamburgerPadding();
     }, 'Toggle click failed', 'gnav', 'error'));
   }
-_1239({popup,isDesktop}) {
+_1239({popup}) {
   let originalContent = popup.innerHTML;
   const isDesktop = window.matchMedia('(min-width: 900px)');
 
