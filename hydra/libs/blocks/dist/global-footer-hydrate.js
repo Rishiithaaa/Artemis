@@ -1,30 +1,56 @@
-import {
-  Footer
-} from '../global-footer/global-footer.js';
+import { Footer } from '../global-footer/global-footer.js';
+
 const x = document.querySelector('footer').getAttribute('data-feds');
+
 class FooterHydrate extends Footer {
-  _272({
-    regionPickerElem
-  }) {
-    {
-      regionPickerElem.addEventListener('click', () => {
-        if (!isRegionPickerExpanded()) {
-          regionPickerElem.setAttribute('aria-expanded', 'true');
-          window.addEventListener('milo:modal:loaded', loadRegionNav, {
-            once: true
-          });
-        }
-      });
-      window.addEventListener('milo:modal:closed', () => {
-        if (isRegionPickerExpanded()) {
-          regionPickerElem.setAttribute('aria-expanded', 'false');
-        }
-      });
+  _273({ regionPickerElem }) {
+    regionPickerElem.addEventListener('click', () => {
+      if (!this.isRegionPickerExpanded(regionPickerElem)) {
+        regionPickerElem.setAttribute('aria-expanded', 'true');
+        window.addEventListener('milo:modal:loaded', () => this.loadRegionNav(), {
+          once: true
+        });
+      }
+    });
+
+    window.addEventListener('milo:modal:closed', () => {
+      if (this.isRegionPickerExpanded(regionPickerElem)) {
+        regionPickerElem.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  isRegionPickerExpanded(elem) {
+    return elem?.getAttribute('aria-expanded') === 'true';
+  }
+
+  async loadRegionNav() {
+    const block = document.querySelector('.region-nav');
+    if (block && getConfig().standaloneGnav) {
+      if (block.getAttribute('data-failed') !== 'true') return;
+      block.classList.add('hide');
+      loadStyle(`${base}/blocks/region-nav/region-nav.css`);
+      const { default: initRegionNav } = await import('../region-nav/region-nav.js');
+      initRegionNav(block);
+      block.classList.remove('hide');
     }
   }
 }
+import {
+  loadBlock,
+  decorateAutoBlock,
+  decorateLinks,
+  getMetadata,
+  getConfig,
+  localizeLink,
+  loadStyle,
+  getFederatedUrl,
+  getFedsPlaceholderConfig,
+} from '../../utils/utils.js';
+
 
 const hydrationToken = "global-footer/global-footer.js";
+
 /**
  * Dynamic Hydration Runtime Code
  * This module provides runtime functionality for hydrating components on the client side.
@@ -177,7 +203,7 @@ export function hydrateDynamically(rawHydratorData, blockDefinitions = []) {
       const argValues = argNames.map(name => resolvedArgs[name]);
       console.log(argNames);
 
-      hydrationBlocks[`_${rawTask.id}`](resolvedArgs);
+      obj[`_${rawTask.id}`](resolvedArgs);
 
       // 6. Execute the User's Hydration Code for this specific instance
       // const hydrateAction = new Function(...argNames, blockCodeString);
