@@ -340,7 +340,7 @@ blocks[lastTwoParts].push(...hydrateBlocks);
 const classBlockIds = new Set();
 const classCustomSnippets = {
   Gnav: `const x = document.querySelector('header').getAttribute('data-feds');`,
-  Footer: `const x = document.querySelector('footer');`,
+  Footer: `const x = document.querySelector('footer').getAttribute('data-feds');`,
   // Add more mappings here if needed
 };
 

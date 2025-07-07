@@ -250,7 +250,6 @@ class Footer {
       loadStyle(`${base}/blocks/modal/modal.css`);
       const { default: initModal } = await import('../modal/modal.js');
       const modal = await initModal(regionPickerElem);
-//hydrate({payload:{regionPickerWrapperClass}});
       const loadRegionNav = async () => {
         const block = document.querySelector('.region-nav');
         if (block && getConfig().standaloneGnav) {
@@ -268,9 +267,9 @@ class Footer {
           block.classList.remove('hide');
         }
       };
-//@end
       if (modal) await loadRegionNav(); // just in case the modal is already open
-
+window.hydrate && window.hydrate({id:272, payload:{regionPickerElem}})
+{
       regionPickerElem.addEventListener('click', () => {
         if (!isRegionPickerExpanded()) {
           regionPickerElem.setAttribute('aria-expanded', 'true');
@@ -284,6 +283,8 @@ class Footer {
           regionPickerElem.setAttribute('aria-expanded', 'false');
         }
       });
+    }
+    //@end
     } else {
       // No hash -> region selector expands a dropdown
       regionPickerElem.setAttribute('aria-haspopup', 'true');
@@ -301,14 +302,13 @@ class Footer {
       });
       // Close region picker dropdown on outside click
 
-window.hydrate && window.hydrate({id:305, payload:{regionPickerWrapperClass}})
       document.addEventListener('click', (e) => {
         if (isRegionPickerExpanded()
           && !e.target.closest(`.${regionPickerWrapperClass}`)) {
           regionPickerElem.setAttribute('aria-expanded', false);
         }
       });
-      //@end
+
     }
 
     return this.elements.regionPicker;

@@ -369,7 +369,7 @@ document.addEventListener('click', (e) => {
 
 
   const s = document.createElement('script');
-            s.src = "https://tog--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
+            s.src = "https://trail--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/loader.js";
             document.head.append(s);
 
 

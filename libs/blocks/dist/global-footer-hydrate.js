@@ -1,16 +1,26 @@
 import {
   Footer
 } from '../global-footer/global-footer.js';
-const x = document.querySelector('footer');
+const x = document.querySelector('footer').getAttribute('data-feds');
 class FooterHydrate extends Footer {
-  _305({
-    regionPickerWrapperClass
+  _272({
+    regionPickerElem
   }) {
-    document.addEventListener('click', e => {
-      if (isRegionPickerExpanded() && !e.target.closest(`.${regionPickerWrapperClass}`)) {
-        regionPickerElem.setAttribute('aria-expanded', false);
-      }
-    });
+    {
+      regionPickerElem.addEventListener('click', () => {
+        if (!isRegionPickerExpanded()) {
+          regionPickerElem.setAttribute('aria-expanded', 'true');
+          window.addEventListener('milo:modal:loaded', loadRegionNav, {
+            once: true
+          });
+        }
+      });
+      window.addEventListener('milo:modal:closed', () => {
+        if (isRegionPickerExpanded()) {
+          regionPickerElem.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
   }
 }
 
