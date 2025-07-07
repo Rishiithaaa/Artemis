@@ -126,6 +126,26 @@ _1239({popup}) {
       }
     }
   };
+    makeTabActive(popup) {
+    const tabbuttons = popup.querySelectorAll('.global-navigation .tabs button');
+    const tabpanels = popup.querySelectorAll('.global-navigation .tab-content [role="tabpanel"]');
+    closeAllTabs(tabbuttons, tabpanels);
+    const { origin, pathname } = window.location;
+    const url = `${origin}${pathname}`;
+    setTimeout(() => {
+      const activeLink = [
+        ...popup.querySelectorAll('a:not([data-modal-hash])'),
+      ].find((el) => (el.href === url || el.href.startsWith(`${url}?`) || el.href.startsWith(`${url}#`)));
+      const tabIndex = activeLink ? +activeLink.parentNode.id : 0;
+      const selectTab = popup.querySelectorAll('.tab')[tabIndex];
+      const daallTab = selectTab.getAttribute('daa-ll');
+      selectTab.setAttribute('daa-ll', `${daallTab.replace('click', 'open')}`);
+      selectTab?.click();
+      selectTab.setAttribute('daa-ll', `${daallTab.replace('open', 'click')}`);
+      selectTab?.focus();
+    }, 100);
+  }
+
   hasMegaMenu = () => this.elements.navWrapper?.querySelectorAll('.feds-nav > section.feds-navItem')?.length >= 1;
   searchPresent = () => !!this.content.querySelector('.search');
   loadDelayed = async () => {

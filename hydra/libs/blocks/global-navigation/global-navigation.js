@@ -1116,7 +1116,6 @@ export class Gnav {
       }
     }
   };
-
   makeTabActive(popup) {
     const tabbuttons = popup.querySelectorAll('.global-navigation .tabs button');
     const tabpanels = popup.querySelectorAll('.global-navigation .tab-content [role="tabpanel"]');
