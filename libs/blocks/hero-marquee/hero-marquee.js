@@ -190,6 +190,15 @@ export default async function init(el) {
   let copy = fRows[0];
   const anyTag = foreground.querySelector('p, h1, h2, h3, h4, h5, h6');
   const asset = foreground.querySelector('div > picture, :is(.video-container, .pause-play-wrapper), div > video, div > a[href*=".mp4"], div > a.image-link');
+  const wrapper = el.querySelector('.video-container');
+const videoEl = wrapper?.querySelector('video');
+const pausePlayWrapper = wrapper?.querySelector('.pause-play-wrapper');
+window.hydrate && window.hydrate({id:197, payload:{videoEl,pausePlayWrapper}})
+if (videoEl && pausePlayWrapper) {
+  applyHoverPlay(videoEl);            // Optional: hover to play
+  applyAccessibilityEvents(videoEl);  // Required: play/pause click, icon sync
+}
+//@end
   const allRows = foreground.querySelectorAll('div > div');
   copy = anyTag.closest('div');
   copy.classList.add('copy');
