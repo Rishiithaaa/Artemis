@@ -295,64 +295,6 @@ if(verbEl) {
     verbEl.querySelector('#file-upload').click();
   });
 }
-/*
-(function () {
-  const stickySection = document.querySelector('.promo-sticky-section');
-  if (!stickySection) return;
-  const scrollThreshold = 650;
-  window.addEventListener('scroll', function () {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-    if (scrollTop > scrollThreshold) {
-      stickySection.classList.remove('hide-sticky-section');
-    } else {
-      stickySection.classList.add('hide-sticky-section'); 
-    }
-  });
-})();
-
-const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]');
-    for (var i = 0; i < navItem.length; i++) {
-      navItem[i].addEventListener('click', (event) => {
-        const isOpen = event.currentTarget.getAttribute('aria-expanded');
-        navItem.forEach(el => {
-          el.setAttribute('aria-expanded', 'false');
-        });
-        event.currentTarget.setAttribute('aria-expanded', isOpen == 'false' ? 'true' : 'false');
-    }, false);
-  } 
-     document.addEventListener('click', (event) => {
-      const openElemSelector = '.global-navigation [aria-expanded="true"]';
-      const isClickedElemOpen = [...document.querySelectorAll(openElemSelector)]
-      .find((openItem) => openItem.parentElement.contains(event.target));
-      if (!isClickedElemOpen) {
-          navItem.forEach(el => el.setAttribute('aria-expanded', 'false'));
-      }
-  });
-  const hamburger = document.querySelector('.feds-toggle');
-  hamburger.addEventListener('click', (event) => {
-    const navWrapper = document.getElementById('feds-nav-wrapper');
-    if (navWrapper.matches('.feds-nav-wrapper--expanded')) {
-      navWrapper.classList.remove('feds-nav-wrapper--expanded');
-    } else {
-      navWrapper.classList.add('feds-nav-wrapper--expanded');
-    }
-  });
-  */
-/*
-  function updateNavMode() {
-    const header = document.querySelector('header');
-    const isDesktop = window.matchMedia('(min-width: 900px)').matches;
-    if (!isDesktop) {
-      header.classList.add('new-nav');
-    } else {
-      header.classList.remove('new-nav');
-    }
-  }
-
-  updateNavMode();
-  window.addEventListener('resize', updateNavMode);
-*/
 document.addEventListener('click', (e) => {
   const navItem = document.querySelectorAll('.feds-navLink[aria-haspopup="true"]');
   const openElemSelector = '.global-navigation [aria-expanded="true"]';
