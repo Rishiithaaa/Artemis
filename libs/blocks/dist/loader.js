@@ -7,4 +7,5 @@ import('https://Lightroom--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/glo
 import('https://Lightroom--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/hero-marquee-hydrate.js');
 import('https://Lightroom--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/modal-hydrate.js');
 import('https://Lightroom--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/section-metadata-hydrate.js');
+import('https://Lightroom--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/sticky-section-hydrate.js');
 import('https://Lightroom--milo--rishiithaaa.hlx.live/hydra/libs/blocks/dist/tabs-hydrate.js');
