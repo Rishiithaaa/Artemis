@@ -268,7 +268,7 @@ export class Footer {
         }
       };
       if (modal) await loadRegionNav(); // just in case the modal is already open
-window.hydrate && window.hydrate({id:272, payload:{regionPickerElem}})
+window.hydrate && window.hydrate({id:273, payload:{regionPickerElem}})
 {
       regionPickerElem.addEventListener('click', () => {
         if (!isRegionPickerExpanded()) {
