@@ -50,6 +50,8 @@ function handleStickyPromobar(section, delay) {
 }
 
 export default async function handleStickySection(sticky, section) {
+window.hydrate && window.hydrate({id:54, payload:{sticky,section}})
+  {
   const main = document.querySelector('main');
   switch (sticky) {
     case 'sticky-top': {
@@ -72,4 +74,6 @@ export default async function handleStickySection(sticky, section) {
     default:
       break;
   }
+}
+//@end
 }

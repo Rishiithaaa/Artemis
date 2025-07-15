@@ -224,6 +224,7 @@ const hydrationBlocks = {
             clearInterval(interval);
             ctas.forEach(cta => {
               cta.setAttribute('data-modal', 'twp');
+              cta.setAttribute('data-modal-id', 'mini-plans-web-cta-photoshop-card');
             });
           }
         }, 300);
