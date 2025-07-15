@@ -37,7 +37,7 @@ const CONFIG = {
 };
 
 //@hydrate.class(Footer,{className:'FooterHydrate'})
-export class Footer {
+class Footer {
   constructor({ block } = {}) {
     this.block = block;
     this.elements = {};
