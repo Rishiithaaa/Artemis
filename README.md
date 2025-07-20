@@ -1,3 +1,14 @@
+## Branches Overview
+
+> Each branch represents performance work scoped to a specific page.  
+> All work is under the `hydra/` folder in each branch.
+
+- **`sticky`** –  **Photoshop** page.
+     Production: [https://www.adobe.com/artemis/headless/ps-r](https://www.adobe.com/artemis/headless/ps-r)
+- **`Lightroom`** –  **Photoshop-Lightroom** page.
+     Production: [https://www.adobe.com/artemis/headless/ps-l](https://www.adobe.com/artemis/headless/ps-l)
+- **`artemisIllus`** – **Illustrator** page.
+
 # Milo
 Milo is a shared set of features and services to power Franklin-based websites on adobe.com. 
 
@@ -39,16 +50,7 @@ This repository introduces an approach to **pre-render and partially hydrate** M
 - **Milo Framework** – Adobe’s modular, content-first web framework
 - **Git & GitHub** – for version control and branch-based modular development
 
----
 
-## Branches Overview
-
-> Each branch represents performance work scoped to a specific page.  
-> All work is under the `hydra/` folder in each branch.
-
-- **`sticky`** –  **Photoshop** page.
-- **`Lightroom`** –  **Photoshop-Lightroom** page.
-- **`artemisIllus`** – **Illustrator** page.
 
 
 
